@@ -1,12 +1,14 @@
-﻿namespace Controle_de_Tarefas
+﻿using Controle_de_Tarefas.Telas;
+
+namespace Controle_de_Tarefas
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Controlador controlador = new Controlador();
+            TelaPrincipal tt = new TelaPrincipal();
             while (true)
-                new TelaTarefas(controlador).menuPrincipal();
+                tt.menu();
         }
     }
 }
