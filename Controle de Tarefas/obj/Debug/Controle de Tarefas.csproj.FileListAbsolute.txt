@@ -1,0 +1,20 @@
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Controle de Tarefas.exe.config
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Controle de Tarefas.exe
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Controle de Tarefas.pdb
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\DotNetty.Common.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\DotNetty.Common.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.csproj.CoreCompileInputs.cache
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.csproj.CopyComplete
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.exe
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.pdb
