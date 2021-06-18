@@ -2,7 +2,7 @@
 
 namespace Controle_de_Tarefas.Dominio
 {
-    public class Objetivo
+    public class Objetivo : Entidade
     {
         public Objetivo(String descricao, int id)
         {
@@ -13,7 +13,6 @@ namespace Controle_de_Tarefas.Dominio
 
         public bool finalizado;
         public String descricao;
-        public int id;
 
         public void concluir() { finalizado = true; }
         public override string ToString()

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Controle_de_Tarefas.Dominio
 {
-    public class Tarefa
+    public class Tarefa : Entidade
     {
         public Tarefa(uint prioridade, String titulo)
         {
@@ -17,7 +17,6 @@ namespace Controle_de_Tarefas.Dominio
         }
 
         public uint prioridade;
-        public int id;
         public string titulo;
         private int id_objetivos;
         private List<Objetivo> objetivos;

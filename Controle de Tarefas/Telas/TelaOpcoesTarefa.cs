@@ -29,7 +29,7 @@ namespace Controle_de_Tarefas.Telas
                 {
                     case "1": cadastrarObjetivos(); break;
                     case "2": concluirObjetivo(); break;
-                    case "3": editar(TelaPrincipal.tarefaValida()); break;
+                    case "3": editar(TelaTarefas.tarefaValida()); break;
                     case "S": break;
                     default: mostrarMensagem(TipoMensagem.Erro, "\nSelecione uma opcão correta!"); break;
                 }

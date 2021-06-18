@@ -5,9 +5,10 @@ using System.Collections.Generic;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaPrincipal : Tela
+    public class TelaTarefas<T> : Tela
     {
-        private readonly Controlador controlador = new Controlador();
+        private readonly Controlador<Tarefa> controladorT = new Controlador<Tarefa>();
+        private readonly Controlador<Contato> controlador = new Controlador<Contato>();
         public override void menu()
         {
             String opcao = "";
@@ -26,14 +27,14 @@ namespace Controle_de_Tarefas.Telas
                 {
                     case "1": menuTarefa(controlador.tarefasIncompletas()); break;
                     case "2": menuTarefa(controlador.tarefasCompletas()); break;
-                    case "3": cadastrarTarefa(); break;
+                    case "3": cadastrar(); break;
                     case "4": excluir(); break;
                     case "S": break;
                     default: mostrarMensagem(TipoMensagem.Erro, "\nSelecione uma opcão correta!"); break;
                 }
             }
         }
-        public static Tarefa tarefaValida()
+        public abstract Tarefa registroValido()
         {
             String titulo;
             String prioridade;
@@ -73,19 +74,18 @@ namespace Controle_de_Tarefas.Telas
             Tarefa tarefa = lista[Convert.ToInt32(opcao) - 1];
             new TelaOpcoesTarefa(tarefa);
         }
-        private void cadastrarTarefa()
+        private void cadastrar()
         {
-            Tarefa tarefa = tarefaValida();
-            controlador.inserir(tarefa);
-            new TelaOpcoesTarefa(tarefa);
+            T registro = registroValido();
+            controlador.inserir(registro);
         }
         private void excluir()
         {
-            var lista = controlador.Tarefas;
+            var lista = controlador.Registros;
             if (!mostrarLista(lista))
                 return;
 
-            mostrarMensagem(TipoMensagem.Requisicao, "Digite o número da Tarefa para excluir -- Ou digite S para Sair\n");
+            mostrarMensagem(TipoMensagem.Requisicao, "Digite o número do Registro para excluir -- Ou digite S para Sair\n");
             String opcao = Console.ReadLine().ToUpperInvariant();
 
             while (opcao != "S")

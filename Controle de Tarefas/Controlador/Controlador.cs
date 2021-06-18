@@ -1,43 +1,26 @@
 ﻿using Controle_de_Tarefas.Dominio;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Controle_de_Tarefas.Controladores
 {
-    public class Controlador
+    public class Controlador<T> where T : Entidade
     {
         private int id;
-        private readonly List<Tarefa> tarefas = new List<Tarefa>();
-        public List<Tarefa> Tarefas => tarefas;
+        private readonly List<T> registros = new List<T>();
+        public List<T> Registros => registros;
 
-        public void inserir(Tarefa tarefa)
+        public void inserir(T registro)
         {
-            tarefa.id = ++id;
-            tarefas.Add(tarefa);
-        }
-        public void editar(int id, Tarefa tarefaNew)
-        {
-            Tarefa tarefaOld = getById(id);
-            tarefaOld.titulo = tarefaNew.titulo;
-            tarefaOld.prioridade = tarefaNew.prioridade;
+            registro.id = ++id;
+            registros.Add(registro);
         }
         public void excluir(int indice)
         {
-            tarefas.RemoveAt(indice);
+            registros.RemoveAt(indice);
         }
-        public List<Tarefa> tarefasCompletas()
+        public T getById(int id)
         {
-            var tarefasIncompletas = tarefas.Where(x => x.porcentagem_conclusao == 100);
-            return tarefasIncompletas.OrderByDescending(x => x.dt_conclusao).ToList();
-        }
-        public List<Tarefa> tarefasIncompletas()
-        {
-            var tarefasIncompletas = tarefas.Except(tarefasCompletas());
-            return tarefasIncompletas.OrderByDescending(x => x.prioridade).ToList();
-        }
-        public Tarefa getById(int id)
-        {
-            return tarefas.Find(x => x.id == id);
+            return registros.Find(x => x.id == id);
         }
     }
 }
