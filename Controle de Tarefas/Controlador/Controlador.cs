@@ -14,6 +14,11 @@ namespace Controle_de_Tarefas.Controladores
             registro.id = ++id;
             registros.Add(registro);
         }
+        public void editar(int id, T registro)
+        {
+            int indice = registros.IndexOf(getById(id));
+            registros[indice] = registro;
+        }
         public void excluir(int indice)
         {
             registros.RemoveAt(indice);
@@ -21,6 +26,10 @@ namespace Controle_de_Tarefas.Controladores
         public T getById(int id)
         {
             return registros.Find(x => x.id == id);
+        }
+        public bool existsById(int id)
+        {
+            return getById(id) != null;
         }
     }
 }

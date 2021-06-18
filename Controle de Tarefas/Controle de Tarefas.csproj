@@ -189,6 +189,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Controlador.cs" />
+    <Compile Include="Controlador\ControladorTarefas.cs" />
+    <Compile Include="Controlador\ControladorObjetivos.cs" />
     <Compile Include="Domínio\Entidade.cs" />
     <Compile Include="Domínio\Objetivo.cs" />
     <Compile Include="Program.cs" />
@@ -197,8 +199,9 @@
     <Compile Include="Domínio\Contato.cs" />
     <Compile Include="Telas\Tela.cs" />
     <Compile Include="Telas\TelaContatos.cs" />
-    <Compile Include="Telas\TelaOpcoesTarefa.cs" />
+    <Compile Include="Telas\TelaObjetivos.cs" />
     <Compile Include="Telas\TelaPrincipal.cs" />
+    <Compile Include="Telas\TelaTarefas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

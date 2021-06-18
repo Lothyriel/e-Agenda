@@ -17,7 +17,7 @@ namespace Controle_de_Tarefas.Dominio
         public void concluir() { finalizado = true; }
         public override string ToString()
         {
-            return $"Descrição {descricao} | : Status: {(finalizado ? "Completo" : "Incompleto")}";
+            return $"ID: {id} | Descrição {descricao} | : Status: {(finalizado ? "Completo" : "Incompleto")}";
         }
     }
 }

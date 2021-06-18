@@ -1,14 +1,17 @@
-﻿using Controle_de_Tarefas.Dominio;
-using Controle_de_Tarefas.Controladores;
+﻿using Controle_de_Tarefas.Controladores;
+using Controle_de_Tarefas.Dominio;
 using System;
 using System.Collections.Generic;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaTarefas<T> : Tela
+    public class TelaTarefas : Tela<Tarefa>
     {
-        private readonly Controlador<Tarefa> controladorT = new Controlador<Tarefa>();
-        private readonly Controlador<Contato> controlador = new Controlador<Contato>();
+        private new ControladorTarefas controlador;
+        public TelaTarefas(ControladorTarefas controlador) : base(controlador)
+        {
+            this.controlador = controlador;
+        }
         public override void menu()
         {
             String opcao = "";
@@ -16,25 +19,23 @@ namespace Controle_de_Tarefas.Telas
             {
                 Console.Clear();
                 Console.WriteLine("Escolha uma opção: \n");
-                Console.WriteLine("Digite 1 para visualizar tarefas não concluídas");
+                Console.WriteLine("Digite 1 para visualizar tarefas pendentes");
                 Console.WriteLine("Digite 2 para visualizar tarefas concluídas");
                 Console.WriteLine("Digite 3 para cadastrar novas tarefas");
-                Console.WriteLine("Digite 4 para excluir tarefas\n");
-
-                mostrarMensagem(TipoMensagem.Requisicao, "Opção:");
+                Console.WriteLine("Digite S para Voltar\n");
+                TipoMensagem.Requisicao.mostrarMensagem("Opção:");
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
                     case "1": menuTarefa(controlador.tarefasIncompletas()); break;
                     case "2": menuTarefa(controlador.tarefasCompletas()); break;
                     case "3": cadastrar(); break;
-                    case "4": excluir(); break;
                     case "S": break;
-                    default: mostrarMensagem(TipoMensagem.Erro, "\nSelecione uma opcão correta!"); break;
+                    default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
                 }
             }
         }
-        public abstract Tarefa registroValido()
+        public override Tarefa registroValido()
         {
             String titulo;
             String prioridade;
@@ -42,19 +43,19 @@ namespace Controle_de_Tarefas.Telas
             Console.Clear();
             while (true)
             {
-                mostrarMensagem(TipoMensagem.Requisicao, "Digite o título da Tarefa\n");
+                TipoMensagem.Requisicao.mostrarMensagem("Digite o título da Tarefa\n");
                 titulo = Console.ReadLine();
                 if (titulo.Length > 0)
                     break;
-                mostrarMensagem(TipoMensagem.Erro, "Título não pode ser vazio");
+                TipoMensagem.Erro.mostrarMensagem("Título não pode ser vazio");
             }
             while (true)
             {
-                mostrarMensagem(TipoMensagem.Requisicao, "\nDigite a prioridade da Tarefa\n");
+                TipoMensagem.Requisicao.mostrarMensagem("\nDigite a prioridade da Tarefa\n");
                 prioridade = Console.ReadLine();
                 if (uint.TryParse(prioridade, out iPrioridade) && iPrioridade <= 1000)
                     break;
-                mostrarMensagem(TipoMensagem.Erro, "Prioridade precisa ser numérica 0-1000");
+                TipoMensagem.Erro.mostrarMensagem("Prioridade precisa ser numérica 0-1000");
             }
 
             return new Tarefa(iPrioridade, titulo);
@@ -62,41 +63,23 @@ namespace Controle_de_Tarefas.Telas
         private void menuTarefa(List<Tarefa> lista)
         {
             Console.Clear();
-            if (!mostrarLista(lista))
-                return;
-            String opcao = "";
-            mostrarMensagem(TipoMensagem.Requisicao, "\nDigite o número da Tarefa para ver ações -- Ou digite S para Sair\n");
-            opcao = Console.ReadLine().ToUpperInvariant();
-            if (opcao == "S")
-                return;
-            if (!indiceValido(lista, opcao))
-                menuTarefa(lista);
-            Tarefa tarefa = lista[Convert.ToInt32(opcao) - 1];
-            new TelaOpcoesTarefa(tarefa);
-        }
-        private void cadastrar()
-        {
-            T registro = registroValido();
-            controlador.inserir(registro);
-        }
-        private void excluir()
-        {
-            var lista = controlador.Registros;
-            if (!mostrarLista(lista))
+            if (!lista.mostrarLista())
                 return;
 
-            mostrarMensagem(TipoMensagem.Requisicao, "Digite o número do Registro para excluir -- Ou digite S para Sair\n");
+            TipoMensagem.Requisicao.mostrarMensagem("\nDigite o ID da Tarefa para ver ações -- Ou digite S para Sair\n");
             String opcao = Console.ReadLine().ToUpperInvariant();
 
-            while (opcao != "S")
+            if (opcao == "S")
+                return;
+
+            if (!opcaoValida(opcao))
             {
-                if (!indiceValido(lista, opcao))
-                    excluir();
-                int indice = Convert.ToInt32(opcao) - 1;
-                controlador.excluir(indice);
-                mostrarMensagem(TipoMensagem.Sucesso, "Excluído com sucesso\n");
-                break;
+                TipoMensagem.Erro.mostrarMensagem("Digite uma opção válida");
+                menuTarefa(lista);
             }
+            Tarefa tarefa = controlador.getById(Convert.ToInt32(opcao));
+            new TelaObjetivos(tarefa);
+
         }
     }
 }

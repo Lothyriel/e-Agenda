@@ -6,7 +6,7 @@ namespace Controle_de_Tarefas
     {
         static void Main(string[] args)
         {
-            TelaTarefas tt = new TelaTarefas();
+            TelaPrincipal tt = new TelaPrincipal();
             while (true)
                 tt.menu();
         }

@@ -1,33 +1,86 @@
-﻿using System;
+﻿using Controle_de_Tarefas.Controladores;
+using Controle_de_Tarefas.Dominio;
+using System;
 using System.Collections;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public abstract class Tela
+    public abstract class Tela<T> where T : Entidade
     {
-        public abstract void menu();
-        protected static bool indiceValido(IList lista, string opcao)
+        protected Controlador<T> controlador;
+        protected Tela(Controlador<T> controlador)
         {
-            bool valido = int.TryParse(opcao, out int iOpcao) && iOpcao > 0 && iOpcao <= lista.Count;
-            if (!valido)
-                mostrarMensagem(TipoMensagem.Erro, "Digite uma opção válida");
-            return valido;
+            this.controlador = controlador;
         }
-        protected static bool mostrarLista(IList lista)
+        public abstract void menu();
+        public abstract T registroValido();
+
+        protected void cadastrar()
+        {
+            T registro = registroValido();
+            controlador.inserir(registro);
+        }
+        protected void editar()
+        {
+            var lista = controlador.Registros;
+            if (!lista.mostrarLista())
+                return;
+
+            TipoMensagem.Requisicao.mostrarMensagem("Digite o ID do Registro para editar -- Ou digite S para Sair\n");
+            String opcao = Console.ReadLine().ToUpperInvariant();
+
+            while (opcao != "S")
+            {
+                if (!opcaoValida(opcao))
+                    editar();
+                int indice = Convert.ToInt32(opcao) - 1;
+                controlador.editar(indice, registroValido());
+                TipoMensagem.Sucesso.mostrarMensagem("Editado com sucesso\n");
+                break;
+            }
+        }
+        protected void excluir()
+        {
+            var lista = controlador.Registros;
+            if (!lista.mostrarLista())
+                return;
+
+            TipoMensagem.Requisicao.mostrarMensagem("Digite o ID do Registro para excluir -- Ou digite S para Sair\n");
+
+            String opcao = Console.ReadLine().ToUpperInvariant();
+
+            while (opcao != "S")
+            {
+                if (!opcaoValida(opcao))
+                    excluir();
+                int indice = Convert.ToInt32(opcao) - 1;
+                controlador.excluir(indice);
+                TipoMensagem.Sucesso.mostrarMensagem("Excluído com sucesso\n");
+                break;
+            }
+        }
+        protected bool opcaoValida(string idSelecionado)
+        {
+            return int.TryParse(idSelecionado, out int id) && controlador.existsById(id);
+        }
+    }
+    public static class Extensions
+    {
+        public static bool mostrarLista(this IList lista)
         {
             if (lista.Count == 0)
             {
-                mostrarMensagem(TipoMensagem.Erro, "Nenhum item aqui!");
+                TipoMensagem.Erro.mostrarMensagem("Nenhum item aqui!");
                 return false;
             }
             else
             {
-                for (int i = 0; i < lista.Count; i++)
-                    Console.WriteLine($"[{i + 1}] {lista[i]}");
+                foreach (var item in lista)
+                    Console.WriteLine(item);
                 return true;
             }
         }
-        protected static void mostrarMensagem(TipoMensagem tipo, String mensagem)
+        public static void mostrarMensagem(this TipoMensagem tipo, String mensagem)
         {
             switch (tipo)
             {
