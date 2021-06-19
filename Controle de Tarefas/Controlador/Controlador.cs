@@ -14,14 +14,14 @@ namespace Controle_de_Tarefas.Controladores
             registro.id = ++id;
             registros.Add(registro);
         }
-        public void editar(int id, T registro)
+        public virtual void editar(int id, T registro)
         {
             int indice = registros.IndexOf(getById(id));
             registros[indice] = registro;
         }
-        public void excluir(int indice)
+        public void excluir(int id)
         {
-            registros.RemoveAt(indice);
+            registros.Remove(getById(id));
         }
         public T getById(int id)
         {

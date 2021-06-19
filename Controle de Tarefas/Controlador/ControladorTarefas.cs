@@ -16,5 +16,11 @@ namespace Controle_de_Tarefas.Controladores
             var tarefasIncompletas = Registros.Except(tarefasCompletas());
             return tarefasIncompletas.OrderByDescending(x => x.prioridade).ToList();
         }
+        public override void editar(int id, Tarefa nova)
+        {
+            Tarefa antiga = getById(id);
+            antiga.titulo = nova.titulo;
+            antiga.prioridade = nova.prioridade;
+        }
     }
 }

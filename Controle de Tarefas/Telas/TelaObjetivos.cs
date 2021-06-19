@@ -9,9 +9,14 @@ namespace Controle_de_Tarefas.Telas
         private new ControladorObjetivos controlador;
         private Tarefa tarefa;
 
-        public TelaObjetivos(Tarefa tarefa) : base(tarefa.ctrlObjetivos)
+        private ControladorTarefas controladorT;
+        private TelaTarefas telaT;
+
+        public TelaObjetivos(Tarefa tarefa, ControladorTarefas controladorT) : base(tarefa.ctrlObjetivos)
         {
             this.tarefa = tarefa;
+            this.controladorT = controladorT;
+            telaT = new TelaTarefas(controladorT);
             controlador = tarefa.ctrlObjetivos;
             menu();
         }
@@ -25,48 +30,19 @@ namespace Controle_de_Tarefas.Telas
                 Console.WriteLine("Digite 1 para cadastrar novos objetivos para esta tarefa");
                 Console.WriteLine("Digite 2 para marcar objetivos como concluídos");
                 Console.WriteLine("Digite 3 para editar esta tarefa");
+                Console.WriteLine("Digite 4 para excluir esta tarefa");
                 Console.WriteLine("Digite S para Voltar\n");
                 TipoMensagem.Requisicao.mostrarMensagem("Opção:");
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": cadastrarObjetivos(); break;
+                    case "1": cadastrar(); break;
                     case "2": concluirObjetivo(); break;
-                    case "3": break;
+                    case "3": controladorT.editar(tarefa.id, telaT.registroValido()); break;
+                    case "4": controladorT.excluir(tarefa.id); return;
                     case "S": break;
                     default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
                 }
-            }
-        }
-        private void mostrarTarefa()
-        {
-            Console.Clear();
-            TipoMensagem.Item.mostrarMensagem(tarefa + "\n");
-        }
-        private void cadastrarObjetivos()
-        {
-            controlador.inserir(registroValido());
-            TipoMensagem.Sucesso.mostrarMensagem("\nObjetivo adicionado com sucesso");
-        }
-        private void concluirObjetivo()
-        {
-            var lista = controlador.objetivosIncompletos();
-            mostrarTarefa();
-            if (!lista.mostrarLista())
-                return;
-            String opcao = "";
-            while (opcao != "S")
-            {
-                TipoMensagem.Requisicao.mostrarMensagem("\nDigite o ID do Objetivo para marcar como concluído -- Ou digite S para Sair\n");
-                opcao = Console.ReadLine().ToUpperInvariant();
-                if (!opcaoValida(opcao))
-                    concluirObjetivo();
-                int indice = Convert.ToInt32(opcao);
-                var objetivo = controlador.objetivosIncompletos()[indice - 1];
-                objetivo.concluir();
-                TipoMensagem.Sucesso.mostrarMensagem("Objetivo marcado como concluído");
-                tarefa.concluiTarefa();
-                break;
             }
         }
         public override Objetivo registroValido()
@@ -81,7 +57,29 @@ namespace Controle_de_Tarefas.Telas
                     break;
                 TipoMensagem.Erro.mostrarMensagem("\nDescrição não pode ser vazia");
             }
-            return new Objetivo(descricao, tarefa.id++);
+            return new Objetivo(descricao);
+        }
+        private void mostrarTarefa()
+        {
+            Console.Clear();
+            TipoMensagem.Item.mostrarMensagem(tarefa + "\n");
+        }
+        private void concluirObjetivo()
+        {
+            mostrarTarefa();
+            string opcao = obterOpcao(controlador.objetivosIncompletos());
+            if (opcao == "S") return;
+
+            int id = Convert.ToInt32(opcao);
+            Objetivo objetivo = controlador.getById(id);
+
+            if (!controlador.objetivosIncompletos().Contains(objetivo))
+            {
+                TipoMensagem.Erro.mostrarMensagem("Selecione uma opcão válida");
+                concluirObjetivo();
+            }
+            objetivo.concluir();
+            tarefa.concluiTarefa();
         }
     }
 }

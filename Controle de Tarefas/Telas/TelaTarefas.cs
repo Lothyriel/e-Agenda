@@ -27,8 +27,8 @@ namespace Controle_de_Tarefas.Telas
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": menuTarefa(controlador.tarefasIncompletas()); break;
-                    case "2": menuTarefa(controlador.tarefasCompletas()); break;
+                    case "1": menuTarefas(controlador.tarefasIncompletas()); break;
+                    case "2": menuTarefas(controlador.tarefasCompletas()); break;
                     case "3": cadastrar(); break;
                     case "S": break;
                     default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
@@ -60,26 +60,22 @@ namespace Controle_de_Tarefas.Telas
 
             return new Tarefa(iPrioridade, titulo);
         }
-        private void menuTarefa(List<Tarefa> lista)
+        private void menuTarefas(List<Tarefa> lista)
         {
             Console.Clear();
-            if (!lista.mostrarLista())
-                return;
+            string opcao = obterOpcao(lista);
 
-            TipoMensagem.Requisicao.mostrarMensagem("\nDigite o ID da Tarefa para ver ações -- Ou digite S para Sair\n");
-            String opcao = Console.ReadLine().ToUpperInvariant();
+            if (opcao == "S") return;
 
-            if (opcao == "S")
-                return;
+            int id = Convert.ToInt32(opcao);
+            Tarefa tarefa = controlador.getById(id);
 
-            if (!opcaoValida(opcao))
+            if (!lista.Contains(tarefa))
             {
-                TipoMensagem.Erro.mostrarMensagem("Digite uma opção válida");
-                menuTarefa(lista);
+                TipoMensagem.Erro.mostrarMensagem("Selecione uma opcão válida");
+                menuTarefas(lista);
             }
-            Tarefa tarefa = controlador.getById(Convert.ToInt32(opcao));
-            new TelaObjetivos(tarefa);
-
+            new TelaObjetivos(tarefa, controlador);
         }
     }
 }

@@ -14,10 +14,10 @@ namespace Controle_de_Tarefas.Dominio
             dt_criacao = DateTime.Now;
         }
         public int porcentagem_conclusao { get; private set; }
-        public uint prioridade { get; private set; }
         public DateTime dt_criacao { get; private set; }
         public DateTime dt_conclusao { get; private set; }
-        private string titulo;
+        public string titulo;
+        public uint prioridade;
         public void atualizaConclusao()
         {
             var objetivos = ctrlObjetivos.Registros;
@@ -33,7 +33,7 @@ namespace Controle_de_Tarefas.Dominio
         public override String ToString()
         {
             return $"ID: {id} | Titulo: {titulo} | Prioridade: {prioridade} | Conclusão: {porcentagem_conclusao}% | Data Criação: {dt_criacao} " +
-            $"{(dt_conclusao != DateTime.MinValue ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{ctrlObjetivos.printObjetivos()}";
+            $"{(dt_conclusao != DateTime.MinValue ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{ctrlObjetivos}";
         }
     }
 }

@@ -7,14 +7,14 @@ namespace Controle_de_Tarefas.Controladores
 {
     public class ControladorObjetivos : Controlador<Objetivo>
     {
-        public String printObjetivos()
+        public override String ToString()
         {
             if (Registros.Count == 0)
                 return "Nenhum objetivo cadastrado";
 
             String strObjetivos = "";
             foreach (var objetivo in Registros)
-                strObjetivos += "- " + objetivo + "\n";
+                strObjetivos += "- " + objetivo.ToString("sem ID") + "\n";
             return strObjetivos;
         }
         public List<Objetivo> objetivosIncompletos()

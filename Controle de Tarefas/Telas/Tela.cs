@@ -17,51 +17,47 @@ namespace Controle_de_Tarefas.Telas
 
         protected void cadastrar()
         {
-            T registro = registroValido();
-            controlador.inserir(registro);
+            controlador.inserir(registroValido());
+            TipoMensagem.Sucesso.mostrarMensagem("\nRegistro adicionado com sucesso");
         }
         protected void editar()
         {
-            var lista = controlador.Registros;
-            if (!lista.mostrarLista())
-                return;
+            string opcao = obterOpcao(controlador.Registros);
+            if (opcao == "S") return;
 
-            TipoMensagem.Requisicao.mostrarMensagem("Digite o ID do Registro para editar -- Ou digite S para Sair\n");
-            String opcao = Console.ReadLine().ToUpperInvariant();
-
-            while (opcao != "S")
-            {
-                if (!opcaoValida(opcao))
-                    editar();
-                int indice = Convert.ToInt32(opcao) - 1;
-                controlador.editar(indice, registroValido());
-                TipoMensagem.Sucesso.mostrarMensagem("Editado com sucesso\n");
-                break;
-            }
+            int id = Convert.ToInt32(opcao);
+            controlador.editar(id, registroValido());
         }
         protected void excluir()
         {
-            var lista = controlador.Registros;
+            string opcao = obterOpcao(controlador.Registros);
+            if (opcao == "S") return;
+
+            int id = Convert.ToInt32(opcao);
+            controlador.excluir(id);
+        }
+        protected bool opcaoValida(string opcao)
+        {
+            return int.TryParse(opcao, out int id) && controlador.existsById(id);
+        }
+        protected String obterOpcao(IList lista)
+        {
+            Console.Clear();
             if (!lista.mostrarLista())
-                return;
+                return "S";
 
-            TipoMensagem.Requisicao.mostrarMensagem("Digite o ID do Registro para excluir -- Ou digite S para Sair\n");
-
+            TipoMensagem.Requisicao.mostrarMensagem("\nDigite o ID do registro para alterar -- Ou digite S para Sair\n");
             String opcao = Console.ReadLine().ToUpperInvariant();
 
-            while (opcao != "S")
+            if (opcao == "S") return opcao;
+
+            if (!opcaoValida(opcao))
             {
-                if (!opcaoValida(opcao))
-                    excluir();
-                int indice = Convert.ToInt32(opcao) - 1;
-                controlador.excluir(indice);
-                TipoMensagem.Sucesso.mostrarMensagem("Excluído com sucesso\n");
-                break;
+                TipoMensagem.Erro.mostrarMensagem("Selecione uma opcão válida");
+                return obterOpcao(lista);
             }
-        }
-        protected bool opcaoValida(string idSelecionado)
-        {
-            return int.TryParse(idSelecionado, out int id) && controlador.existsById(id);
+            TipoMensagem.Sucesso.mostrarMensagem("Operação realizada com sucesso");
+            return opcao;
         }
     }
     public static class Extensions
