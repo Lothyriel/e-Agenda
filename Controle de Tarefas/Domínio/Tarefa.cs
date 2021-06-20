@@ -6,19 +6,19 @@ namespace Controle_de_Tarefas.Dominio
     public class Tarefa : Entidade
     {
         public readonly ControladorObjetivos ctrlObjetivos = new ControladorObjetivos();
-        public Tarefa(int prioridade, String titulo)
+        public Tarefa(int porcentagem_conclusao, DateTime dt_criacao, DateTime dt_conclusao, String titulo, int prioridade)
         {
             this.prioridade = prioridade;
             this.titulo = titulo;
-            porcentagem_conclusao = 0;
-            dt_criacao = DateTime.Now;
-            dt_conclusao = new DateTime(1900, 1, 1);
+            this.porcentagem_conclusao = porcentagem_conclusao;
+            this.dt_criacao = dt_criacao;
+            this.dt_conclusao = dt_conclusao;
         }
         public int porcentagem_conclusao { get; private set; }
         public DateTime dt_criacao { get; private set; }
         public DateTime dt_conclusao { get; private set; }
-        public string titulo;
-        public int prioridade;
+        public string titulo { get; set; }
+        public int prioridade { get; set; }
         public void atualizaConclusao()
         {
             var objetivos = ctrlObjetivos.Registros;

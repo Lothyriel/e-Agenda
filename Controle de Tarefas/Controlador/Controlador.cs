@@ -11,7 +11,6 @@ namespace Controle_de_Tarefas.Controladores
     {
         protected abstract string nometabela { get; }
         public List<T> Registros => obterRegistros();
-
         public void inserir(T registro)
         {
             inserirOuEditar(new List<String> { "INSERT INTO", "", "VALUES", "SELECT SCOPE_IDENTITY();" }, registro);
@@ -62,20 +61,18 @@ namespace Controle_de_Tarefas.Controladores
             string sqlSelecao = $@"SELECT * FROM {nometabela}";
             comandoSelecao.CommandText = sqlSelecao;
 
-            SqlDataReader leitorTarefas = comandoSelecao.ExecuteReader();
+            SqlDataReader leitorRegistros = comandoSelecao.ExecuteReader();
 
             List<T> registros = new List<T>();
             var props = propriedades();
             var nomesProps = nomesPropriedades(props);
 
-            while (leitorTarefas.Read())
+            while (leitorRegistros.Read())
             {
-                List<object> parametros = ObterParametros(leitorTarefas, props, nomesProps);
-                int id = (int)parametros[0];
-                parametros.RemoveAt(0);
+                List<object> parametros = ObterParametros(leitorRegistros, props, nomesProps);
 
                 T registro = (T)Activator.CreateInstance(typeof(T), parametros);
-                registro.id = id;
+                registro.id = Convert.ToInt32(leitorRegistros["ID"]);
 
                 registros.Add(registro);
             }
@@ -83,12 +80,12 @@ namespace Controle_de_Tarefas.Controladores
             conexaoComBanco.Close();
             return registros;
         }
-        private List<object> ObterParametros(SqlDataReader leitorTarefas, List<PropertyInfo> props,List<String> nomesProps)
+        private List<object> ObterParametros(SqlDataReader leitor, List<PropertyInfo> props, List<String> nomesProps)
         {
             List<object> parametros = new List<object>();
 
-            for (int i = 0; leitorTarefas.Read(); i++)
-                parametros.Add(Convert.ChangeType(leitorTarefas[nomesProps[i]], props[i].GetType()));
+            for (int i = 0; i < leitor.FieldCount-1; i++)
+                parametros.Add(Convert.ChangeType(leitor[nomesProps[i]], props[i].PropertyType));
 
             return parametros;
         }

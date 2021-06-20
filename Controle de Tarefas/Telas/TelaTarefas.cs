@@ -58,7 +58,7 @@ namespace Controle_de_Tarefas.Telas
                 TipoMensagem.Erro.mostrarMensagem("Prioridade precisa ser numérica 0-1000");
             }
 
-            return new Tarefa(iPrioridade, titulo);
+            return new Tarefa(0, DateTime.Now, new DateTime(1900, 1, 1), titulo, iPrioridade);
         }
         private void menuTarefas(List<Tarefa> lista)
         {

@@ -11,14 +11,6 @@ namespace Controle_de_Tarefas
     {
         static void Main(string[] args)
         {
-            var tip = tipos();
-            var tipStr = tiposEmString(tip);
-
-            tip.ForEach(x => Console.WriteLine(x));
-            tipStr.ForEach(x => Console.WriteLine(x));
-
-            Console.ReadKey();
-
             TelaPrincipal tp = new TelaPrincipal();
             while (true)
                 tp.menu();
