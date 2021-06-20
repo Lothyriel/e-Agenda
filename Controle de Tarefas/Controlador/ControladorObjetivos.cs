@@ -7,6 +7,7 @@ namespace Controle_de_Tarefas.Controladores
 {
     public class ControladorObjetivos : Controlador<Objetivo>
     {
+        protected override string nometabela => "TBObjetivos";
         public override String ToString()
         {
             if (Registros.Count == 0)

@@ -6,18 +6,19 @@ namespace Controle_de_Tarefas.Dominio
     public class Tarefa : Entidade
     {
         public readonly ControladorObjetivos ctrlObjetivos = new ControladorObjetivos();
-        public Tarefa(uint prioridade, String titulo)
+        public Tarefa(int prioridade, String titulo)
         {
             this.prioridade = prioridade;
             this.titulo = titulo;
             porcentagem_conclusao = 0;
             dt_criacao = DateTime.Now;
+            dt_conclusao = new DateTime(1900, 1, 1);
         }
         public int porcentagem_conclusao { get; private set; }
         public DateTime dt_criacao { get; private set; }
         public DateTime dt_conclusao { get; private set; }
         public string titulo;
-        public uint prioridade;
+        public int prioridade;
         public void atualizaConclusao()
         {
             var objetivos = ctrlObjetivos.Registros;
@@ -33,7 +34,7 @@ namespace Controle_de_Tarefas.Dominio
         public override String ToString()
         {
             return $"ID: {id} | Titulo: {titulo} | Prioridade: {prioridade} | Conclusão: {porcentagem_conclusao}% | Data Criação: {dt_criacao} " +
-            $"{(dt_conclusao != DateTime.MinValue ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{ctrlObjetivos}";
+            $"{(dt_conclusao != new DateTime(1900, 1, 1) ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{ctrlObjetivos}";
         }
     }
 }

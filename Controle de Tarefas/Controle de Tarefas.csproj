@@ -197,6 +197,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domínio\Tarefa.cs" />
     <Compile Include="Domínio\Contato.cs" />
+    <Compile Include="Controlador\ControladorContatos.cs" />
     <Compile Include="Telas\Tela.cs" />
     <Compile Include="Telas\TelaContatos.cs" />
     <Compile Include="Telas\TelaObjetivos.cs" />

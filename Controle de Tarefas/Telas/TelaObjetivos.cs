@@ -38,12 +38,21 @@ namespace Controle_de_Tarefas.Telas
                 {
                     case "1": cadastrar(); break;
                     case "2": concluirObjetivo(); break;
-                    case "3": controladorT.editar(tarefa.id, telaT.registroValido()); break;
+                    case "3": editarTarefa(); break;
                     case "4": controladorT.excluir(tarefa.id); return;
                     case "S": break;
                     default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
                 }
             }
+        }
+
+        private void editarTarefa()
+        {
+            Tarefa nova = telaT.registroValido();
+            tarefa.titulo = nova.titulo;
+            tarefa.prioridade = nova.prioridade;
+
+            controladorT.editar(tarefa.id, nova);
         }
         public override Objetivo registroValido()
         {

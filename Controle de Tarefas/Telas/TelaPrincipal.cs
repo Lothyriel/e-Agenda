@@ -1,5 +1,4 @@
-﻿using Controle_de_Tarefas.Dominio;
-using Controle_de_Tarefas.Controladores;
+﻿using Controle_de_Tarefas.Controladores;
 using System;
 
 namespace Controle_de_Tarefas.Telas
@@ -7,7 +6,7 @@ namespace Controle_de_Tarefas.Telas
     public class TelaPrincipal
     {
         private readonly ControladorTarefas controladorT = new ControladorTarefas();
-        private readonly Controlador<Contato> controladorC = new Controlador<Contato>();
+        private readonly ControladorContatos controladorC = new ControladorContatos();
         public void menu()
         {
             String opcao = "";

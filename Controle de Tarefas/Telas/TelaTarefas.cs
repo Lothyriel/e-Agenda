@@ -39,7 +39,7 @@ namespace Controle_de_Tarefas.Telas
         {
             String titulo;
             String prioridade;
-            uint iPrioridade;
+            int iPrioridade;
             Console.Clear();
             while (true)
             {
@@ -53,7 +53,7 @@ namespace Controle_de_Tarefas.Telas
             {
                 TipoMensagem.Requisicao.mostrarMensagem("\nDigite a prioridade da Tarefa\n");
                 prioridade = Console.ReadLine();
-                if (uint.TryParse(prioridade, out iPrioridade) && iPrioridade <= 1000)
+                if (int.TryParse(prioridade, out iPrioridade) && iPrioridade <= 1000)
                     break;
                 TipoMensagem.Erro.mostrarMensagem("Prioridade precisa ser numérica 0-1000");
             }
