@@ -36,7 +36,7 @@ namespace Controle_de_Tarefas.Telas
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": cadastrar(); break;
+                    case "1": cadastrarObjetivo(); break;
                     case "2": concluirObjetivo(); break;
                     case "3": editarTarefa(); break;
                     case "4": controladorT.excluir(tarefa.id); return;
@@ -46,14 +46,7 @@ namespace Controle_de_Tarefas.Telas
             }
         }
 
-        private void editarTarefa()
-        {
-            Tarefa nova = telaT.registroValido();
-            tarefa.titulo = nova.titulo;
-            tarefa.prioridade = nova.prioridade;
 
-            controladorT.editar(tarefa.id, nova);
-        }
         public override Objetivo registroValido()
         {
             String descricao;
@@ -66,29 +59,42 @@ namespace Controle_de_Tarefas.Telas
                     break;
                 TipoMensagem.Erro.mostrarMensagem("\nDescrição não pode ser vazia");
             }
-            return new Objetivo(descricao);
+            return new Objetivo(descricao, tarefa.id);
         }
+
         private void mostrarTarefa()
         {
             Console.Clear();
             TipoMensagem.Item.mostrarMensagem(tarefa + "\n");
         }
+        private void cadastrarObjetivo()
+        {
+            cadastrar();
+            tarefa.addObjetivo();
+            controladorT.editar(tarefa.id, tarefa);
+        }
+        private void editarTarefa()
+        {
+            Tarefa nova = telaT.registroValido();
+            tarefa.titulo = nova.titulo;
+            tarefa.prioridade = nova.prioridade;
+
+            controladorT.editar(tarefa.id, nova);
+        }
         private void concluirObjetivo()
         {
             mostrarTarefa();
-            string opcao = obterOpcao(controlador.objetivosIncompletos());
+            string opcao = obterOpcao(controlador.objetivosIncompletos(tarefa.id));
             if (opcao == "S") return;
 
             int id = Convert.ToInt32(opcao);
             Objetivo objetivo = controlador.getById(id);
 
-            if (!controlador.objetivosIncompletos().Contains(objetivo))
-            {
-                TipoMensagem.Erro.mostrarMensagem("Selecione uma opcão válida");
-                concluirObjetivo();
-            }
             objetivo.concluir();
+            controlador.editar(id, objetivo);
+
             tarefa.concluiTarefa();
+            controladorT.editar(tarefa.id, tarefa);
         }
     }
 }

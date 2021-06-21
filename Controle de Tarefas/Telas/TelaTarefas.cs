@@ -58,7 +58,7 @@ namespace Controle_de_Tarefas.Telas
                 TipoMensagem.Erro.mostrarMensagem("Prioridade precisa ser numérica 0-1000");
             }
 
-            return new Tarefa(0, DateTime.Now, new DateTime(1900, 1, 1), titulo, iPrioridade);
+            return new Tarefa(iPrioridade, titulo);
         }
         private void menuTarefas(List<Tarefa> lista)
         {
@@ -69,12 +69,6 @@ namespace Controle_de_Tarefas.Telas
 
             int id = Convert.ToInt32(opcao);
             Tarefa tarefa = controlador.getById(id);
-
-            if (!lista.Contains(tarefa))
-            {
-                TipoMensagem.Erro.mostrarMensagem("Selecione uma opcão válida");
-                menuTarefas(lista);
-            }
             new TelaObjetivos(tarefa, controlador);
         }
     }

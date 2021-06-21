@@ -1,9 +1,4 @@
-﻿using Controle_de_Tarefas.Dominio;
-using Controle_de_Tarefas.Telas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using Controle_de_Tarefas.Telas;
 
 namespace Controle_de_Tarefas
 {
@@ -14,14 +9,6 @@ namespace Controle_de_Tarefas
             TelaPrincipal tp = new TelaPrincipal();
             while (true)
                 tp.menu();
-        }
-        private static List<PropertyInfo> tipos()
-        {
-            return typeof(Tarefa).GetProperties().ToList();
-        }
-        private static List<String> tiposEmString(List<PropertyInfo> propriedades)
-        {
-            return propriedades.Select(x => x.Name.ToString().ToUpper()).ToList();
         }
     }
 }

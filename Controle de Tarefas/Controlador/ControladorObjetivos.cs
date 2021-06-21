@@ -7,24 +7,31 @@ namespace Controle_de_Tarefas.Controladores
 {
     public class ControladorObjetivos : Controlador<Objetivo>
     {
-        protected override string nometabela => "TBObjetivos";
-        public override String ToString()
+        protected override string nomeTabela => "TBObjetivos";
+        public String ToString(int id_tarefa)
         {
-            if (Registros.Count == 0)
+            var objetivos = objetivosTarefa(id_tarefa);
+            if (objetivos.Count == 0)
                 return "Nenhum objetivo cadastrado";
 
             String strObjetivos = "";
-            foreach (var objetivo in Registros)
+            foreach (var objetivo in objetivos)
                 strObjetivos += "- " + objetivo.ToString("sem ID") + "\n";
             return strObjetivos;
         }
-        public List<Objetivo> objetivosIncompletos()
+
+        public List<Objetivo> objetivosTarefa(int id_tarefa)
         {
-            return Registros.Except(objetivosCompletos()).ToList();
+            return Registros.Where(x => x.id_tarefa == id_tarefa).ToList();
         }
-        private List<Objetivo> objetivosCompletos()
+
+        public List<Objetivo> objetivosIncompletos(int id_tarefa)
         {
-            return Registros.FindAll(x => x.finalizado);
+            return objetivosTarefa(id_tarefa).FindAll(x => !x.finalizado);
+        }
+        public List<Objetivo> objetivosCompletos(int id_tarefa)
+        {
+            return objetivosTarefa(id_tarefa).FindAll(x => x.finalizado);
         }
     }
 }

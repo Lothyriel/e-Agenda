@@ -2,6 +2,7 @@
 using Controle_de_Tarefas.Dominio;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Controle_de_Tarefas.Telas
 {
@@ -36,11 +37,11 @@ namespace Controle_de_Tarefas.Telas
             int id = Convert.ToInt32(opcao);
             controlador.excluir(id);
         }
-        protected bool opcaoValida(string opcao)
+        protected bool opcaoValida(string opcao, List<T> lista)
         {
-            return int.TryParse(opcao, out int id) && controlador.existsById(id);
+            return int.TryParse(opcao, out int id) && lista.Exists(x => x.id == id);
         }
-        protected String obterOpcao(IList lista)
+        protected String obterOpcao(List<T> lista)
         {
             Console.Clear();
             if (!lista.mostrarLista())
@@ -51,7 +52,7 @@ namespace Controle_de_Tarefas.Telas
 
             if (opcao == "S") return opcao;
 
-            if (!opcaoValida(opcao))
+            if (!opcaoValida(opcao, lista))
             {
                 TipoMensagem.Erro.mostrarMensagem("Selecione uma opcão válida");
                 return obterOpcao(lista);
@@ -59,6 +60,10 @@ namespace Controle_de_Tarefas.Telas
             TipoMensagem.Sucesso.mostrarMensagem("Operação realizada com sucesso");
             return opcao;
         }
+    }
+    public enum TipoMensagem
+    {
+        Sucesso, Erro, Aviso, Requisicao, Item
     }
     public static class Extensions
     {
@@ -91,9 +96,12 @@ namespace Controle_de_Tarefas.Telas
             Console.ResetColor();
             if (tipo != TipoMensagem.Requisicao && tipo != TipoMensagem.Item) Console.ReadKey();
         }
-    }
-    public enum TipoMensagem
-    {
-        Sucesso, Erro, Aviso, Requisicao, Item
+        public static List<String> concatenarLinhasSQL(this List<String> x, List<String> z)
+        {
+            List<String> saida = new List<String>();
+            for (int i = 0; i < x.Count; i++)
+                saida.Add($"{x[i]}={z[i]}");
+            return saida;
+        }
     }
 }

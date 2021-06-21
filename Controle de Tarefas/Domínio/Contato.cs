@@ -10,11 +10,11 @@
             this.empresa = empresa;
             this.cargo = cargo;
         }
-        private string nome;
-        private string email;
-        private string telefone;
-        private string empresa;
-        private string cargo;
+        public string nome { get; private set; }
+        public string email { get; private set; }
+        public string telefone { get; private set; }
+        public string empresa { get; private set; }
+        public string cargo { get; private set; }
 
         public override string ToString()
         {

@@ -4,6 +4,6 @@ namespace Controle_de_Tarefas.Controladores
 {
     public class ControladorContatos : Controlador<Contato>
     {
-        protected override string nometabela => "TBContatos";
+        protected override string nomeTabela => "TBContatos";
     }
 }

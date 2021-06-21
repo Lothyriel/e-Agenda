@@ -6,7 +6,17 @@ namespace Controle_de_Tarefas.Dominio
     public class Tarefa : Entidade
     {
         public readonly ControladorObjetivos ctrlObjetivos = new ControladorObjetivos();
-        public Tarefa(int porcentagem_conclusao, DateTime dt_criacao, DateTime dt_conclusao, String titulo, int prioridade)
+
+        public Tarefa(int prioridade, string titulo)
+        {
+            this.prioridade = prioridade;
+            this.titulo = titulo;
+            porcentagem_conclusao = 0;
+            dt_criacao = DateTime.Now;
+            resetaDt_Conclusao();
+        }
+
+        public Tarefa(int porcentagem_conclusao, DateTime dt_criacao, DateTime dt_conclusao, int prioridade, String titulo)
         {
             this.prioridade = prioridade;
             this.titulo = titulo;
@@ -19,11 +29,18 @@ namespace Controle_de_Tarefas.Dominio
         public DateTime dt_conclusao { get; private set; }
         public string titulo { get; set; }
         public int prioridade { get; set; }
-        public void atualizaConclusao()
+
+        public void addObjetivo() { resetaDt_Conclusao(); atualizaConclusao(); }
+        private void resetaDt_Conclusao()
         {
-            var objetivos = ctrlObjetivos.Registros;
-            var concluidos = objetivos.FindAll(x => x.finalizado);
-            porcentagem_conclusao = concluidos.Count / objetivos.Count * 100;
+            dt_conclusao = new DateTime(1900, 1, 1);
+        }
+        private void atualizaConclusao()
+        {
+            double objetivos = ctrlObjetivos.objetivosTarefa(id).Count;
+            double concluidos = ctrlObjetivos.objetivosCompletos(id).Count;
+            double resultado = concluidos / objetivos * 100;
+            porcentagem_conclusao = Convert.ToInt32(resultado);
         }
         public void concluiTarefa()
         {
@@ -34,7 +51,7 @@ namespace Controle_de_Tarefas.Dominio
         public override String ToString()
         {
             return $"ID: {id} | Titulo: {titulo} | Prioridade: {prioridade} | Conclusão: {porcentagem_conclusao}% | Data Criação: {dt_criacao} " +
-            $"{(dt_conclusao != new DateTime(1900, 1, 1) ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{ctrlObjetivos}";
+            $"{(dt_conclusao != new DateTime(1900, 1, 1) ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{ctrlObjetivos.ToString(id)}";
         }
     }
 }
