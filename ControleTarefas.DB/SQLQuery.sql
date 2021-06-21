@@ -1,0 +1,3 @@
+﻿SELECT * FROM TBTarefas
+SELECT * FROM TBObjetivos
+SELECT * FROM TBContatos

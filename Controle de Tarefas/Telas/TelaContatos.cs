@@ -1,6 +1,7 @@
 ﻿using Controle_de_Tarefas.Controladores;
 using Controle_de_Tarefas.Dominio;
 using System;
+using System.Collections.Generic;
 
 namespace Controle_de_Tarefas.Telas
 {
@@ -14,9 +15,29 @@ namespace Controle_de_Tarefas.Telas
 
         public override void menu()
         {
-            throw new NotImplementedException();
+            String opcao = "";
+            while (opcao != "S")
+            {
+                Console.Clear();
+                Console.WriteLine("Escolha uma opção: \n");
+                Console.WriteLine("Digite 1 para visualizar contatos cadastrados");
+                Console.WriteLine("Digite 2 para cadastrar um novo contato");
+                Console.WriteLine("Digite 3 para editar um contato");
+                Console.WriteLine("Digite 4 para excluir um contato");
+                Console.WriteLine("Digite S para Voltar\n");
+                TipoMensagem.Requisicao.mostrarMensagem("Opção:");
+                opcao = Console.ReadLine().ToUpperInvariant();
+                switch (opcao)
+                {
+                    case "1": visualizar(); break;
+                    case "2": cadastrar(); break;
+                    case "3": editar(); break;
+                    case "4": excluir(); break;
+                    case "S": break;
+                    default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
+                }
+            }
         }
-
         public override Contato registroValido()
         {
             String nome, email, telefone, empresa, cargo;
@@ -62,6 +83,12 @@ namespace Controle_de_Tarefas.Telas
                 TipoMensagem.Erro.mostrarMensagem("\nCargo não pode ser vazio");
             }
             return new Contato(nome, email, telefone, empresa, cargo);
+        }
+        private void visualizar()
+        {
+            Console.Clear();
+            controlador.Registros.mostrarLista();
+            Console.ReadKey();
         }
     }
 }
