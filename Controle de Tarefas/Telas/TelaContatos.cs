@@ -12,7 +12,7 @@ namespace Controle_de_Tarefas.Telas
             menu();
         }
 
-        public void menu()
+        public override void menu()
         {
             String opcao = "";
             while (opcao != "S")

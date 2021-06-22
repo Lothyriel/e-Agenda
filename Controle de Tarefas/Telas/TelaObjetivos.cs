@@ -7,7 +7,7 @@ namespace Controle_de_Tarefas.Telas
     public class TelaObjetivos : Tela<Objetivo>
     {
         private ControladorTarefas controladorT;
-        private new ControladorObjetivos controlador;
+        private new ControladorObjetivos controlador = new ControladorObjetivos();
         private Tarefa tarefa;
 
         private TelaTarefas telaT;
@@ -19,7 +19,7 @@ namespace Controle_de_Tarefas.Telas
             telaT = new TelaTarefas();
             menu();
         }
-        public void menu()
+        public override void menu()
         {
             String opcao = "";
             while (opcao != "S")
@@ -35,9 +35,9 @@ namespace Controle_de_Tarefas.Telas
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": cadastrarObjetivo(); break;
+                    case "1": cadastrar(); break;
                     case "2": concluirObjetivo(); break;
-                    case "3": editarTarefa(); break;
+                    case "3": editar(); break;
                     case "4": controladorT.excluir(tarefa.id); return;
                     case "S": break;
                     default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
@@ -58,25 +58,24 @@ namespace Controle_de_Tarefas.Telas
             }
             return new Objetivo(descricao, tarefa.id);
         }
-
-        private void mostrarTarefa()
+        protected override void cadastrar()
         {
-            Console.Clear();
-            TipoMensagem.Item.mostrarMensagem(tarefa + "\n");
-        }
-        private void cadastrarObjetivo()
-        {
-            cadastrar();
+            base.cadastrar();
             tarefa.addObjetivo();
             controladorT.editar(tarefa.id, tarefa);
         }
-        private void editarTarefa()
+        protected override void editar()
         {
             Tarefa nova = telaT.registroValido();
             tarefa.titulo = nova.titulo;
             tarefa.prioridade = nova.prioridade;
 
             controladorT.editar(tarefa.id, nova);
+        }
+        private void mostrarTarefa()
+        {
+            Console.Clear();
+            TipoMensagem.Item.mostrarMensagem(tarefa + "\n");
         }
         private void concluirObjetivo()
         {

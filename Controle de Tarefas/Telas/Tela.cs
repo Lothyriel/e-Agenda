@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public abstract class Tela<T> where T : Entidade
+    public abstract class Tela<T> : ITela where T : Entidade
     {
         protected Controlador<T> controlador;
 
@@ -16,14 +16,21 @@ namespace Controle_de_Tarefas.Telas
             this.controlador = controlador;
         }
 
+        public abstract void menu();
         public abstract T registroValido();
-
-        protected void cadastrar()
+        protected virtual void visualizar(List<T> registros)
+        {
+            Console.Clear();
+            registros.mostrarLista();
+            TipoMensagem.Requisicao.mostrarMensagem("\nAperte uma tecla para voltar");
+            Console.ReadKey();
+        }
+        protected virtual void cadastrar()
         {
             controlador.inserir(registroValido());
             TipoMensagem.Sucesso.mostrarMensagem("\nRegistro adicionado com sucesso");
         }
-        protected void editar()
+        protected virtual void editar()
         {
             string opcao = obterOpcao(controlador.Registros);
             if (opcao == "S") return;

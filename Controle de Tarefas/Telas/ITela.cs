@@ -1,6 +1,6 @@
 ﻿namespace Controle_de_Tarefas.Telas
 {
-    internal interface ITela
+    public interface ITela
     {
         void menu();
     }

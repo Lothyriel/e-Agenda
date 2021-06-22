@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaTarefas : Tela<Tarefa>, ITela
+    public class TelaTarefas : Tela<Tarefa>
     {
         private new ControladorTarefas controlador = new ControladorTarefas();
         public TelaTarefas() : base(new ControladorTarefas())
         {
         }
-        public void menu()
+        public override void menu()
         {
             String opcao = "";
             while (opcao != "S")
