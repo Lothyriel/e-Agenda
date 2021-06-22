@@ -40,7 +40,7 @@ namespace Controle_de_Tarefas.Dominio
             double objetivos = ctrlObjetivos.objetivosTarefa(id).Count;
             double concluidos = ctrlObjetivos.objetivosCompletos(id).Count;
             double resultado = concluidos / objetivos * 100;
-            porcentagem_conclusao = Convert.ToInt32(resultado);
+            porcentagem_conclusao = (int)resultado;
         }
         public void concluiTarefa()
         {

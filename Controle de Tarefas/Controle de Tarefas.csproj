@@ -198,6 +198,7 @@
     <Compile Include="Domínio\Tarefa.cs" />
     <Compile Include="Domínio\Contato.cs" />
     <Compile Include="Controlador\ControladorContatos.cs" />
+    <Compile Include="Telas\ITela.cs" />
     <Compile Include="Telas\Tela.cs" />
     <Compile Include="Telas\TelaContatos.cs" />
     <Compile Include="Telas\TelaObjetivos.cs" />

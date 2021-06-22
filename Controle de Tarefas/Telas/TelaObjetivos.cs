@@ -6,21 +6,20 @@ namespace Controle_de_Tarefas.Telas
 {
     public class TelaObjetivos : Tela<Objetivo>
     {
+        private ControladorTarefas controladorT;
         private new ControladorObjetivos controlador;
         private Tarefa tarefa;
 
-        private ControladorTarefas controladorT;
         private TelaTarefas telaT;
 
-        public TelaObjetivos(Tarefa tarefa, ControladorTarefas controladorT) : base(tarefa.ctrlObjetivos)
+        public TelaObjetivos(Tarefa tarefa) : base(new ControladorObjetivos())
         {
             this.tarefa = tarefa;
-            this.controladorT = controladorT;
-            telaT = new TelaTarefas(controladorT);
-            controlador = tarefa.ctrlObjetivos;
+            controladorT = new ControladorTarefas();
+            telaT = new TelaTarefas();
             menu();
         }
-        public override void menu()
+        public void menu()
         {
             String opcao = "";
             while (opcao != "S")
@@ -45,8 +44,6 @@ namespace Controle_de_Tarefas.Telas
                 }
             }
         }
-
-
         public override Objetivo registroValido()
         {
             String descricao;

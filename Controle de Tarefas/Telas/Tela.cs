@@ -3,17 +3,19 @@ using Controle_de_Tarefas.Dominio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Controle_de_Tarefas.Telas
 {
     public abstract class Tela<T> where T : Entidade
     {
         protected Controlador<T> controlador;
+
         protected Tela(Controlador<T> controlador)
         {
             this.controlador = controlador;
         }
-        public abstract void menu();
+
         public abstract T registroValido();
 
         protected void cadastrar()
@@ -96,12 +98,12 @@ namespace Controle_de_Tarefas.Telas
             Console.ResetColor();
             if (tipo != TipoMensagem.Requisicao && tipo != TipoMensagem.Item) Console.ReadKey();
         }
-        public static List<String> concatenarLinhasSQL(this List<String> x, List<String> z)
+        public static List<Object> ObterParametros(this SqlDataReader linha)
         {
-            List<String> saida = new List<String>();
-            for (int i = 0; i < x.Count; i++)
-                saida.Add($"{x[i]}={z[i]}");
-            return saida;
+            List<Object> parametros = new List<object>();
+            for (int i = 0; i < linha.FieldCount; i++)
+                parametros.Add(linha.GetValue(i));
+            return parametros;
         }
     }
 }

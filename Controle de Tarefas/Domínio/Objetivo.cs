@@ -27,7 +27,7 @@ namespace Controle_de_Tarefas.Dominio
         }
         public string ToString(String format)
         {
-            return $"Descrição { descricao} | : Status: { (finalizado ? "Completo" : "Incompleto")}";
+            return $"{ descricao} | : Status: { (finalizado ? "Completo" : "Incompleto")}";
         }
     }
 }

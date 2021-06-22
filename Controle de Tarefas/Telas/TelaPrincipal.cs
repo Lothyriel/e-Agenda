@@ -1,12 +1,9 @@
-﻿using Controle_de_Tarefas.Controladores;
-using System;
+﻿using System;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaPrincipal
+    public class TelaPrincipal : ITela
     {
-        private readonly ControladorTarefas controladorT = new ControladorTarefas();
-        private readonly ControladorContatos controladorC = new ControladorContatos();
         public void menu()
         {
             String opcao = "";
@@ -22,12 +19,12 @@ namespace Controle_de_Tarefas.Telas
                 obterTela(opcao).menu();
             }
         }
-        private dynamic obterTela(string opcao)
+        private ITela obterTela(String opcao)
         {
             switch (opcao)
             {
-                case "1": return new TelaTarefas(controladorT);
-                case "2": return new TelaContatos(controladorC);
+                case "1": return new TelaTarefas();
+                case "2": return new TelaContatos();
                 default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); return this;
             }
         }

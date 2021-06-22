@@ -1,19 +1,18 @@
 ﻿using Controle_de_Tarefas.Controladores;
 using Controle_de_Tarefas.Dominio;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaContatos : Tela<Contato>
+    public class TelaContatos : Tela<Contato>, ITela
     {
-        public TelaContatos(Controlador<Contato> controlador) : base(controlador)
+        public TelaContatos() : base(new ControladorContatos())
         {
-            this.controlador = controlador;
             menu();
         }
 
-        public override void menu()
+        public void menu()
         {
             String opcao = "";
             while (opcao != "S")
@@ -87,7 +86,9 @@ namespace Controle_de_Tarefas.Telas
         private void visualizar()
         {
             Console.Clear();
-            controlador.Registros.mostrarLista();
+            var ordenados = controlador.Registros.OrderBy(x => x.cargo).ToList();
+            ordenados.mostrarLista();
+            TipoMensagem.Requisicao.mostrarMensagem("\nAperte uma tecla para voltar");
             Console.ReadKey();
         }
     }

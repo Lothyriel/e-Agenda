@@ -11,13 +11,16 @@ namespace Controle_de_Tarefas.Controladores
 {
     abstract public class Controlador<T> where T : Entidade
     {
+        public SqlConnection conexaoComBanco { get => abrirConexaoDB(); }
+        public List<T> Registros => obterRegistros();
         protected abstract string nomeTabela { get; }
-        public List<T> Registros => registros();
+
+        public T getById(int id)
+        {
+            return Registros.Find(x => x.id == id);
+        }
         public void inserir(T registro)
         {
-            string enderecoDB = @"Data Source=(LocalDB)\MSSqlLocalDB;Initial Catalog=DBControleTarefas;Integrated Security=True;Pooling=False";
-            SqlConnection conexaoComBanco = new SqlConnection(enderecoDB);
-            conexaoComBanco.Open();
             SqlCommand comandoSql = new SqlCommand();
             comandoSql.Connection = conexaoComBanco;
 
@@ -27,11 +30,11 @@ namespace Controle_de_Tarefas.Controladores
             string sqlcommand =
                 $@"INSERT INTO {nomeTabela}
                     (
-                    {String.Join(",\n", montarLinhas("[", "]", nomesProps)).TrimEnd(new char[] { ',', '\n' })}
+                    {String.Join(",\n", montarLinhas("[", "]", nomesProps))}
                     )
                     VALUES
                     (
-                    {String.Join(",\n", montarLinhas("@", "", nomesProps)).TrimEnd(new char[] { ',', '\n' })}
+                    {String.Join(",\n", montarLinhas("@", "", nomesProps))}
                     );
                  SELECT SCOPE_IDENTITY();";
 
@@ -47,9 +50,6 @@ namespace Controle_de_Tarefas.Controladores
         }
         public void editar(int id, T registro)
         {
-            string enderecoDB = @"Data Source=(LocalDB)\MSSqlLocalDB;Initial Catalog=DBControleTarefas;Integrated Security=True;Pooling=False";
-            SqlConnection conexaoComBanco = new SqlConnection(enderecoDB);
-            conexaoComBanco.Open();
             SqlCommand comandoSql = new SqlCommand();
             comandoSql.Connection = conexaoComBanco;
 
@@ -61,25 +61,20 @@ namespace Controle_de_Tarefas.Controladores
             string sqlcommand =
                 $@"UPDATE {nomeTabela}
 	                SET
-  		                {String.Join(",\n", linhaChaves.concatenarLinhasSQL(linhaArroba))}
+  		                {String.Join(",\n", combinarListas(linhaChaves, linhaArroba, "="))}
 	                WHERE 
                         [ID] = @ID";
             comandoSql.CommandText = sqlcommand;
 
             for (int i = 0; i < props.Count; i++)
                 comandoSql.Parameters.AddWithValue(nomesProps[i], props[i].GetValue(registro));
-            comandoSql.Parameters.AddWithValue("ID", registro.id);
+            comandoSql.Parameters.AddWithValue("ID", id);
 
             comandoSql.ExecuteNonQuery();
             conexaoComBanco.Close();
         }
         public void excluir(int id)
         {
-            string enderecoDBTarefa = @"Data Source=(LocalDB)\MSSqlLocalDB;Initial Catalog=DBControleTarefas;Integrated Security=True;Pooling=False";
-            SqlConnection conexaoComBanco = new SqlConnection(enderecoDBTarefa);
-
-            conexaoComBanco.Open();
-
             SqlCommand comandoExclusao = new SqlCommand();
             comandoExclusao.Connection = conexaoComBanco;
 
@@ -89,36 +84,24 @@ namespace Controle_de_Tarefas.Controladores
 		                [ID] = @ID";
 
             comandoExclusao.CommandText = sqlExclusao;
-
             comandoExclusao.Parameters.AddWithValue("ID", id);
-
             comandoExclusao.ExecuteNonQuery();
-
             conexaoComBanco.Close();
         }
-        public T getById(int id)
+        public List<T> obterRegistros()
         {
-            return Registros.Find(x => x.id == id);
-        }
-        public List<T> registros()
-        {
-            string enderecoDB = @"Data Source=(LocalDB)\MSSqlLocalDB;Initial Catalog=DBControleTarefas;Integrated Security=True;Pooling=False";
-            SqlConnection conexaoComBanco = new SqlConnection(enderecoDB);
-            conexaoComBanco.Open();
-
             SqlCommand comandoSelecao = new SqlCommand();
             comandoSelecao.Connection = conexaoComBanco;
+
             string sqlSelecao = $@"SELECT * FROM {nomeTabela}";
-
             comandoSelecao.CommandText = sqlSelecao;
-
             SqlDataReader leitorRegistros = comandoSelecao.ExecuteReader();
 
             List<T> registros = new List<T>();
 
             while (leitorRegistros.Read())
             {
-                List<object> parametros = ObterParametros(leitorRegistros);
+                List<object> parametros = leitorRegistros.ObterParametros();
                 var id = parametros.First();
                 parametros.Remove(id);
 
@@ -130,14 +113,21 @@ namespace Controle_de_Tarefas.Controladores
             conexaoComBanco.Close();
             return registros;
         }
-        private List<object> ObterParametros(IDataRecord linha)
+        private SqlConnection abrirConexaoDB()
         {
-            List<object> parametros = new List<object>();
-            for (int i = 0; i < linha.FieldCount; i++)
-                parametros.Add(linha.GetValue(i));
-            return parametros;
+            string enderecoDB = @"Data Source=(LocalDB)\MSSqlLocalDB;Initial Catalog=DBControleTarefas;Integrated Security=True;Pooling=False";
+            SqlConnection conexaoComBanco = new SqlConnection(enderecoDB);
+            conexaoComBanco.Open();
+            return conexaoComBanco;
         }
-        private List<String> montarLinhas(string esquerda, string direita, List<String> propriedadesEmString)
+        private List<String> combinarListas(List<String> lista1, List<String> lista2, String separador)
+        {
+            Queue<string> var = new Queue<string>();
+            lista2.ForEach(x => var.Enqueue(x));
+
+            return lista1.Select(x => x + separador + var.Dequeue()).ToList();
+        }
+        private List<String> montarLinhas(String esquerda, String direita, List<String> propriedadesEmString)
         {
             return propriedadesEmString.Select(x => esquerda + x + direita).ToList();
         }

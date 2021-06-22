@@ -5,14 +5,13 @@ using System.Collections.Generic;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaTarefas : Tela<Tarefa>
+    public class TelaTarefas : Tela<Tarefa>, ITela
     {
         private new ControladorTarefas controlador;
-        public TelaTarefas(ControladorTarefas controlador) : base(controlador)
+        public TelaTarefas() : base(new ControladorTarefas())
         {
-            this.controlador = controlador;
         }
-        public override void menu()
+        public void menu()
         {
             String opcao = "";
             while (opcao != "S")
@@ -69,7 +68,7 @@ namespace Controle_de_Tarefas.Telas
 
             int id = Convert.ToInt32(opcao);
             Tarefa tarefa = controlador.getById(id);
-            new TelaObjetivos(tarefa, controlador);
+            new TelaObjetivos(tarefa);
         }
     }
 }

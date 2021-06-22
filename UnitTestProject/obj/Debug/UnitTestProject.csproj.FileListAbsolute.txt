@@ -1,0 +1,17 @@
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Controle de Tarefas.exe
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Controle de Tarefas.pdb
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Controle de Tarefas.exe.config
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.csproj.CopyComplete
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.pdb

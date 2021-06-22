@@ -1,6 +1,6 @@
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\ControleTarefas.DB\bin\Debug\ControleTarefas.DB.dacpac
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\ControleTarefas.DB\bin\Debug\ControleTarefas.DB.dll
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\ControleTarefas.DB\bin\Debug\ControleTarefas.DB.pdb
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\ControleTarefas.DB\obj\Debug\ControleTarefas.DB.sqlproj.AssemblyReference.cache
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\ControleTarefas.DB\obj\Debug\ControleTarefas.DB.dll
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\ControleTarefas.DB\obj\Debug\ControleTarefas.DB.pdb
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\ControleTarefas.DB\obj\Debug\ControleTarefas.DB.sqlproj.AssemblyReference.cache
