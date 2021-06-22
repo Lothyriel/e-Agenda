@@ -28,7 +28,7 @@ namespace Controle_de_Tarefas.Telas
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": visualizar(); break;
+                    case "1": visualizar(controlador.Registros.OrderBy(x => x.cargo).ToList()); break;
                     case "2": cadastrar(); break;
                     case "3": editar(); break;
                     case "4": excluir(); break;
@@ -82,14 +82,6 @@ namespace Controle_de_Tarefas.Telas
                 TipoMensagem.Erro.mostrarMensagem("\nCargo não pode ser vazio");
             }
             return new Contato(nome, email, telefone, empresa, cargo);
-        }
-        private void visualizar()
-        {
-            Console.Clear();
-            var ordenados = controlador.Registros.OrderBy(x => x.cargo).ToList();
-            ordenados.mostrarLista();
-            TipoMensagem.Requisicao.mostrarMensagem("\nAperte uma tecla para voltar");
-            Console.ReadKey();
         }
     }
 }

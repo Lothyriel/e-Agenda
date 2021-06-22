@@ -26,8 +26,8 @@ namespace Controle_de_Tarefas.Telas
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": menuTarefas(controlador.tarefasIncompletas()); break;
-                    case "2": menuTarefas(controlador.tarefasCompletas()); break;
+                    case "1": visualizar(controlador.tarefasIncompletas()); break;
+                    case "2": visualizar(controlador.tarefasCompletas()); break;
                     case "3": cadastrar(); break;
                     case "S": break;
                     default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
@@ -59,10 +59,10 @@ namespace Controle_de_Tarefas.Telas
 
             return new Tarefa(iPrioridade, titulo);
         }
-        private void menuTarefas(List<Tarefa> lista)
+        protected override void visualizar(List<Tarefa> registros)
         {
             Console.Clear();
-            string opcao = obterOpcao(lista);
+            string opcao = obterOpcao(registros);
 
             if (opcao == "S") return;
 
