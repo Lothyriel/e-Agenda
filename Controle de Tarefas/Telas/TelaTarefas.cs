@@ -7,7 +7,7 @@ namespace Controle_de_Tarefas.Telas
 {
     public class TelaTarefas : Tela<Tarefa>, ITela
     {
-        private new ControladorTarefas controlador;
+        private new ControladorTarefas controlador = new ControladorTarefas();
         public TelaTarefas() : base(new ControladorTarefas())
         {
         }

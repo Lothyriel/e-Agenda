@@ -113,6 +113,7 @@ namespace Controle_de_Tarefas.Controladores
             conexaoComBanco.Close();
             return registros;
         }
+
         private SqlConnection abrirConexaoDB()
         {
             string enderecoDB = @"Data Source=(LocalDB)\MSSqlLocalDB;Initial Catalog=DBControleTarefas;Integrated Security=True;Pooling=False";

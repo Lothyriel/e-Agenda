@@ -31,6 +31,18 @@ namespace Controle_de_Tarefas.Dominio
         public int prioridade { get; set; }
 
         public void addObjetivo() { resetaDt_Conclusao(); atualizaConclusao(); }
+        public void concluiTarefa()
+        {
+            atualizaConclusao();
+            if (porcentagem_conclusao == 100)
+                dt_conclusao = DateTime.Now;
+        }
+        public void editar(Tarefa nova)
+        {
+            titulo = nova.titulo;
+            prioridade = nova.prioridade;
+            new ControladorTarefas().editar(id, this);
+        }
         private void resetaDt_Conclusao()
         {
             dt_conclusao = new DateTime(1900, 1, 1);
@@ -41,12 +53,6 @@ namespace Controle_de_Tarefas.Dominio
             double concluidos = ctrlObjetivos.objetivosCompletos(id).Count;
             double resultado = concluidos / objetivos * 100;
             porcentagem_conclusao = (int)resultado;
-        }
-        public void concluiTarefa()
-        {
-            atualizaConclusao();
-            if (porcentagem_conclusao == 100)
-                dt_conclusao = DateTime.Now;
         }
         public override String ToString()
         {
