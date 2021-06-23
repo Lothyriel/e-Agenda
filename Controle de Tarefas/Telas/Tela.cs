@@ -105,7 +105,7 @@ namespace Controle_de_Tarefas.Telas
             Console.ResetColor();
             if (tipo != TipoMensagem.Requisicao && tipo != TipoMensagem.Item) Console.ReadKey();
         }
-        public static List<Object> ObterParametros(this SqlDataReader linha)
+        public static List<Object> ObterCamposDB(this SqlDataReader linha)
         {
             List<Object> parametros = new List<object>();
             for (int i = 0; i < linha.FieldCount; i++)

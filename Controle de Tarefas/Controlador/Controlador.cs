@@ -101,12 +101,9 @@ namespace Controle_de_Tarefas.Controladores
 
             while (leitorRegistros.Read())
             {
-                List<object> parametros = leitorRegistros.ObterParametros();
-                var id = parametros.First();
-                parametros.Remove(id);
+                List<object> camposDB = leitorRegistros.ObterCamposDB();
 
-                T registro = (T)Activator.CreateInstance(typeof(T), parametros.ToArray());
-                registro.id = Convert.ToInt32(id);
+                T registro = (T)Activator.CreateInstance(typeof(T), camposDB.ToArray());
                 registros.Add(registro);
             }
 
