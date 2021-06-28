@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public abstract class Tela<T> : ITela where T : Entidade
+    public abstract class Tela<T> : IMenu where T : Entidade
     {
         protected Controlador<T> controlador;
 
@@ -18,39 +18,11 @@ namespace Controle_de_Tarefas.Telas
 
         public abstract void menu();
         public abstract T registroValido();
-        protected virtual void visualizar(List<T> registros)
+        public String obterOpcao()
         {
-            Console.Clear();
-            registros.mostrarLista();
-            TipoMensagem.Requisicao.mostrarMensagem("\nAperte uma tecla para voltar");
-            Console.ReadKey();
+            return obterOpcao(controlador.Registros);
         }
-        protected virtual void cadastrar()
-        {
-            controlador.inserir(registroValido());
-            TipoMensagem.Sucesso.mostrarMensagem("\nRegistro adicionado com sucesso");
-        }
-        protected virtual void editar()
-        {
-            string opcao = obterOpcao(controlador.Registros);
-            if (opcao == "S") return;
-
-            int id = Convert.ToInt32(opcao);
-            controlador.editar(id, registroValido());
-        }
-        protected void excluir()
-        {
-            string opcao = obterOpcao(controlador.Registros);
-            if (opcao == "S") return;
-
-            int id = Convert.ToInt32(opcao);
-            controlador.excluir(id);
-        }
-        protected bool opcaoValida(string opcao, List<T> lista)
-        {
-            return int.TryParse(opcao, out int id) && lista.Exists(x => x.id == id);
-        }
-        protected String obterOpcao(List<T> lista)
+        public String obterOpcao(List<T> lista)
         {
             Console.Clear();
             if (!lista.mostrarLista())
@@ -68,6 +40,42 @@ namespace Controle_de_Tarefas.Telas
             }
             TipoMensagem.Sucesso.mostrarMensagem("Operação realizada com sucesso");
             return opcao;
+        }
+        protected bool opcaoValida(string opcao, List<T> lista)
+        {
+            return int.TryParse(opcao, out int id) && lista.Exists(x => x.id == id);
+        }
+        protected void visualizar()
+        {
+            visualizar(controlador.Registros);
+        }
+        protected virtual void visualizar(List<T> registros)
+        {
+            Console.Clear();
+            registros.mostrarLista();
+            TipoMensagem.Requisicao.mostrarMensagem("\nAperte uma tecla para voltar");
+            Console.ReadKey();
+        }
+        protected virtual void cadastrar()
+        {
+            controlador.inserir(registroValido());
+            TipoMensagem.Sucesso.mostrarMensagem("\nRegistro adicionado com sucesso");
+        }
+        protected virtual void editar()
+        {
+            string opcao = obterOpcao();
+            if (opcao == "S") return;
+
+            int id = Convert.ToInt32(opcao);
+            controlador.editar(id, registroValido());
+        }
+        protected void excluir()
+        {
+            string opcao = obterOpcao();
+            if (opcao == "S") return;
+
+            int id = Convert.ToInt32(opcao);
+            controlador.excluir(id);
         }
     }
     public enum TipoMensagem

@@ -27,6 +27,9 @@ namespace Controle_de_Tarefas.Controladores
             var props = propriedades();
             var nomesProps = nomesPropriedades(props);
 
+            var fields = campos();
+            var nomesFields = nomesCampos(fields);
+
             string sqlcommand =
                 $@"INSERT INTO {nomeTabela}
                     (
@@ -40,14 +43,18 @@ namespace Controle_de_Tarefas.Controladores
 
             comandoSql.CommandText = sqlcommand;
 
+            for (int i = 0; i < fields.Count; i++)
+                comandoSql.Parameters.AddWithValue(nomesFields[i], fields[i].GetValue(registro));
+
             for (int i = 0; i < props.Count; i++)
                 comandoSql.Parameters.AddWithValue(nomesProps[i], props[i].GetValue(registro));
 
             object id = comandoSql.ExecuteScalar();
-            registro.id = Convert.ToInt32(id);
+            registro.id = (int)id;
 
             conexaoComBanco.Close();
         }
+
         public void editar(int id, T registro)
         {
             SqlCommand comandoSql = new SqlCommand();
@@ -136,6 +143,14 @@ namespace Controle_de_Tarefas.Controladores
         private List<String> nomesPropriedades(List<PropertyInfo> propriedades)
         {
             return propriedades.Select(x => x.Name.ToString().ToUpper()).ToList();
+        }
+        private List<FieldInfo> campos()
+        {
+            return typeof(T).GetFields().ToList();
+        }
+        private List<String> nomesCampos(List<FieldInfo> campos)
+        {
+            return campos.Select(x => x.Name.ToString().ToUpper()).ToList();
         }
     }
 }

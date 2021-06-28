@@ -2,7 +2,7 @@
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaPrincipal : ITela
+    public class TelaPrincipal : IMenu
     {
         public void menu()
         {
@@ -19,7 +19,7 @@ namespace Controle_de_Tarefas.Telas
                 obterTela(opcao).menu();
             }
         }
-        private ITela obterTela(String opcao)
+        private IMenu obterTela(String opcao)
         {
             switch (opcao)
             {

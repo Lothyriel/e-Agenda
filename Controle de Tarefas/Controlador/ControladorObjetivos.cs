@@ -1,7 +1,6 @@
 ﻿using Controle_de_Tarefas.Dominio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Controle_de_Tarefas.Controladores
 {
@@ -22,7 +21,7 @@ namespace Controle_de_Tarefas.Controladores
 
         public List<Objetivo> objetivosTarefa(int id_tarefa)
         {
-            return Registros.Where(x => x.id_tarefa == id_tarefa).ToList();
+            throw new NotImplementedException();
         }
 
         public List<Objetivo> objetivosIncompletos(int id_tarefa)

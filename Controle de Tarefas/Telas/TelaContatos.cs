@@ -5,12 +5,10 @@ using System.Linq;
 
 namespace Controle_de_Tarefas.Telas
 {
-    public class TelaContatos : Tela<Contato>, ITela
+    public class TelaContatos : Tela<Contato>, IMenu
     {
-        public TelaContatos() : base(new ControladorContatos())
-        {
-            menu();
-        }
+        private new ControladorContatos controlador = new ControladorContatos();
+        public TelaContatos() : base(new ControladorContatos()) { }
 
         public override void menu()
         {
@@ -28,7 +26,7 @@ namespace Controle_de_Tarefas.Telas
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": visualizar(controlador.Registros.OrderBy(x => x.cargo).ToList()); break;
+                    case "1": visualizar(controlador.ordenadosPorCargo()); break;
                     case "2": cadastrar(); break;
                     case "3": editar(); break;
                     case "4": excluir(); break;

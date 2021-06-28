@@ -1,5 +1,7 @@
 ﻿using Controle_de_Tarefas.Controladores;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Controle_de_Tarefas.Dominio
 {
@@ -23,7 +25,9 @@ namespace Controle_de_Tarefas.Dominio
             this.porcentagem_conclusao = porcentagem_conclusao;
             this.dt_criacao = dt_criacao;
             this.dt_conclusao = dt_conclusao;
+            objetivos = new List<Objetivo>();
         }
+        public List<Objetivo> objetivos;
         public int porcentagem_conclusao { get; private set; }
         public DateTime dt_criacao { get; private set; }
         public DateTime dt_conclusao { get; private set; }
@@ -49,9 +53,9 @@ namespace Controle_de_Tarefas.Dominio
         }
         private void atualizaConclusao()
         {
-            double objetivos = ctrlObjetivos.objetivosTarefa(id).Count;
-            double concluidos = ctrlObjetivos.objetivosCompletos(id).Count;
-            double resultado = concluidos / objetivos * 100;
+            double total = objetivos.Count;
+            double concluidos = objetivos.Where(x => x.finalizado).ToList().Count;
+            double resultado = concluidos / total * 100;
             porcentagem_conclusao = (int)resultado;
         }
         public override String ToString()
