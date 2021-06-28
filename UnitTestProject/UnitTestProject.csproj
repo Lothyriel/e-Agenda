@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestesCompromissos.cs" />
     <Compile Include="TestesContatos.cs" />
     <Compile Include="TestesTarefas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

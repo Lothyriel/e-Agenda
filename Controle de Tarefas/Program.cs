@@ -1,8 +1,4 @@
-﻿using Controle_de_Tarefas.Domínio;
-using Controle_de_Tarefas.Dominio;
-using Controle_de_Tarefas.Telas;
-using System;
-using System.Linq;
+﻿using Controle_de_Tarefas.Telas;
 
 namespace Controle_de_Tarefas
 {

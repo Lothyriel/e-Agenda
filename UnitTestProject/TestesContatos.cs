@@ -1,8 +1,6 @@
 ﻿using Controle_de_Tarefas.Controladores;
 using Controle_de_Tarefas.Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Linq;
 
 namespace UnitTestProject
 {
@@ -11,33 +9,39 @@ namespace UnitTestProject
     {
         ControladorContatos cc = new ControladorContatos();
         Contato c = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev");
-        int id;
+
+        void inserirContato() { cc.inserir(c); }
+        void excluirContato() { cc.excluir(c.id); }
 
         [TestMethod]
         public void adicionarContato()
         {
-            cc.inserir(c);
-            id = cc.Registros.Last().id;
-
-            Assert.AreEqual(c.nome, cc.getById(id).nome);
+            inserirContato();
+            Assert.IsTrue(c.id != 0);
+            excluirContato();
         }
         [TestMethod]
         public void editarContato()
         {
-            Contato nova = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev pleno");
-            id = cc.Registros.Last().id;
-
-            cc.editar(id, nova);
-
-            Assert.AreEqual(nova.cargo, cc.getById(id).cargo);
+            inserirContato();
+            Contato cn = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev Pleno");
+            cc.editar(c.id, c);
+            
+            Assert.AreEqual(cn.nome, c.nome);
+            Assert.AreEqual(cn.telefone, c.telefone);
+            Assert.AreEqual(cn.email, c.email);
+            Assert.AreEqual(cn.empresa, c.empresa);
+            Assert.AreNotEqual(cn.cargo, c.cargo);
+            Assert.AreNotEqual(cn.id, c.id);
+            Assert.AreNotEqual(cn, c);
+            excluirContato();
         }
         [TestMethod]
-        public void excluirContato()
+        public void ExcluirContato()
         {
-            id = cc.Registros.Last().id;
-            cc.excluir(id);
-
-            Assert.AreEqual(null, cc.getById(id));
+            inserirContato();
+            excluirContato();
+            Assert.AreEqual(null, cc.getById(c.id));
         }
     }
 }

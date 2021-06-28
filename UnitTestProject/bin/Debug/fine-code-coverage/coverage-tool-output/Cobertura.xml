@@ -1,473 +1,862 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.4280821917808219" branch-rate="0.10483870967741936" lines-covered="250" lines-valid="584" branches-covered="13" branches-valid="124" complexity="144" version="0" timestamp="1624463545">
+<coverage line-rate="0.43333333333333335" branch-rate="0.10465116279069768" lines-covered="377" lines-valid="870" branches-covered="18" branches-valid="172" complexity="221" version="0" timestamp="1624905676">
   <sources />
   <packages>
-    <package name="Controle de Tarefas" line-rate="0.34509803921568627" branch-rate="0.10483870967741936" complexity="131">
+    <package name="Controle de Tarefas" line-rate="0.34615384615384615" branch-rate="0.10465116279069768" complexity="198">
       <classes>
-        <class name="Controle_de_Tarefas.Controladores.Controlador`1" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\Controlador.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="Controle_de_Tarefas.Controladores.Controlador`1" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\Controlador.cs" line-rate="0" branch-rate="1" complexity="NaN">
           <methods>
-            <method name="conexaoComBanco" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="14" hits="72" branch="false" />
-              </lines>
-            </method>
-            <method name="Registros" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="15" hits="13" branch="false" />
-              </lines>
-            </method>
-            <method name="getById" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="19" hits="4" branch="false" />
-                <line number="20" hits="6" branch="false" />
-                <line number="21" hits="4" branch="false" />
-              </lines>
-            </method>
-            <method name="inserir" signature="(T)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="23" hits="10" branch="false" />
-                <line number="24" hits="10" branch="false" />
-                <line number="25" hits="10" branch="false" />
-                <line number="27" hits="10" branch="false" />
-                <line number="28" hits="10" branch="false" />
-                <line number="30" hits="10" branch="false" />
-                <line number="31" hits="10" branch="false" />
-                <line number="32" hits="10" branch="false" />
-                <line number="33" hits="10" branch="false" />
-                <line number="34" hits="10" branch="false" />
-                <line number="35" hits="10" branch="false" />
-                <line number="36" hits="10" branch="false" />
-                <line number="37" hits="10" branch="false" />
-                <line number="38" hits="10" branch="false" />
-                <line number="39" hits="10" branch="false" />
-                <line number="41" hits="10" branch="false" />
-                <line number="43" hits="108" branch="true" condition-coverage="100% (2/2)" />
-                <line number="44" hits="44" branch="false" />
-                <line number="46" hits="10" branch="false" />
-                <line number="47" hits="10" branch="false" />
-                <line number="49" hits="10" branch="false" />
-                <line number="50" hits="10" branch="false" />
-              </lines>
-            </method>
-            <method name="editar" signature="(System.Int32,T)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="52" hits="6" branch="false" />
-                <line number="53" hits="6" branch="false" />
-                <line number="54" hits="6" branch="false" />
-                <line number="56" hits="6" branch="false" />
-                <line number="57" hits="6" branch="false" />
-                <line number="58" hits="6" branch="false" />
-                <line number="59" hits="6" branch="false" />
-                <line number="61" hits="6" branch="false" />
-                <line number="62" hits="6" branch="false" />
-                <line number="63" hits="6" branch="false" />
-                <line number="64" hits="6" branch="false" />
-                <line number="65" hits="6" branch="false" />
-                <line number="66" hits="6" branch="false" />
-                <line number="67" hits="6" branch="false" />
-                <line number="69" hits="72" branch="true" condition-coverage="100% (2/2)" />
-                <line number="70" hits="30" branch="false" />
-                <line number="71" hits="6" branch="false" />
-                <line number="73" hits="6" branch="false" />
-                <line number="74" hits="6" branch="false" />
-                <line number="75" hits="6" branch="false" />
-              </lines>
-            </method>
-            <method name="excluir" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="77" hits="7" branch="false" />
-                <line number="78" hits="7" branch="false" />
-                <line number="79" hits="7" branch="false" />
-                <line number="81" hits="7" branch="false" />
-                <line number="82" hits="7" branch="false" />
-                <line number="83" hits="7" branch="false" />
-                <line number="84" hits="7" branch="false" />
-                <line number="86" hits="7" branch="false" />
-                <line number="87" hits="7" branch="false" />
-                <line number="88" hits="7" branch="false" />
-                <line number="89" hits="7" branch="false" />
-                <line number="90" hits="7" branch="false" />
-              </lines>
-            </method>
-            <method name="obterRegistros" signature="()" line-rate="1" branch-rate="1" complexity="2">
-              <lines>
-                <line number="92" hits="13" branch="false" />
-                <line number="93" hits="13" branch="false" />
-                <line number="94" hits="13" branch="false" />
-                <line number="96" hits="13" branch="false" />
-                <line number="97" hits="13" branch="false" />
-                <line number="98" hits="13" branch="false" />
-                <line number="100" hits="13" branch="false" />
-                <line number="102" hits="24" branch="true" condition-coverage="100% (2/2)" />
-                <line number="103" hits="11" branch="false" />
-                <line number="104" hits="11" branch="false" />
-                <line number="105" hits="11" branch="false" />
-                <line number="106" hits="11" branch="false" />
-                <line number="108" hits="11" branch="false" />
-                <line number="109" hits="11" branch="false" />
-                <line number="110" hits="11" branch="false" />
-                <line number="111" hits="11" branch="false" />
-                <line number="113" hits="13" branch="false" />
-                <line number="114" hits="13" branch="false" />
-                <line number="115" hits="13" branch="false" />
-              </lines>
-            </method>
-            <method name="abrirConexaoDB" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="118" hits="72" branch="false" />
-                <line number="119" hits="72" branch="false" />
-                <line number="120" hits="72" branch="false" />
-                <line number="121" hits="72" branch="false" />
-                <line number="122" hits="72" branch="false" />
-                <line number="123" hits="72" branch="false" />
-              </lines>
-            </method>
-            <method name="combinarListas" signature="(System.Collections.Generic.List`1&lt;System.String&gt;,System.Collections.Generic.List`1&lt;System.String&gt;,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="125" hits="6" branch="false" />
-                <line number="126" hits="6" branch="false" />
-                <line number="127" hits="36" branch="false" />
-                <line number="129" hits="36" branch="false" />
-                <line number="130" hits="6" branch="false" />
-              </lines>
-            </method>
-            <method name="montarLinhas" signature="(System.String,System.String,System.Collections.Generic.List`1&lt;System.String&gt;)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="132" hits="32" branch="false" />
-                <line number="133" hits="180" branch="false" />
-                <line number="134" hits="32" branch="false" />
-              </lines>
-            </method>
-            <method name="propriedades" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="136" hits="16" branch="false" />
-                <line number="137" hits="16" branch="false" />
-                <line number="138" hits="16" branch="false" />
-              </lines>
-            </method>
-            <method name="nomesPropriedades" signature="(System.Collections.Generic.List`1&lt;System.Reflection.PropertyInfo&gt;)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="140" hits="16" branch="false" />
-                <line number="141" hits="90" branch="true" condition-coverage="100% (2/2)" />
-                <line number="142" hits="16" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="14" hits="72" branch="false" />
-            <line number="15" hits="13" branch="false" />
-            <line number="19" hits="4" branch="false" />
-            <line number="20" hits="6" branch="false" />
-            <line number="21" hits="4" branch="false" />
-            <line number="23" hits="10" branch="false" />
-            <line number="24" hits="10" branch="false" />
-            <line number="25" hits="10" branch="false" />
-            <line number="27" hits="10" branch="false" />
-            <line number="28" hits="10" branch="false" />
-            <line number="30" hits="10" branch="false" />
-            <line number="31" hits="10" branch="false" />
-            <line number="32" hits="10" branch="false" />
-            <line number="33" hits="10" branch="false" />
-            <line number="34" hits="10" branch="false" />
-            <line number="35" hits="10" branch="false" />
-            <line number="36" hits="10" branch="false" />
-            <line number="37" hits="10" branch="false" />
-            <line number="38" hits="10" branch="false" />
-            <line number="39" hits="10" branch="false" />
-            <line number="41" hits="10" branch="false" />
-            <line number="43" hits="108" branch="true" condition-coverage="100% (2/2)" />
-            <line number="44" hits="44" branch="false" />
-            <line number="46" hits="10" branch="false" />
-            <line number="47" hits="10" branch="false" />
-            <line number="49" hits="10" branch="false" />
-            <line number="50" hits="10" branch="false" />
-            <line number="52" hits="6" branch="false" />
-            <line number="53" hits="6" branch="false" />
-            <line number="54" hits="6" branch="false" />
-            <line number="56" hits="6" branch="false" />
-            <line number="57" hits="6" branch="false" />
-            <line number="58" hits="6" branch="false" />
-            <line number="59" hits="6" branch="false" />
-            <line number="61" hits="6" branch="false" />
-            <line number="62" hits="6" branch="false" />
-            <line number="63" hits="6" branch="false" />
-            <line number="64" hits="6" branch="false" />
-            <line number="65" hits="6" branch="false" />
-            <line number="66" hits="6" branch="false" />
-            <line number="67" hits="6" branch="false" />
-            <line number="69" hits="72" branch="true" condition-coverage="100% (2/2)" />
-            <line number="70" hits="30" branch="false" />
-            <line number="71" hits="6" branch="false" />
-            <line number="73" hits="6" branch="false" />
-            <line number="74" hits="6" branch="false" />
-            <line number="75" hits="6" branch="false" />
-            <line number="77" hits="7" branch="false" />
-            <line number="78" hits="7" branch="false" />
-            <line number="79" hits="7" branch="false" />
-            <line number="81" hits="7" branch="false" />
-            <line number="82" hits="7" branch="false" />
-            <line number="83" hits="7" branch="false" />
-            <line number="84" hits="7" branch="false" />
-            <line number="86" hits="7" branch="false" />
-            <line number="87" hits="7" branch="false" />
-            <line number="88" hits="7" branch="false" />
-            <line number="89" hits="7" branch="false" />
-            <line number="90" hits="7" branch="false" />
-            <line number="92" hits="13" branch="false" />
-            <line number="93" hits="13" branch="false" />
-            <line number="94" hits="13" branch="false" />
-            <line number="96" hits="13" branch="false" />
-            <line number="97" hits="13" branch="false" />
-            <line number="98" hits="13" branch="false" />
-            <line number="100" hits="13" branch="false" />
-            <line number="102" hits="24" branch="true" condition-coverage="100% (2/2)" />
-            <line number="103" hits="11" branch="false" />
-            <line number="104" hits="11" branch="false" />
-            <line number="105" hits="11" branch="false" />
-            <line number="106" hits="11" branch="false" />
-            <line number="108" hits="11" branch="false" />
-            <line number="109" hits="11" branch="false" />
-            <line number="110" hits="11" branch="false" />
-            <line number="111" hits="11" branch="false" />
-            <line number="113" hits="13" branch="false" />
-            <line number="114" hits="13" branch="false" />
-            <line number="115" hits="13" branch="false" />
-            <line number="118" hits="72" branch="false" />
-            <line number="119" hits="72" branch="false" />
-            <line number="120" hits="72" branch="false" />
-            <line number="121" hits="72" branch="false" />
-            <line number="122" hits="72" branch="false" />
-            <line number="123" hits="72" branch="false" />
-            <line number="125" hits="6" branch="false" />
-            <line number="126" hits="6" branch="false" />
-            <line number="127" hits="36" branch="false" />
-            <line number="129" hits="36" branch="false" />
-            <line number="130" hits="6" branch="false" />
-            <line number="132" hits="32" branch="false" />
-            <line number="133" hits="180" branch="false" />
-            <line number="134" hits="32" branch="false" />
-            <line number="136" hits="16" branch="false" />
-            <line number="137" hits="16" branch="false" />
-            <line number="138" hits="16" branch="false" />
-            <line number="140" hits="16" branch="false" />
-            <line number="141" hits="90" branch="true" condition-coverage="100% (2/2)" />
-            <line number="142" hits="16" branch="false" />
-          </lines>
-        </class>
-        <class name="Controle_de_Tarefas.Controladores.ControladorContatos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\ControladorContatos.cs" line-rate="1" branch-rate="1" complexity="NaN">
-          <methods>
-            <method name="nomeTabela" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="7" hits="9" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="7" hits="9" branch="false" />
-          </lines>
-        </class>
-        <class name="Controle_de_Tarefas.Controladores.ControladorObjetivos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\ControladorObjetivos.cs" line-rate="0.3684210526315789" branch-rate="0.3333333333333333" complexity="NaN">
-          <methods>
-            <method name="nomeTabela" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="10" hits="9" branch="false" />
-              </lines>
-            </method>
-            <method name="ToString" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
-              <lines>
-                <line number="12" hits="0" branch="false" />
-                <line number="13" hits="0" branch="false" />
-                <line number="14" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="15" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
-                <line number="18" hits="0" branch="false" />
-                <line number="19" hits="0" branch="false" />
-                <line number="20" hits="0" branch="false" />
-                <line number="21" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="objetivosTarefa" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="24" hits="6" branch="false" />
-                <line number="25" hits="12" branch="false" />
-                <line number="26" hits="6" branch="false" />
-              </lines>
-            </method>
-            <method name="objetivosIncompletos" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
-              <lines>
-                <line number="29" hits="0" branch="false" />
-                <line number="30" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="31" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="objetivosCompletos" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="33" hits="3" branch="false" />
-                <line number="34" hits="6" branch="true" condition-coverage="100% (2/2)" />
-                <line number="35" hits="3" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="10" hits="9" branch="false" />
-            <line number="12" hits="0" branch="false" />
-            <line number="13" hits="0" branch="false" />
-            <line number="14" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="15" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
-            <line number="18" hits="0" branch="false" />
-            <line number="19" hits="0" branch="false" />
-            <line number="20" hits="0" branch="false" />
-            <line number="21" hits="0" branch="false" />
-            <line number="24" hits="6" branch="false" />
-            <line number="25" hits="12" branch="false" />
-            <line number="26" hits="6" branch="false" />
-            <line number="29" hits="0" branch="false" />
-            <line number="30" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="31" hits="0" branch="false" />
-            <line number="33" hits="3" branch="false" />
-            <line number="34" hits="6" branch="true" condition-coverage="100% (2/2)" />
-            <line number="35" hits="3" branch="false" />
-          </lines>
-        </class>
-        <class name="Controle_de_Tarefas.Controladores.ControladorTarefas" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\ControladorTarefas.cs" line-rate="0.1111111111111111" branch-rate="0" complexity="6">
-          <methods>
-            <method name="nomeTabela" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="9" hits="18" branch="false" />
-              </lines>
-            </method>
-            <method name="tarefasCompletas" signature="()" line-rate="0" branch-rate="0" complexity="3">
-              <lines>
-                <line number="11" hits="0" branch="false" />
-                <line number="12" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="13" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="14" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="tarefasIncompletas" signature="()" line-rate="0" branch-rate="0" complexity="3">
-              <lines>
-                <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="19" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="9" hits="18" branch="false" />
-            <line number="11" hits="0" branch="false" />
-            <line number="12" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="13" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="14" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="19" hits="0" branch="false" />
-          </lines>
-        </class>
-        <class name="Controle_de_Tarefas.Domínio.Compromisso" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Domínio\Compromisso.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="contato" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="17" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="contato" signature="(Controle_de_Tarefas.Dominio.Contato)" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="17" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="assunto" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="18" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="assunto" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="18" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="local" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="19" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="local" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="19" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="data_inicio" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="20" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="data_inicio" signature="(System.DateTime)" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="20" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="data_fim" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="21" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="data_fim" signature="(System.DateTime)" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="21" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="(Controle_de_Tarefas.Dominio.Contato,System.String,System.String,System.DateTime,System.DateTime)" line-rate="0" branch-rate="1" complexity="NaN">
+            <method name="Registros" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
                 <line number="8" hits="0" branch="false" />
-                <line number="9" hits="0" branch="false" />
-                <line number="10" hits="0" branch="false" />
-                <line number="11" hits="0" branch="false" />
-                <line number="12" hits="0" branch="false" />
-                <line number="13" hits="0" branch="false" />
-                <line number="14" hits="0" branch="false" />
-                <line number="16" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="ToString" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="23" hits="0" branch="false" />
-                <line number="24" hits="0" branch="false" />
-                <line number="25" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="8" hits="0" branch="false" />
-            <line number="9" hits="0" branch="false" />
-            <line number="10" hits="0" branch="false" />
-            <line number="11" hits="0" branch="false" />
-            <line number="12" hits="0" branch="false" />
-            <line number="13" hits="0" branch="false" />
-            <line number="14" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
-            <line number="18" hits="0" branch="false" />
-            <line number="19" hits="0" branch="false" />
-            <line number="20" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Controladores.ControladorCompromissos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\ControladorCompromissos.cs" line-rate="0.8" branch-rate="0.75" complexity="2">
+          <methods>
+            <method name="inserir" signature="(Controle_de_Tarefas.Dominio.Compromisso)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="70" hits="4" branch="false" />
+                <line number="71" hits="4" branch="false" />
+                <line number="72" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="editar" signature="(System.Int32,Controle_de_Tarefas.Dominio.Compromisso)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="74" hits="1" branch="false" />
+                <line number="75" hits="1" branch="false" />
+                <line number="76" hits="1" branch="false" />
+                <line number="77" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="excluir" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="79" hits="4" branch="false" />
+                <line number="80" hits="4" branch="false" />
+                <line number="81" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="getById" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="83" hits="3" branch="false" />
+                <line number="84" hits="3" branch="false" />
+                <line number="85" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="obterRegistros" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="87" hits="0" branch="false" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="filtrarPorData" signature="(System.DateTime)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="91" hits="0" branch="false" />
+                <line number="92" hits="0" branch="false" />
+                <line number="93" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="compromissosPassados" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="95" hits="0" branch="false" />
+                <line number="96" hits="0" branch="false" />
+                <line number="97" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ConverterEmCompromisso" signature="(System.Data.IDataReader)" line-rate="0.9230769230769231" branch-rate="0.5" complexity="NaN">
+              <lines>
+                <line number="99" hits="2" branch="false" />
+                <line number="100" hits="2" branch="false" />
+                <line number="101" hits="2" branch="false" />
+                <line number="102" hits="2" branch="false" />
+                <line number="103" hits="2" branch="false" />
+                <line number="105" hits="2" branch="false" />
+                <line number="106" hits="2" branch="false" />
+                <line number="107" hits="2" branch="false" />
+                <line number="108" hits="2" branch="false" />
+                <line number="109" hits="2" branch="true" condition-coverage="50% (1/2)" />
+                <line number="110" hits="0" branch="false" />
+                <line number="112" hits="2" branch="false" />
+                <line number="113" hits="2" branch="false" />
+              </lines>
+            </method>
+            <method name="ObtemParametrosCompromisso" signature="(Controle_de_Tarefas.Dominio.Compromisso)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="115" hits="5" branch="false" />
+                <line number="116" hits="5" branch="false" />
+                <line number="118" hits="5" branch="false" />
+                <line number="119" hits="5" branch="false" />
+                <line number="120" hits="5" branch="false" />
+                <line number="121" hits="5" branch="false" />
+                <line number="122" hits="5" branch="false" />
+                <line number="124" hits="5" branch="true" condition-coverage="100% (2/2)" />
+                <line number="125" hits="4" branch="false" />
+                <line number="127" hits="1" branch="false" />
+                <line number="129" hits="5" branch="false" />
+                <line number="130" hits="5" branch="false" />
+              </lines>
+            </method>
+            <method name="AdicionarParametro" signature="(System.String,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="132" hits="7" branch="false" />
+                <line number="133" hits="7" branch="false" />
+                <line number="134" hits="7" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="70" hits="4" branch="false" />
+            <line number="71" hits="4" branch="false" />
+            <line number="72" hits="4" branch="false" />
+            <line number="74" hits="1" branch="false" />
+            <line number="75" hits="1" branch="false" />
+            <line number="76" hits="1" branch="false" />
+            <line number="77" hits="1" branch="false" />
+            <line number="79" hits="4" branch="false" />
+            <line number="80" hits="4" branch="false" />
+            <line number="81" hits="4" branch="false" />
+            <line number="83" hits="3" branch="false" />
+            <line number="84" hits="3" branch="false" />
+            <line number="85" hits="3" branch="false" />
+            <line number="87" hits="0" branch="false" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="91" hits="0" branch="false" />
+            <line number="92" hits="0" branch="false" />
+            <line number="93" hits="0" branch="false" />
+            <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="97" hits="0" branch="false" />
+            <line number="99" hits="2" branch="false" />
+            <line number="100" hits="2" branch="false" />
+            <line number="101" hits="2" branch="false" />
+            <line number="102" hits="2" branch="false" />
+            <line number="103" hits="2" branch="false" />
+            <line number="105" hits="2" branch="false" />
+            <line number="106" hits="2" branch="false" />
+            <line number="107" hits="2" branch="false" />
+            <line number="108" hits="2" branch="false" />
+            <line number="109" hits="2" branch="true" condition-coverage="50% (1/2)" />
+            <line number="110" hits="0" branch="false" />
+            <line number="112" hits="2" branch="false" />
+            <line number="113" hits="2" branch="false" />
+            <line number="115" hits="5" branch="false" />
+            <line number="116" hits="5" branch="false" />
+            <line number="118" hits="5" branch="false" />
+            <line number="119" hits="5" branch="false" />
+            <line number="120" hits="5" branch="false" />
+            <line number="121" hits="5" branch="false" />
+            <line number="122" hits="5" branch="false" />
+            <line number="124" hits="5" branch="true" condition-coverage="100% (2/2)" />
+            <line number="125" hits="4" branch="false" />
+            <line number="127" hits="1" branch="false" />
+            <line number="129" hits="5" branch="false" />
+            <line number="130" hits="5" branch="false" />
+            <line number="132" hits="7" branch="false" />
+            <line number="133" hits="7" branch="false" />
+            <line number="134" hits="7" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Controladores.ControladorContatos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\ControladorContatos.cs" line-rate="0.5909090909090909" branch-rate="0" complexity="3">
+          <methods>
+            <method name="inserir" signature="(Controle_de_Tarefas.Dominio.Contato)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="70" hits="3" branch="false" />
+                <line number="71" hits="3" branch="false" />
+                <line number="72" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="editar" signature="(System.Int32,Controle_de_Tarefas.Dominio.Contato)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="74" hits="1" branch="false" />
+                <line number="75" hits="1" branch="false" />
+                <line number="76" hits="1" branch="false" />
+                <line number="77" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="excluir" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="79" hits="3" branch="false" />
+                <line number="80" hits="3" branch="false" />
+                <line number="81" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="getById" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="83" hits="1" branch="false" />
+                <line number="84" hits="1" branch="false" />
+                <line number="85" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="obterRegistros" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="87" hits="0" branch="false" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ConverterEmContato" signature="(System.Data.IDataReader)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="91" hits="0" branch="false" />
+                <line number="92" hits="0" branch="false" />
+                <line number="93" hits="0" branch="false" />
+                <line number="94" hits="0" branch="false" />
+                <line number="95" hits="0" branch="false" />
+                <line number="96" hits="0" branch="false" />
+                <line number="98" hits="0" branch="false" />
+                <line number="99" hits="0" branch="false" />
+                <line number="100" hits="0" branch="false" />
+                <line number="101" hits="0" branch="false" />
+                <line number="103" hits="0" branch="false" />
+                <line number="104" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ObtemParametrosContato" signature="(Controle_de_Tarefas.Dominio.Contato)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="106" hits="4" branch="false" />
+                <line number="107" hits="4" branch="false" />
+                <line number="109" hits="4" branch="false" />
+                <line number="110" hits="4" branch="false" />
+                <line number="111" hits="4" branch="false" />
+                <line number="112" hits="4" branch="false" />
+                <line number="113" hits="4" branch="false" />
+                <line number="114" hits="4" branch="false" />
+                <line number="116" hits="4" branch="false" />
+                <line number="117" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="AdicionarParametro" signature="(System.String,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="119" hits="4" branch="false" />
+                <line number="120" hits="4" branch="false" />
+                <line number="121" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="ordenadosPorCargo" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="123" hits="0" branch="false" />
+                <line number="124" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="125" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="70" hits="3" branch="false" />
+            <line number="71" hits="3" branch="false" />
+            <line number="72" hits="3" branch="false" />
+            <line number="74" hits="1" branch="false" />
+            <line number="75" hits="1" branch="false" />
+            <line number="76" hits="1" branch="false" />
+            <line number="77" hits="1" branch="false" />
+            <line number="79" hits="3" branch="false" />
+            <line number="80" hits="3" branch="false" />
+            <line number="81" hits="3" branch="false" />
+            <line number="83" hits="1" branch="false" />
+            <line number="84" hits="1" branch="false" />
+            <line number="85" hits="1" branch="false" />
+            <line number="87" hits="0" branch="false" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="91" hits="0" branch="false" />
+            <line number="92" hits="0" branch="false" />
+            <line number="93" hits="0" branch="false" />
+            <line number="94" hits="0" branch="false" />
+            <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="98" hits="0" branch="false" />
+            <line number="99" hits="0" branch="false" />
+            <line number="100" hits="0" branch="false" />
+            <line number="101" hits="0" branch="false" />
+            <line number="103" hits="0" branch="false" />
+            <line number="104" hits="0" branch="false" />
+            <line number="106" hits="4" branch="false" />
+            <line number="107" hits="4" branch="false" />
+            <line number="109" hits="4" branch="false" />
+            <line number="110" hits="4" branch="false" />
+            <line number="111" hits="4" branch="false" />
+            <line number="112" hits="4" branch="false" />
+            <line number="113" hits="4" branch="false" />
+            <line number="114" hits="4" branch="false" />
+            <line number="116" hits="4" branch="false" />
+            <line number="117" hits="4" branch="false" />
+            <line number="119" hits="4" branch="false" />
+            <line number="120" hits="4" branch="false" />
+            <line number="121" hits="4" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="124" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="125" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Controladores.ControladorObjetivos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\ControladorObjetivos.cs" line-rate="0.5454545454545454" branch-rate="0.3333333333333333" complexity="1">
+          <methods>
+            <method name="inserir" signature="(Controle_de_Tarefas.Dominio.Objetivo)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="60" hits="3" branch="false" />
+                <line number="61" hits="3" branch="false" />
+                <line number="62" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="editar" signature="(System.Int32,Controle_de_Tarefas.Dominio.Objetivo)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="64" hits="0" branch="false" />
+                <line number="65" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="excluir" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="69" hits="0" branch="false" />
+                <line number="70" hits="0" branch="false" />
+                <line number="71" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="getById" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="73" hits="0" branch="false" />
+                <line number="74" hits="0" branch="false" />
+                <line number="75" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="obterRegistros" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="77" hits="6" branch="false" />
+                <line number="78" hits="6" branch="false" />
+                <line number="79" hits="6" branch="false" />
+              </lines>
+            </method>
+            <method name="objetivosCompletos" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="81" hits="3" branch="false" />
+                <line number="82" hits="6" branch="true" condition-coverage="100% (2/2)" />
+                <line number="83" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="objetivosIncompletos" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
+              <lines>
+                <line number="85" hits="0" branch="false" />
+                <line number="86" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="87" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="objetivosTarefa" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="89" hits="6" branch="false" />
+                <line number="90" hits="12" branch="false" />
+                <line number="91" hits="6" branch="false" />
+              </lines>
+            </method>
+            <method name="ConverterEmObjetivo" signature="(System.Data.IDataReader)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="93" hits="6" branch="false" />
+                <line number="94" hits="6" branch="false" />
+                <line number="95" hits="6" branch="false" />
+                <line number="96" hits="6" branch="false" />
+                <line number="98" hits="6" branch="false" />
+                <line number="99" hits="6" branch="false" />
+                <line number="101" hits="6" branch="false" />
+                <line number="102" hits="6" branch="false" />
+              </lines>
+            </method>
+            <method name="ObtemParametrosObjetivo" signature="(Controle_de_Tarefas.Dominio.Objetivo)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="104" hits="3" branch="false" />
+                <line number="105" hits="3" branch="false" />
+                <line number="106" hits="3" branch="false" />
+                <line number="107" hits="3" branch="false" />
+                <line number="108" hits="3" branch="false" />
+                <line number="109" hits="3" branch="false" />
+                <line number="110" hits="3" branch="false" />
+                <line number="111" hits="3" branch="false" />
+                <line number="113" hits="3" branch="false" />
+                <line number="114" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="AdicionarParametro" signature="(System.String,System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="116" hits="0" branch="false" />
+                <line number="117" hits="0" branch="false" />
+                <line number="118" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ToString" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
+              <lines>
+                <line number="120" hits="0" branch="false" />
+                <line number="121" hits="0" branch="false" />
+                <line number="122" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="123" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+                <line number="126" hits="0" branch="false" />
+                <line number="127" hits="0" branch="false" />
+                <line number="128" hits="0" branch="false" />
+                <line number="129" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="60" hits="3" branch="false" />
+            <line number="61" hits="3" branch="false" />
+            <line number="62" hits="3" branch="false" />
+            <line number="64" hits="0" branch="false" />
+            <line number="65" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="69" hits="0" branch="false" />
+            <line number="70" hits="0" branch="false" />
+            <line number="71" hits="0" branch="false" />
+            <line number="73" hits="0" branch="false" />
+            <line number="74" hits="0" branch="false" />
+            <line number="75" hits="0" branch="false" />
+            <line number="77" hits="6" branch="false" />
+            <line number="78" hits="6" branch="false" />
+            <line number="79" hits="6" branch="false" />
+            <line number="81" hits="3" branch="false" />
+            <line number="82" hits="6" branch="true" condition-coverage="100% (2/2)" />
+            <line number="83" hits="3" branch="false" />
+            <line number="85" hits="0" branch="false" />
+            <line number="86" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="87" hits="0" branch="false" />
+            <line number="89" hits="6" branch="false" />
+            <line number="90" hits="12" branch="false" />
+            <line number="91" hits="6" branch="false" />
+            <line number="93" hits="6" branch="false" />
+            <line number="94" hits="6" branch="false" />
+            <line number="95" hits="6" branch="false" />
+            <line number="96" hits="6" branch="false" />
+            <line number="98" hits="6" branch="false" />
+            <line number="99" hits="6" branch="false" />
+            <line number="101" hits="6" branch="false" />
+            <line number="102" hits="6" branch="false" />
+            <line number="104" hits="3" branch="false" />
+            <line number="105" hits="3" branch="false" />
+            <line number="106" hits="3" branch="false" />
+            <line number="107" hits="3" branch="false" />
+            <line number="108" hits="3" branch="false" />
+            <line number="109" hits="3" branch="false" />
+            <line number="110" hits="3" branch="false" />
+            <line number="111" hits="3" branch="false" />
+            <line number="113" hits="3" branch="false" />
+            <line number="114" hits="3" branch="false" />
+            <line number="116" hits="0" branch="false" />
+            <line number="117" hits="0" branch="false" />
+            <line number="118" hits="0" branch="false" />
+            <line number="120" hits="0" branch="false" />
+            <line number="121" hits="0" branch="false" />
+            <line number="122" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="123" hits="0" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="126" hits="0" branch="false" />
+            <line number="127" hits="0" branch="false" />
+            <line number="128" hits="0" branch="false" />
+            <line number="129" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Controladores.ControladorTarefas" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\ControladorTarefas.cs" line-rate="0.5306122448979592" branch-rate="0" complexity="3">
+          <methods>
+            <method name="inserir" signature="(Controle_de_Tarefas.Dominio.Tarefa)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="101" hits="6" branch="false" />
+                <line number="102" hits="6" branch="false" />
+                <line number="103" hits="6" branch="false" />
+              </lines>
+            </method>
+            <method name="editar" signature="(System.Int32,Controle_de_Tarefas.Dominio.Tarefa)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="105" hits="5" branch="false" />
+                <line number="106" hits="5" branch="false" />
+                <line number="107" hits="5" branch="false" />
+                <line number="108" hits="5" branch="false" />
+              </lines>
+            </method>
+            <method name="excluir" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="110" hits="6" branch="false" />
+                <line number="111" hits="6" branch="false" />
+                <line number="112" hits="6" branch="false" />
+              </lines>
+            </method>
+            <method name="getById" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="114" hits="1" branch="false" />
+                <line number="115" hits="1" branch="false" />
+                <line number="116" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="obterRegistros" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="118" hits="0" branch="false" />
+                <line number="119" hits="0" branch="false" />
+                <line number="120" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="tarefasCompletas" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="122" hits="0" branch="false" />
+                <line number="123" hits="0" branch="false" />
+                <line number="124" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="tarefasIncompletas" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="126" hits="0" branch="false" />
+                <line number="127" hits="0" branch="false" />
+                <line number="128" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ConverterEmTarefa" signature="(System.Data.IDataReader)" line-rate="0" branch-rate="0" complexity="NaN">
+              <lines>
+                <line number="130" hits="0" branch="false" />
+                <line number="131" hits="0" branch="false" />
+                <line number="132" hits="0" branch="false" />
+                <line number="133" hits="0" branch="false" />
+                <line number="134" hits="0" branch="false" />
+                <line number="136" hits="0" branch="false" />
+                <line number="137" hits="0" branch="false" />
+                <line number="138" hits="0" branch="false" />
+                <line number="139" hits="0" branch="false" />
+                <line number="141" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="142" hits="0" branch="false" />
+                <line number="144" hits="0" branch="false" />
+                <line number="146" hits="0" branch="false" />
+                <line number="147" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ObtemParametrosTarefa" signature="(Controle_de_Tarefas.Dominio.Tarefa)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="149" hits="11" branch="false" />
+                <line number="150" hits="11" branch="false" />
+                <line number="152" hits="11" branch="false" />
+                <line number="153" hits="11" branch="false" />
+                <line number="154" hits="11" branch="false" />
+                <line number="155" hits="11" branch="false" />
+                <line number="156" hits="11" branch="false" />
+                <line number="157" hits="11" branch="false" />
+                <line number="159" hits="11" branch="false" />
+                <line number="160" hits="11" branch="false" />
+              </lines>
+            </method>
+            <method name="AdicionarParametro" signature="(System.String,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="162" hits="7" branch="false" />
+                <line number="163" hits="7" branch="false" />
+                <line number="164" hits="7" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="101" hits="6" branch="false" />
+            <line number="102" hits="6" branch="false" />
+            <line number="103" hits="6" branch="false" />
+            <line number="105" hits="5" branch="false" />
+            <line number="106" hits="5" branch="false" />
+            <line number="107" hits="5" branch="false" />
+            <line number="108" hits="5" branch="false" />
+            <line number="110" hits="6" branch="false" />
+            <line number="111" hits="6" branch="false" />
+            <line number="112" hits="6" branch="false" />
+            <line number="114" hits="1" branch="false" />
+            <line number="115" hits="1" branch="false" />
+            <line number="116" hits="1" branch="false" />
+            <line number="118" hits="0" branch="false" />
+            <line number="119" hits="0" branch="false" />
+            <line number="120" hits="0" branch="false" />
+            <line number="122" hits="0" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="124" hits="0" branch="false" />
+            <line number="126" hits="0" branch="false" />
+            <line number="127" hits="0" branch="false" />
+            <line number="128" hits="0" branch="false" />
+            <line number="130" hits="0" branch="false" />
+            <line number="131" hits="0" branch="false" />
+            <line number="132" hits="0" branch="false" />
+            <line number="133" hits="0" branch="false" />
+            <line number="134" hits="0" branch="false" />
+            <line number="136" hits="0" branch="false" />
+            <line number="137" hits="0" branch="false" />
+            <line number="138" hits="0" branch="false" />
+            <line number="139" hits="0" branch="false" />
+            <line number="141" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="142" hits="0" branch="false" />
+            <line number="144" hits="0" branch="false" />
+            <line number="146" hits="0" branch="false" />
+            <line number="147" hits="0" branch="false" />
+            <line number="149" hits="11" branch="false" />
+            <line number="150" hits="11" branch="false" />
+            <line number="152" hits="11" branch="false" />
+            <line number="153" hits="11" branch="false" />
+            <line number="154" hits="11" branch="false" />
+            <line number="155" hits="11" branch="false" />
+            <line number="156" hits="11" branch="false" />
+            <line number="157" hits="11" branch="false" />
+            <line number="159" hits="11" branch="false" />
+            <line number="160" hits="11" branch="false" />
+            <line number="162" hits="7" branch="false" />
+            <line number="163" hits="7" branch="false" />
+            <line number="164" hits="7" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Controladores.Db" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Controlador\Db.cs" line-rate="0.984375" branch-rate="0.8571428571428571" complexity="1">
+          <methods>
+            <method name="Insert" signature="(System.String,System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="14" hits="16" branch="false" />
+                <line number="15" hits="16" branch="false" />
+                <line number="17" hits="16" branch="false" />
+                <line number="19" hits="16" branch="false" />
+                <line number="21" hits="16" branch="false" />
+                <line number="23" hits="16" branch="false" />
+                <line number="25" hits="16" branch="false" />
+                <line number="27" hits="16" branch="false" />
+                <line number="28" hits="16" branch="false" />
+              </lines>
+            </method>
+            <method name="Update" signature="(System.String,System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="30" hits="20" branch="false" />
+                <line number="31" hits="20" branch="false" />
+                <line number="33" hits="20" branch="false" />
+                <line number="35" hits="20" branch="false" />
+                <line number="37" hits="20" branch="false" />
+                <line number="39" hits="20" branch="false" />
+                <line number="41" hits="20" branch="false" />
+                <line number="42" hits="20" branch="false" />
+              </lines>
+            </method>
+            <method name="Delete" signature="(System.String,System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="44" hits="13" branch="false" />
+                <line number="45" hits="13" branch="false" />
+                <line number="46" hits="13" branch="false" />
+              </lines>
+            </method>
+            <method name="GetAll" signature="(System.String,Controle_de_Tarefas.Controladores.ConverterDelegate`1&lt;T&gt;,System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="48" hits="6" branch="false" />
+                <line number="49" hits="6" branch="false" />
+                <line number="51" hits="6" branch="false" />
+                <line number="53" hits="6" branch="false" />
+                <line number="55" hits="6" branch="false" />
+                <line number="57" hits="6" branch="false" />
+                <line number="59" hits="6" branch="false" />
+                <line number="61" hits="12" branch="true" condition-coverage="100% (2/2)" />
+                <line number="62" hits="6" branch="false" />
+                <line number="63" hits="6" branch="false" />
+                <line number="64" hits="6" branch="false" />
+                <line number="65" hits="6" branch="false" />
+                <line number="67" hits="6" branch="false" />
+                <line number="68" hits="6" branch="false" />
+                <line number="69" hits="6" branch="false" />
+              </lines>
+            </method>
+            <method name="Get" signature="(System.String,Controle_de_Tarefas.Controladores.ConverterDelegate`1&lt;T&gt;,System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="71" hits="5" branch="false" />
+                <line number="72" hits="5" branch="false" />
+                <line number="74" hits="5" branch="false" />
+                <line number="76" hits="5" branch="false" />
+                <line number="78" hits="5" branch="false" />
+                <line number="80" hits="5" branch="false" />
+                <line number="82" hits="5" branch="false" />
+                <line number="84" hits="5" branch="true" condition-coverage="100% (2/2)" />
+                <line number="85" hits="2" branch="false" />
+                <line number="87" hits="5" branch="false" />
+                <line number="88" hits="5" branch="false" />
+                <line number="89" hits="5" branch="false" />
+              </lines>
+            </method>
+            <method name="SetParameters" signature="(System.Data.SqlClient.SqlCommand,System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;)" line-rate="0.9230769230769231" branch-rate="0.8" complexity="NaN">
+              <lines>
+                <line number="91" hits="47" branch="false" />
+                <line number="92" hits="47" branch="true" condition-coverage="100% (4/4)" />
+                <line number="93" hits="6" branch="false" />
+                <line number="95" hits="423" branch="false" />
+                <line number="96" hits="150" branch="false" />
+                <line number="97" hits="150" branch="true" condition-coverage="75% (3/4)" />
+                <line number="98" hits="0" branch="false" />
+                <line number="100" hits="150" branch="false" />
+                <line number="101" hits="150" branch="true" condition-coverage="50% (1/2)" />
+                <line number="103" hits="150" branch="false" />
+                <line number="105" hits="150" branch="false" />
+                <line number="106" hits="150" branch="false" />
+                <line number="107" hits="47" branch="false" />
+              </lines>
+            </method>
+            <method name="AppendSelectIdentity" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="109" hits="16" branch="false" />
+                <line number="110" hits="16" branch="false" />
+                <line number="111" hits="16" branch="false" />
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="1" branch="false" />
+            <line number="14" hits="16" branch="false" />
+            <line number="15" hits="16" branch="false" />
+            <line number="17" hits="16" branch="false" />
+            <line number="19" hits="16" branch="false" />
+            <line number="21" hits="16" branch="false" />
+            <line number="23" hits="16" branch="false" />
+            <line number="25" hits="16" branch="false" />
+            <line number="27" hits="16" branch="false" />
+            <line number="28" hits="16" branch="false" />
+            <line number="30" hits="20" branch="false" />
+            <line number="31" hits="20" branch="false" />
+            <line number="33" hits="20" branch="false" />
+            <line number="35" hits="20" branch="false" />
+            <line number="37" hits="20" branch="false" />
+            <line number="39" hits="20" branch="false" />
+            <line number="41" hits="20" branch="false" />
+            <line number="42" hits="20" branch="false" />
+            <line number="44" hits="13" branch="false" />
+            <line number="45" hits="13" branch="false" />
+            <line number="46" hits="13" branch="false" />
+            <line number="48" hits="6" branch="false" />
+            <line number="49" hits="6" branch="false" />
+            <line number="51" hits="6" branch="false" />
+            <line number="53" hits="6" branch="false" />
+            <line number="55" hits="6" branch="false" />
+            <line number="57" hits="6" branch="false" />
+            <line number="59" hits="6" branch="false" />
+            <line number="61" hits="12" branch="true" condition-coverage="100% (2/2)" />
+            <line number="62" hits="6" branch="false" />
+            <line number="63" hits="6" branch="false" />
+            <line number="64" hits="6" branch="false" />
+            <line number="65" hits="6" branch="false" />
+            <line number="67" hits="6" branch="false" />
+            <line number="68" hits="6" branch="false" />
+            <line number="69" hits="6" branch="false" />
+            <line number="71" hits="5" branch="false" />
+            <line number="72" hits="5" branch="false" />
+            <line number="74" hits="5" branch="false" />
+            <line number="76" hits="5" branch="false" />
+            <line number="78" hits="5" branch="false" />
+            <line number="80" hits="5" branch="false" />
+            <line number="82" hits="5" branch="false" />
+            <line number="84" hits="5" branch="true" condition-coverage="100% (2/2)" />
+            <line number="85" hits="2" branch="false" />
+            <line number="87" hits="5" branch="false" />
+            <line number="88" hits="5" branch="false" />
+            <line number="89" hits="5" branch="false" />
+            <line number="91" hits="47" branch="false" />
+            <line number="92" hits="47" branch="true" condition-coverage="100% (4/4)" />
+            <line number="93" hits="6" branch="false" />
+            <line number="95" hits="423" branch="false" />
+            <line number="96" hits="150" branch="false" />
+            <line number="97" hits="150" branch="true" condition-coverage="75% (3/4)" />
+            <line number="98" hits="0" branch="false" />
+            <line number="100" hits="150" branch="false" />
+            <line number="101" hits="150" branch="true" condition-coverage="50% (1/2)" />
+            <line number="103" hits="150" branch="false" />
+            <line number="105" hits="150" branch="false" />
+            <line number="106" hits="150" branch="false" />
+            <line number="107" hits="47" branch="false" />
+            <line number="109" hits="16" branch="false" />
+            <line number="110" hits="16" branch="false" />
+            <line number="111" hits="16" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Dominio.Compromisso" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Domínio\Compromisso.cs" line-rate="0.8" branch-rate="0" complexity="3">
+          <methods>
+            <method name="assunto" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="16" hits="14" branch="false" />
+              </lines>
+            </method>
+            <method name="assunto" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="16" hits="14" branch="false" />
+              </lines>
+            </method>
+            <method name="local" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="17" hits="14" branch="false" />
+              </lines>
+            </method>
+            <method name="local" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="17" hits="14" branch="false" />
+              </lines>
+            </method>
+            <method name="data_inicio" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="18" hits="14" branch="false" />
+              </lines>
+            </method>
+            <method name="data_inicio" signature="(System.DateTime)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="18" hits="14" branch="false" />
+              </lines>
+            </method>
+            <method name="data_fim" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="19" hits="12" branch="false" />
+              </lines>
+            </method>
+            <method name="data_fim" signature="(System.DateTime)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="19" hits="12" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.String,System.DateTime,System.DateTime,Controle_de_Tarefas.Dominio.Contato)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="7" hits="7" branch="false" />
+                <line number="8" hits="7" branch="false" />
+                <line number="9" hits="7" branch="false" />
+                <line number="10" hits="7" branch="false" />
+                <line number="11" hits="7" branch="false" />
+                <line number="12" hits="7" branch="false" />
+                <line number="13" hits="7" branch="false" />
+                <line number="14" hits="7" branch="false" />
+              </lines>
+            </method>
+            <method name="ToString" signature="()" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
+                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="23" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="7" branch="false" />
+            <line number="8" hits="7" branch="false" />
+            <line number="9" hits="7" branch="false" />
+            <line number="10" hits="7" branch="false" />
+            <line number="11" hits="7" branch="false" />
+            <line number="12" hits="7" branch="false" />
+            <line number="13" hits="7" branch="false" />
+            <line number="14" hits="7" branch="false" />
+            <line number="16" hits="14" branch="false" />
+            <line number="17" hits="14" branch="false" />
+            <line number="18" hits="14" branch="false" />
+            <line number="19" hits="12" branch="false" />
             <line number="21" hits="0" branch="false" />
+            <line number="22" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="23" hits="0" branch="false" />
-            <line number="24" hits="0" branch="false" />
-            <line number="25" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Controle_de_Tarefas.Dominio.Contato" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Domínio\Contato.cs" line-rate="0.8125" branch-rate="1" complexity="1">
           <methods>
             <method name="nome" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="13" hits="13" branch="false" />
+                <line number="13" hits="11" branch="false" />
               </lines>
             </method>
             <method name="nome" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="13" hits="13" branch="false" />
+                <line number="13" hits="11" branch="false" />
               </lines>
             </method>
             <method name="email" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
@@ -502,24 +891,24 @@
             </method>
             <method name="cargo" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="17" hits="13" branch="false" />
+                <line number="17" hits="11" branch="false" />
               </lines>
             </method>
             <method name="cargo" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="17" hits="13" branch="false" />
+                <line number="17" hits="11" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="(System.String,System.String,System.String,System.String,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="5" hits="9" branch="false" />
-                <line number="6" hits="9" branch="false" />
-                <line number="7" hits="9" branch="false" />
-                <line number="8" hits="9" branch="false" />
-                <line number="9" hits="9" branch="false" />
-                <line number="10" hits="9" branch="false" />
-                <line number="11" hits="9" branch="false" />
-                <line number="12" hits="9" branch="false" />
+                <line number="5" hits="5" branch="false" />
+                <line number="6" hits="5" branch="false" />
+                <line number="7" hits="5" branch="false" />
+                <line number="8" hits="5" branch="false" />
+                <line number="9" hits="5" branch="false" />
+                <line number="10" hits="5" branch="false" />
+                <line number="11" hits="5" branch="false" />
+                <line number="12" hits="5" branch="false" />
               </lines>
             </method>
             <method name="ToString" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -531,22 +920,39 @@
             </method>
           </methods>
           <lines>
-            <line number="5" hits="9" branch="false" />
-            <line number="6" hits="9" branch="false" />
-            <line number="7" hits="9" branch="false" />
-            <line number="8" hits="9" branch="false" />
-            <line number="9" hits="9" branch="false" />
-            <line number="10" hits="9" branch="false" />
-            <line number="11" hits="9" branch="false" />
-            <line number="12" hits="9" branch="false" />
-            <line number="13" hits="13" branch="false" />
+            <line number="5" hits="5" branch="false" />
+            <line number="6" hits="5" branch="false" />
+            <line number="7" hits="5" branch="false" />
+            <line number="8" hits="5" branch="false" />
+            <line number="9" hits="5" branch="false" />
+            <line number="10" hits="5" branch="false" />
+            <line number="11" hits="5" branch="false" />
+            <line number="12" hits="5" branch="false" />
+            <line number="13" hits="11" branch="false" />
             <line number="14" hits="11" branch="false" />
             <line number="15" hits="11" branch="false" />
             <line number="16" hits="11" branch="false" />
-            <line number="17" hits="13" branch="false" />
+            <line number="17" hits="11" branch="false" />
             <line number="20" hits="0" branch="false" />
             <line number="21" hits="0" branch="false" />
             <line number="22" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Dominio.Entidade" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Domínio\Entidade.cs" line-rate="1" branch-rate="1" complexity="NaN">
+          <methods>
+            <method name="id" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="5" hits="103" branch="false" />
+              </lines>
+            </method>
+            <method name="id" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="5" hits="103" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="103" branch="false" />
           </lines>
         </class>
         <class name="Controle_de_Tarefas.Dominio.Objetivo" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Domínio\Objetivo.cs" line-rate="0.7272727272727273" branch-rate="0" complexity="4">
@@ -646,56 +1052,56 @@
             <line number="31" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Controle_de_Tarefas.Dominio.Tarefa" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Domínio\Tarefa.cs" line-rate="0.7391304347826086" branch-rate="0.25" complexity="8">
+        <class name="Controle_de_Tarefas.Dominio.Tarefa" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Domínio\Tarefa.cs" line-rate="0.7555555555555555" branch-rate="0.25" complexity="8">
           <methods>
             <method name="porcentagem_conclusao" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="27" hits="25" branch="false" />
+                <line number="25" hits="25" branch="false" />
               </lines>
             </method>
             <method name="porcentagem_conclusao" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="27" hits="25" branch="false" />
+                <line number="25" hits="25" branch="false" />
               </lines>
             </method>
             <method name="dt_criacao" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="28" hits="20" branch="false" />
+                <line number="26" hits="20" branch="false" />
               </lines>
             </method>
             <method name="dt_criacao" signature="(System.DateTime)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="28" hits="20" branch="false" />
+                <line number="26" hits="20" branch="false" />
               </lines>
             </method>
             <method name="dt_conclusao" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="29" hits="22" branch="false" />
+                <line number="27" hits="22" branch="false" />
               </lines>
             </method>
             <method name="dt_conclusao" signature="(System.DateTime)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="29" hits="22" branch="false" />
+                <line number="27" hits="22" branch="false" />
               </lines>
             </method>
             <method name="titulo" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="30" hits="22" branch="false" />
+                <line number="28" hits="22" branch="false" />
               </lines>
             </method>
             <method name="titulo" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="30" hits="22" branch="false" />
+                <line number="28" hits="22" branch="false" />
               </lines>
             </method>
             <method name="prioridade" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="31" hits="22" branch="false" />
+                <line number="29" hits="22" branch="false" />
               </lines>
             </method>
             <method name="prioridade" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="31" hits="22" branch="false" />
+                <line number="29" hits="22" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="(System.Int32,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
@@ -711,7 +1117,7 @@
                 <line number="17" hits="7" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="(System.Int32,System.DateTime,System.DateTime,System.Int32,System.String)" line-rate="0.5294117647058824" branch-rate="1" complexity="NaN">
+            <method name=".ctor" signature="(System.Int32,System.DateTime,System.Int32,System.String)" line-rate="0.5625" branch-rate="1" complexity="NaN">
               <lines>
                 <line number="8" hits="7" branch="false" />
                 <line number="10" hits="7" branch="false" />
@@ -722,62 +1128,61 @@
                 <line number="15" hits="7" branch="false" />
                 <line number="16" hits="7" branch="false" />
                 <line number="17" hits="7" branch="false" />
+                <line number="18" hits="0" branch="false" />
                 <line number="19" hits="0" branch="false" />
                 <line number="20" hits="0" branch="false" />
                 <line number="21" hits="0" branch="false" />
                 <line number="22" hits="0" branch="false" />
                 <line number="23" hits="0" branch="false" />
                 <line number="24" hits="0" branch="false" />
-                <line number="25" hits="0" branch="false" />
-                <line number="26" hits="0" branch="false" />
               </lines>
             </method>
             <method name="addObjetivo" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="33" hits="4" branch="false" />
+                <line number="31" hits="4" branch="false" />
               </lines>
             </method>
             <method name="concluiTarefa" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="35" hits="2" branch="false" />
+                <line number="33" hits="2" branch="false" />
+                <line number="34" hits="2" branch="false" />
+                <line number="35" hits="2" branch="true" condition-coverage="50% (1/2)" />
                 <line number="36" hits="2" branch="false" />
-                <line number="37" hits="2" branch="true" condition-coverage="50% (1/2)" />
-                <line number="38" hits="2" branch="false" />
-                <line number="39" hits="2" branch="false" />
+                <line number="37" hits="2" branch="false" />
               </lines>
             </method>
             <method name="editar" signature="(Controle_de_Tarefas.Dominio.Tarefa)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
+                <line number="39" hits="1" branch="false" />
+                <line number="40" hits="1" branch="false" />
                 <line number="41" hits="1" branch="false" />
                 <line number="42" hits="1" branch="false" />
                 <line number="43" hits="1" branch="false" />
-                <line number="44" hits="1" branch="false" />
-                <line number="45" hits="1" branch="false" />
               </lines>
             </method>
             <method name="resetaDt_Conclusao" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="45" hits="8" branch="false" />
+                <line number="46" hits="8" branch="false" />
                 <line number="47" hits="8" branch="false" />
-                <line number="48" hits="8" branch="false" />
-                <line number="49" hits="8" branch="false" />
               </lines>
             </method>
             <method name="atualizaConclusao" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="49" hits="3" branch="false" />
+                <line number="50" hits="3" branch="false" />
                 <line number="51" hits="3" branch="false" />
                 <line number="52" hits="3" branch="false" />
                 <line number="53" hits="3" branch="false" />
                 <line number="54" hits="3" branch="false" />
-                <line number="55" hits="3" branch="false" />
-                <line number="56" hits="3" branch="false" />
               </lines>
             </method>
             <method name="ToString" signature="()" line-rate="0" branch-rate="0" complexity="3">
               <lines>
+                <line number="56" hits="0" branch="false" />
+                <line number="57" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="58" hits="0" branch="false" />
-                <line number="59" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="60" hits="0" branch="false" />
-                <line number="61" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -791,136 +1196,135 @@
             <line number="15" hits="7" branch="false" />
             <line number="16" hits="7" branch="false" />
             <line number="17" hits="7" branch="false" />
+            <line number="18" hits="0" branch="false" />
             <line number="19" hits="0" branch="false" />
             <line number="20" hits="0" branch="false" />
             <line number="21" hits="0" branch="false" />
             <line number="22" hits="0" branch="false" />
             <line number="23" hits="0" branch="false" />
             <line number="24" hits="0" branch="false" />
-            <line number="25" hits="0" branch="false" />
-            <line number="26" hits="0" branch="false" />
-            <line number="27" hits="25" branch="false" />
-            <line number="28" hits="20" branch="false" />
+            <line number="25" hits="25" branch="false" />
+            <line number="26" hits="20" branch="false" />
+            <line number="27" hits="22" branch="false" />
+            <line number="28" hits="22" branch="false" />
             <line number="29" hits="22" branch="false" />
-            <line number="30" hits="22" branch="false" />
-            <line number="31" hits="22" branch="false" />
-            <line number="33" hits="4" branch="false" />
-            <line number="35" hits="2" branch="false" />
+            <line number="31" hits="4" branch="false" />
+            <line number="33" hits="2" branch="false" />
+            <line number="34" hits="2" branch="false" />
+            <line number="35" hits="2" branch="true" condition-coverage="50% (1/2)" />
             <line number="36" hits="2" branch="false" />
-            <line number="37" hits="2" branch="true" condition-coverage="50% (1/2)" />
-            <line number="38" hits="2" branch="false" />
-            <line number="39" hits="2" branch="false" />
+            <line number="37" hits="2" branch="false" />
+            <line number="39" hits="1" branch="false" />
+            <line number="40" hits="1" branch="false" />
             <line number="41" hits="1" branch="false" />
             <line number="42" hits="1" branch="false" />
             <line number="43" hits="1" branch="false" />
-            <line number="44" hits="1" branch="false" />
-            <line number="45" hits="1" branch="false" />
+            <line number="45" hits="8" branch="false" />
+            <line number="46" hits="8" branch="false" />
             <line number="47" hits="8" branch="false" />
-            <line number="48" hits="8" branch="false" />
-            <line number="49" hits="8" branch="false" />
+            <line number="49" hits="3" branch="false" />
+            <line number="50" hits="3" branch="false" />
             <line number="51" hits="3" branch="false" />
             <line number="52" hits="3" branch="false" />
             <line number="53" hits="3" branch="false" />
             <line number="54" hits="3" branch="false" />
-            <line number="55" hits="3" branch="false" />
-            <line number="56" hits="3" branch="false" />
+            <line number="56" hits="0" branch="false" />
+            <line number="57" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="58" hits="0" branch="false" />
-            <line number="59" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="60" hits="0" branch="false" />
-            <line number="61" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Controle_de_Tarefas.Program" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Program.cs" line-rate="0" branch-rate="1" complexity="NaN">
           <methods>
             <method name="Main" signature="(System.String[])" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
+                <line number="8" hits="0" branch="false" />
+                <line number="9" hits="0" branch="false" />
+                <line number="10" hits="0" branch="false" />
                 <line number="11" hits="0" branch="false" />
-                <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
-                <line number="18" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="8" hits="0" branch="false" />
+            <line number="9" hits="0" branch="false" />
+            <line number="10" hits="0" branch="false" />
             <line number="11" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
-            <line number="18" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Controle_de_Tarefas.Telas.Extensions" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\Tela.cs" line-rate="0.2222222222222222" branch-rate="0.14285714285714285" complexity="NaN">
+        <class name="Controle_de_Tarefas.Telas.Extensions" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\Tela.cs" line-rate="0" branch-rate="0" complexity="NaN">
           <methods>
             <method name="mostrarLista" signature="(System.Collections.IList)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="80" hits="0" branch="false" />
-                <line number="81" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="82" hits="0" branch="false" />
-                <line number="83" hits="0" branch="false" />
-                <line number="84" hits="0" branch="false" />
-                <line number="87" hits="0" branch="false" />
                 <line number="88" hits="0" branch="false" />
-                <line number="89" hits="0" branch="false" />
+                <line number="89" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="90" hits="0" branch="false" />
+                <line number="91" hits="0" branch="false" />
                 <line number="92" hits="0" branch="false" />
+                <line number="95" hits="0" branch="false" />
+                <line number="96" hits="0" branch="false" />
+                <line number="97" hits="0" branch="false" />
+                <line number="98" hits="0" branch="false" />
+                <line number="100" hits="0" branch="false" />
               </lines>
             </method>
             <method name="mostrarMensagem" signature="(Controle_de_Tarefas.Telas.TipoMensagem,System.String)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="94" hits="0" branch="false" />
-                <line number="95" hits="0" branch="true" condition-coverage="0% (0/6)" />
-                <line number="97" hits="0" branch="false" />
-                <line number="98" hits="0" branch="false" />
-                <line number="99" hits="0" branch="false" />
-                <line number="100" hits="0" branch="false" />
-                <line number="101" hits="0" branch="false" />
-                <line number="104" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+                <line number="103" hits="0" branch="true" condition-coverage="0% (0/6)" />
                 <line number="105" hits="0" branch="false" />
-                <line number="106" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="106" hits="0" branch="false" />
                 <line number="107" hits="0" branch="false" />
+                <line number="108" hits="0" branch="false" />
+                <line number="109" hits="0" branch="false" />
+                <line number="112" hits="0" branch="false" />
+                <line number="113" hits="0" branch="false" />
+                <line number="114" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="115" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="ObterParametros" signature="(System.Data.SqlClient.SqlDataReader)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="ObterCamposDB" signature="(System.Data.SqlClient.SqlDataReader)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="109" hits="11" branch="false" />
-                <line number="110" hits="11" branch="false" />
-                <line number="111" hits="130" branch="true" condition-coverage="100% (2/2)" />
-                <line number="112" hits="54" branch="false" />
-                <line number="113" hits="11" branch="false" />
-                <line number="114" hits="11" branch="false" />
+                <line number="117" hits="0" branch="false" />
+                <line number="118" hits="0" branch="false" />
+                <line number="119" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="120" hits="0" branch="false" />
+                <line number="121" hits="0" branch="false" />
+                <line number="122" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="80" hits="0" branch="false" />
-            <line number="81" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="82" hits="0" branch="false" />
-            <line number="83" hits="0" branch="false" />
-            <line number="84" hits="0" branch="false" />
-            <line number="87" hits="0" branch="false" />
             <line number="88" hits="0" branch="false" />
-            <line number="89" hits="0" branch="false" />
+            <line number="89" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="90" hits="0" branch="false" />
+            <line number="91" hits="0" branch="false" />
             <line number="92" hits="0" branch="false" />
-            <line number="94" hits="0" branch="false" />
-            <line number="95" hits="0" branch="true" condition-coverage="0% (0/6)" />
+            <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
             <line number="97" hits="0" branch="false" />
             <line number="98" hits="0" branch="false" />
-            <line number="99" hits="0" branch="false" />
             <line number="100" hits="0" branch="false" />
-            <line number="101" hits="0" branch="false" />
-            <line number="104" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="103" hits="0" branch="true" condition-coverage="0% (0/6)" />
             <line number="105" hits="0" branch="false" />
-            <line number="106" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="106" hits="0" branch="false" />
             <line number="107" hits="0" branch="false" />
-            <line number="109" hits="11" branch="false" />
-            <line number="110" hits="11" branch="false" />
-            <line number="111" hits="130" branch="true" condition-coverage="100% (2/2)" />
-            <line number="112" hits="54" branch="false" />
-            <line number="113" hits="11" branch="false" />
-            <line number="114" hits="11" branch="false" />
+            <line number="108" hits="0" branch="false" />
+            <line number="109" hits="0" branch="false" />
+            <line number="112" hits="0" branch="false" />
+            <line number="113" hits="0" branch="false" />
+            <line number="114" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="115" hits="0" branch="false" />
+            <line number="117" hits="0" branch="false" />
+            <line number="118" hits="0" branch="false" />
+            <line number="119" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="120" hits="0" branch="false" />
+            <line number="121" hits="0" branch="false" />
+            <line number="122" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Controle_de_Tarefas.Telas.Tela`1" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\Tela.cs" line-rate="0" branch-rate="0" complexity="5">
+        <class name="Controle_de_Tarefas.Telas.Tela`1" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\Tela.cs" line-rate="0" branch-rate="0" complexity="7">
           <methods>
             <method name=".ctor" signature="(Controle_de_Tarefas.Controladores.Controlador`1&lt;T&gt;)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
@@ -930,67 +1334,81 @@
                 <line number="17" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="visualizar" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="0" branch-rate="1" complexity="NaN">
+            <method name="obterOpcao" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
                 <line number="22" hits="0" branch="false" />
                 <line number="23" hits="0" branch="false" />
                 <line number="24" hits="0" branch="false" />
-                <line number="25" hits="0" branch="false" />
-                <line number="26" hits="0" branch="false" />
-                <line number="27" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="cadastrar" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="29" hits="0" branch="false" />
-                <line number="30" hits="0" branch="false" />
-                <line number="31" hits="0" branch="false" />
-                <line number="32" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="editar" signature="()" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
-                <line number="34" hits="0" branch="false" />
-                <line number="35" hits="0" branch="false" />
-                <line number="36" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="38" hits="0" branch="false" />
-                <line number="39" hits="0" branch="false" />
-                <line number="40" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="excluir" signature="()" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
-                <line number="42" hits="0" branch="false" />
-                <line number="43" hits="0" branch="false" />
-                <line number="44" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="46" hits="0" branch="false" />
-                <line number="47" hits="0" branch="false" />
-                <line number="48" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="opcaoValida" signature="(System.String,System.Collections.Generic.List`1&lt;T&gt;)" line-rate="0" branch-rate="0" complexity="NaN">
-              <lines>
-                <line number="50" hits="0" branch="false" />
-                <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="52" hits="0" branch="false" />
               </lines>
             </method>
             <method name="obterOpcao" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
+                <line number="26" hits="0" branch="false" />
+                <line number="27" hits="0" branch="false" />
+                <line number="28" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="29" hits="0" branch="false" />
+                <line number="31" hits="0" branch="false" />
+                <line number="32" hits="0" branch="false" />
+                <line number="34" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="36" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="37" hits="0" branch="false" />
+                <line number="38" hits="0" branch="false" />
+                <line number="39" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="opcaoValida" signature="(System.String,System.Collections.Generic.List`1&lt;T&gt;)" line-rate="0" branch-rate="0" complexity="NaN">
+              <lines>
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="47" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="visualizar" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="49" hits="0" branch="false" />
+                <line number="50" hits="0" branch="false" />
+                <line number="51" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="visualizar" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="53" hits="0" branch="false" />
                 <line number="54" hits="0" branch="false" />
                 <line number="55" hits="0" branch="false" />
-                <line number="56" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="56" hits="0" branch="false" />
                 <line number="57" hits="0" branch="false" />
-                <line number="59" hits="0" branch="false" />
+                <line number="58" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="cadastrar" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
                 <line number="60" hits="0" branch="false" />
-                <line number="62" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="64" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="61" hits="0" branch="false" />
+                <line number="62" hits="0" branch="false" />
+                <line number="63" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="editar" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
                 <line number="65" hits="0" branch="false" />
                 <line number="66" hits="0" branch="false" />
-                <line number="67" hits="0" branch="false" />
+                <line number="67" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="69" hits="0" branch="false" />
                 <line number="70" hits="0" branch="false" />
                 <line number="71" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="excluir" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="73" hits="0" branch="false" />
+                <line number="74" hits="0" branch="false" />
+                <line number="75" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="77" hits="0" branch="false" />
+                <line number="78" hits="0" branch="false" />
+                <line number="79" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -1002,100 +1420,98 @@
             <line number="22" hits="0" branch="false" />
             <line number="23" hits="0" branch="false" />
             <line number="24" hits="0" branch="false" />
-            <line number="25" hits="0" branch="false" />
             <line number="26" hits="0" branch="false" />
             <line number="27" hits="0" branch="false" />
+            <line number="28" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="29" hits="0" branch="false" />
-            <line number="30" hits="0" branch="false" />
             <line number="31" hits="0" branch="false" />
             <line number="32" hits="0" branch="false" />
-            <line number="34" hits="0" branch="false" />
-            <line number="35" hits="0" branch="false" />
+            <line number="34" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="36" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="37" hits="0" branch="false" />
             <line number="38" hits="0" branch="false" />
             <line number="39" hits="0" branch="false" />
-            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
             <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
-            <line number="44" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="46" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="47" hits="0" branch="false" />
-            <line number="48" hits="0" branch="false" />
+            <line number="49" hits="0" branch="false" />
             <line number="50" hits="0" branch="false" />
-            <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="52" hits="0" branch="false" />
+            <line number="51" hits="0" branch="false" />
+            <line number="53" hits="0" branch="false" />
             <line number="54" hits="0" branch="false" />
             <line number="55" hits="0" branch="false" />
-            <line number="56" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="56" hits="0" branch="false" />
             <line number="57" hits="0" branch="false" />
-            <line number="59" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
             <line number="60" hits="0" branch="false" />
-            <line number="62" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="64" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="61" hits="0" branch="false" />
+            <line number="62" hits="0" branch="false" />
+            <line number="63" hits="0" branch="false" />
             <line number="65" hits="0" branch="false" />
             <line number="66" hits="0" branch="false" />
-            <line number="67" hits="0" branch="false" />
+            <line number="67" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="69" hits="0" branch="false" />
             <line number="70" hits="0" branch="false" />
             <line number="71" hits="0" branch="false" />
+            <line number="73" hits="0" branch="false" />
+            <line number="74" hits="0" branch="false" />
+            <line number="75" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="77" hits="0" branch="false" />
+            <line number="78" hits="0" branch="false" />
+            <line number="79" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Controle_de_Tarefas.Telas.TelaContatos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\TelaContatos.cs" line-rate="0" branch-rate="0" complexity="16">
+        <class name="Controle_de_Tarefas.Telas.TelaCompromissos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\TelaCompromissos.cs" line-rate="0" branch-rate="0" complexity="26">
           <methods>
             <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
+                <line number="9" hits="0" branch="false" />
                 <line number="10" hits="0" branch="false" />
-                <line number="11" hits="0" branch="false" />
                 <line number="12" hits="0" branch="false" />
-                <line number="13" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="menu" signature="()" line-rate="0" branch-rate="0" complexity="8">
+            <method name="registroValido" signature="()" line-rate="0" branch-rate="0" complexity="10">
               <lines>
-                <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
-                <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="19" hits="0" branch="false" />
-                <line number="20" hits="0" branch="false" />
-                <line number="21" hits="0" branch="false" />
-                <line number="22" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
                 <line number="23" hits="0" branch="false" />
                 <line number="24" hits="0" branch="false" />
                 <line number="25" hits="0" branch="false" />
                 <line number="26" hits="0" branch="false" />
-                <line number="27" hits="0" branch="false" />
+                <line number="27" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="28" hits="0" branch="false" />
-                <line number="29" hits="0" branch="true" condition-coverage="0% (0/10)" />
-                <line number="31" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="29" hits="0" branch="false" />
+                <line number="30" hits="0" branch="false" />
+                <line number="31" hits="0" branch="false" />
                 <line number="32" hits="0" branch="false" />
                 <line number="33" hits="0" branch="false" />
                 <line number="34" hits="0" branch="false" />
-                <line number="35" hits="0" branch="false" />
+                <line number="35" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="36" hits="0" branch="false" />
+                <line number="37" hits="0" branch="false" />
                 <line number="38" hits="0" branch="false" />
                 <line number="39" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="registroValido" signature="()" line-rate="0" branch-rate="0" complexity="7">
-              <lines>
+                <line number="40" hits="0" branch="false" />
                 <line number="41" hits="0" branch="false" />
-                <line number="43" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="true" condition-coverage="0% (0/4)" />
                 <line number="44" hits="0" branch="false" />
                 <line number="45" hits="0" branch="false" />
                 <line number="46" hits="0" branch="false" />
                 <line number="47" hits="0" branch="false" />
-                <line number="48" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="48" hits="0" branch="false" />
                 <line number="49" hits="0" branch="false" />
                 <line number="50" hits="0" branch="false" />
-                <line number="51" hits="0" branch="false" />
+                <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="52" hits="0" branch="false" />
                 <line number="53" hits="0" branch="false" />
-                <line number="54" hits="0" branch="false" />
+                <line number="54" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="55" hits="0" branch="false" />
-                <line number="56" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="56" hits="0" branch="false" />
                 <line number="57" hits="0" branch="false" />
                 <line number="58" hits="0" branch="false" />
-                <line number="59" hits="0" branch="false" />
                 <line number="60" hits="0" branch="false" />
                 <line number="61" hits="0" branch="false" />
                 <line number="62" hits="0" branch="false" />
@@ -1104,72 +1520,117 @@
                 <line number="65" hits="0" branch="false" />
                 <line number="66" hits="0" branch="false" />
                 <line number="67" hits="0" branch="false" />
-                <line number="68" hits="0" branch="false" />
-                <line number="69" hits="0" branch="false" />
+                <line number="68" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="70" hits="0" branch="false" />
                 <line number="71" hits="0" branch="false" />
-                <line number="72" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name="menu" signature="()" line-rate="0" branch-rate="0" complexity="7">
+              <lines>
                 <line number="73" hits="0" branch="false" />
                 <line number="74" hits="0" branch="false" />
-                <line number="75" hits="0" branch="false" />
+                <line number="75" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="76" hits="0" branch="false" />
                 <line number="77" hits="0" branch="false" />
                 <line number="78" hits="0" branch="false" />
                 <line number="79" hits="0" branch="false" />
-                <line number="80" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="80" hits="0" branch="false" />
                 <line number="81" hits="0" branch="false" />
                 <line number="82" hits="0" branch="false" />
                 <line number="83" hits="0" branch="false" />
                 <line number="84" hits="0" branch="false" />
                 <line number="85" hits="0" branch="false" />
+                <line number="86" hits="0" branch="true" condition-coverage="0% (0/10)" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+                <line number="90" hits="0" branch="false" />
+                <line number="91" hits="0" branch="false" />
+                <line number="92" hits="0" branch="false" />
+                <line number="93" hits="0" branch="false" />
+                <line number="95" hits="0" branch="false" />
+                <line number="96" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="menuVisualizar" signature="()" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="98" hits="0" branch="false" />
+                <line number="99" hits="0" branch="false" />
+                <line number="100" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="101" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+                <line number="103" hits="0" branch="false" />
+                <line number="104" hits="0" branch="false" />
+                <line number="105" hits="0" branch="false" />
+                <line number="106" hits="0" branch="false" />
+                <line number="107" hits="0" branch="false" />
+                <line number="108" hits="0" branch="false" />
+                <line number="109" hits="0" branch="true" condition-coverage="0% (0/8)" />
+                <line number="111" hits="0" branch="false" />
+                <line number="112" hits="0" branch="false" />
+                <line number="113" hits="0" branch="false" />
+                <line number="114" hits="0" branch="false" />
+                <line number="115" hits="0" branch="false" />
+                <line number="117" hits="0" branch="false" />
+                <line number="118" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="getDate" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="120" hits="0" branch="false" />
+                <line number="122" hits="0" branch="false" />
+                <line number="123" hits="0" branch="false" />
+                <line number="124" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+                <line number="126" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="127" hits="0" branch="false" />
+                <line number="128" hits="0" branch="false" />
+                <line number="129" hits="0" branch="false" />
+                <line number="130" hits="0" branch="false" />
+                <line number="131" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="9" hits="0" branch="false" />
             <line number="10" hits="0" branch="false" />
-            <line number="11" hits="0" branch="false" />
             <line number="12" hits="0" branch="false" />
-            <line number="13" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
-            <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="19" hits="0" branch="false" />
-            <line number="20" hits="0" branch="false" />
-            <line number="21" hits="0" branch="false" />
-            <line number="22" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
             <line number="23" hits="0" branch="false" />
             <line number="24" hits="0" branch="false" />
             <line number="25" hits="0" branch="false" />
             <line number="26" hits="0" branch="false" />
-            <line number="27" hits="0" branch="false" />
+            <line number="27" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="28" hits="0" branch="false" />
-            <line number="29" hits="0" branch="true" condition-coverage="0% (0/10)" />
-            <line number="31" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="29" hits="0" branch="false" />
+            <line number="30" hits="0" branch="false" />
+            <line number="31" hits="0" branch="false" />
             <line number="32" hits="0" branch="false" />
             <line number="33" hits="0" branch="false" />
             <line number="34" hits="0" branch="false" />
-            <line number="35" hits="0" branch="false" />
+            <line number="35" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="36" hits="0" branch="false" />
+            <line number="37" hits="0" branch="false" />
             <line number="38" hits="0" branch="false" />
             <line number="39" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
             <line number="41" hits="0" branch="false" />
-            <line number="43" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="43" hits="0" branch="true" condition-coverage="0% (0/4)" />
             <line number="44" hits="0" branch="false" />
             <line number="45" hits="0" branch="false" />
             <line number="46" hits="0" branch="false" />
             <line number="47" hits="0" branch="false" />
-            <line number="48" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="48" hits="0" branch="false" />
             <line number="49" hits="0" branch="false" />
             <line number="50" hits="0" branch="false" />
-            <line number="51" hits="0" branch="false" />
+            <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="52" hits="0" branch="false" />
             <line number="53" hits="0" branch="false" />
-            <line number="54" hits="0" branch="false" />
+            <line number="54" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="55" hits="0" branch="false" />
-            <line number="56" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="56" hits="0" branch="false" />
             <line number="57" hits="0" branch="false" />
             <line number="58" hits="0" branch="false" />
-            <line number="59" hits="0" branch="false" />
             <line number="60" hits="0" branch="false" />
             <line number="61" hits="0" branch="false" />
             <line number="62" hits="0" branch="false" />
@@ -1178,24 +1639,215 @@
             <line number="65" hits="0" branch="false" />
             <line number="66" hits="0" branch="false" />
             <line number="67" hits="0" branch="false" />
-            <line number="68" hits="0" branch="false" />
-            <line number="69" hits="0" branch="false" />
+            <line number="68" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="70" hits="0" branch="false" />
             <line number="71" hits="0" branch="false" />
-            <line number="72" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="73" hits="0" branch="false" />
             <line number="74" hits="0" branch="false" />
-            <line number="75" hits="0" branch="false" />
+            <line number="75" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="76" hits="0" branch="false" />
             <line number="77" hits="0" branch="false" />
             <line number="78" hits="0" branch="false" />
             <line number="79" hits="0" branch="false" />
-            <line number="80" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="80" hits="0" branch="false" />
             <line number="81" hits="0" branch="false" />
             <line number="82" hits="0" branch="false" />
             <line number="83" hits="0" branch="false" />
             <line number="84" hits="0" branch="false" />
             <line number="85" hits="0" branch="false" />
+            <line number="86" hits="0" branch="true" condition-coverage="0% (0/10)" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="90" hits="0" branch="false" />
+            <line number="91" hits="0" branch="false" />
+            <line number="92" hits="0" branch="false" />
+            <line number="93" hits="0" branch="false" />
+            <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="98" hits="0" branch="false" />
+            <line number="99" hits="0" branch="false" />
+            <line number="100" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="101" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="103" hits="0" branch="false" />
+            <line number="104" hits="0" branch="false" />
+            <line number="105" hits="0" branch="false" />
+            <line number="106" hits="0" branch="false" />
+            <line number="107" hits="0" branch="false" />
+            <line number="108" hits="0" branch="false" />
+            <line number="109" hits="0" branch="true" condition-coverage="0% (0/8)" />
+            <line number="111" hits="0" branch="false" />
+            <line number="112" hits="0" branch="false" />
+            <line number="113" hits="0" branch="false" />
+            <line number="114" hits="0" branch="false" />
+            <line number="115" hits="0" branch="false" />
+            <line number="117" hits="0" branch="false" />
+            <line number="118" hits="0" branch="false" />
+            <line number="120" hits="0" branch="false" />
+            <line number="122" hits="0" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="124" hits="0" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="126" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="127" hits="0" branch="false" />
+            <line number="128" hits="0" branch="false" />
+            <line number="129" hits="0" branch="false" />
+            <line number="130" hits="0" branch="false" />
+            <line number="131" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Controle_de_Tarefas.Telas.TelaContatos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\TelaContatos.cs" line-rate="0" branch-rate="0" complexity="15">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="false" />
+                <line number="10" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="menu" signature="()" line-rate="0" branch-rate="0" complexity="7">
+              <lines>
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="16" hits="0" branch="false" />
+                <line number="17" hits="0" branch="false" />
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
+                <line number="25" hits="0" branch="false" />
+                <line number="26" hits="0" branch="true" condition-coverage="0% (0/10)" />
+                <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
+                <line number="30" hits="0" branch="false" />
+                <line number="31" hits="0" branch="false" />
+                <line number="32" hits="0" branch="false" />
+                <line number="33" hits="0" branch="false" />
+                <line number="35" hits="0" branch="false" />
+                <line number="36" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="registroValido" signature="()" line-rate="0" branch-rate="0" complexity="7">
+              <lines>
+                <line number="38" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="48" hits="0" branch="false" />
+                <line number="49" hits="0" branch="false" />
+                <line number="50" hits="0" branch="false" />
+                <line number="51" hits="0" branch="false" />
+                <line number="52" hits="0" branch="false" />
+                <line number="53" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="54" hits="0" branch="false" />
+                <line number="55" hits="0" branch="false" />
+                <line number="56" hits="0" branch="false" />
+                <line number="57" hits="0" branch="false" />
+                <line number="58" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
+                <line number="60" hits="0" branch="false" />
+                <line number="61" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="62" hits="0" branch="false" />
+                <line number="63" hits="0" branch="false" />
+                <line number="64" hits="0" branch="false" />
+                <line number="65" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
+                <line number="68" hits="0" branch="false" />
+                <line number="69" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="70" hits="0" branch="false" />
+                <line number="71" hits="0" branch="false" />
+                <line number="72" hits="0" branch="false" />
+                <line number="73" hits="0" branch="false" />
+                <line number="74" hits="0" branch="false" />
+                <line number="75" hits="0" branch="false" />
+                <line number="76" hits="0" branch="false" />
+                <line number="77" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="78" hits="0" branch="false" />
+                <line number="79" hits="0" branch="false" />
+                <line number="80" hits="0" branch="false" />
+                <line number="81" hits="0" branch="false" />
+                <line number="82" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="false" />
+            <line number="10" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="16" hits="0" branch="false" />
+            <line number="17" hits="0" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="21" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="23" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="25" hits="0" branch="false" />
+            <line number="26" hits="0" branch="true" condition-coverage="0% (0/10)" />
+            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
+            <line number="30" hits="0" branch="false" />
+            <line number="31" hits="0" branch="false" />
+            <line number="32" hits="0" branch="false" />
+            <line number="33" hits="0" branch="false" />
+            <line number="35" hits="0" branch="false" />
+            <line number="36" hits="0" branch="false" />
+            <line number="38" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="43" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="48" hits="0" branch="false" />
+            <line number="49" hits="0" branch="false" />
+            <line number="50" hits="0" branch="false" />
+            <line number="51" hits="0" branch="false" />
+            <line number="52" hits="0" branch="false" />
+            <line number="53" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="54" hits="0" branch="false" />
+            <line number="55" hits="0" branch="false" />
+            <line number="56" hits="0" branch="false" />
+            <line number="57" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
+            <line number="60" hits="0" branch="false" />
+            <line number="61" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="62" hits="0" branch="false" />
+            <line number="63" hits="0" branch="false" />
+            <line number="64" hits="0" branch="false" />
+            <line number="65" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="68" hits="0" branch="false" />
+            <line number="69" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="70" hits="0" branch="false" />
+            <line number="71" hits="0" branch="false" />
+            <line number="72" hits="0" branch="false" />
+            <line number="73" hits="0" branch="false" />
+            <line number="74" hits="0" branch="false" />
+            <line number="75" hits="0" branch="false" />
+            <line number="76" hits="0" branch="false" />
+            <line number="77" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="78" hits="0" branch="false" />
+            <line number="79" hits="0" branch="false" />
+            <line number="80" hits="0" branch="false" />
+            <line number="81" hits="0" branch="false" />
+            <line number="82" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Controle_de_Tarefas.Telas.TelaObjetivos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\TelaObjetivos.cs" line-rate="0" branch-rate="0" complexity="16">
@@ -1380,21 +2032,23 @@
                 <line number="13" hits="0" branch="false" />
                 <line number="14" hits="0" branch="false" />
                 <line number="15" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
+                <line number="16" hits="0" branch="false" />
                 <line number="18" hits="0" branch="false" />
                 <line number="19" hits="0" branch="false" />
                 <line number="20" hits="0" branch="false" />
                 <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
               </lines>
             </method>
             <method name="obterTela" signature="(System.String)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="23" hits="0" branch="false" />
-                <line number="24" hits="0" branch="true" condition-coverage="0% (0/4)" />
-                <line number="26" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
+                <line number="25" hits="0" branch="true" condition-coverage="0% (0/6)" />
                 <line number="27" hits="0" branch="false" />
                 <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
                 <line number="30" hits="0" branch="false" />
+                <line number="32" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -1407,17 +2061,19 @@
             <line number="13" hits="0" branch="false" />
             <line number="14" hits="0" branch="false" />
             <line number="15" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
+            <line number="16" hits="0" branch="false" />
             <line number="18" hits="0" branch="false" />
             <line number="19" hits="0" branch="false" />
             <line number="20" hits="0" branch="false" />
             <line number="21" hits="0" branch="false" />
-            <line number="23" hits="0" branch="false" />
-            <line number="24" hits="0" branch="true" condition-coverage="0% (0/4)" />
-            <line number="26" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="25" hits="0" branch="true" condition-coverage="0% (0/6)" />
             <line number="27" hits="0" branch="false" />
             <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
             <line number="30" hits="0" branch="false" />
+            <line number="32" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Controle_de_Tarefas.Telas.TelaTarefas" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\Telas\TelaTarefas.cs" line-rate="0" branch-rate="0" complexity="11">
@@ -1548,90 +2204,31 @@
         </class>
       </classes>
     </package>
-    <package name="UnitTestProject" line-rate="1" branch-rate="1" complexity="13">
+    <package name="UnitTestProject" line-rate="1" branch-rate="1" complexity="23">
       <classes>
-        <class name="UnitTestProject.TestesContatos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\TestesContatos.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="UnitTestProject.TestesCompromissos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\TestesCompromissos.cs" line-rate="1" branch-rate="1" complexity="8">
           <methods>
-            <method name="adicionarContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="inserirCompromisso" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="1" branch="false" />
-                <line number="19" hits="1" branch="false" />
-                <line number="20" hits="1" branch="false" />
-                <line number="22" hits="1" branch="false" />
-                <line number="23" hits="1" branch="false" />
+                <line number="16" hits="12" branch="false" />
               </lines>
             </method>
-            <method name="editarContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="excluirCompromisso" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="26" hits="1" branch="false" />
-                <line number="27" hits="1" branch="false" />
-                <line number="28" hits="1" branch="false" />
-                <line number="30" hits="1" branch="false" />
-                <line number="32" hits="1" branch="false" />
-                <line number="33" hits="1" branch="false" />
+                <line number="17" hits="12" branch="false" />
               </lines>
             </method>
-            <method name="excluirContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="adicionarCompromisso" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="36" hits="1" branch="false" />
-                <line number="37" hits="1" branch="false" />
-                <line number="38" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
-                <line number="41" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="12" hits="3" branch="false" />
-                <line number="13" hits="3" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="12" hits="3" branch="false" />
-            <line number="13" hits="3" branch="false" />
-            <line number="18" hits="1" branch="false" />
-            <line number="19" hits="1" branch="false" />
-            <line number="20" hits="1" branch="false" />
-            <line number="22" hits="1" branch="false" />
-            <line number="23" hits="1" branch="false" />
-            <line number="26" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
-            <line number="28" hits="1" branch="false" />
-            <line number="30" hits="1" branch="false" />
-            <line number="32" hits="1" branch="false" />
-            <line number="33" hits="1" branch="false" />
-            <line number="36" hits="1" branch="false" />
-            <line number="37" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="41" hits="1" branch="false" />
-          </lines>
-        </class>
-        <class name="UnitTestProject.TestesTarefas" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\TestesTarefas.cs" line-rate="1" branch-rate="1" complexity="9">
-          <methods>
-            <method name="inserirTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="15" hits="18" branch="false" />
-              </lines>
-            </method>
-            <method name="excluirTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="16" hits="18" branch="false" />
-              </lines>
-            </method>
-            <method name="adicionarTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="20" hits="1" branch="false" />
                 <line number="21" hits="1" branch="false" />
                 <line number="22" hits="1" branch="false" />
                 <line number="23" hits="1" branch="false" />
                 <line number="24" hits="1" branch="false" />
+                <line number="25" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="editarTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="editarCompromisso" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="27" hits="1" branch="false" />
                 <line number="28" hits="1" branch="false" />
                 <line number="29" hits="1" branch="false" />
                 <line number="30" hits="1" branch="false" />
@@ -1645,76 +2242,50 @@
                 <line number="39" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="PorcentagemConclusao100AoConcluir" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="testeExcluirCompromisso" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="42" hits="1" branch="false" />
                 <line number="43" hits="1" branch="false" />
+                <line number="44" hits="1" branch="false" />
                 <line number="45" hits="1" branch="false" />
                 <line number="46" hits="1" branch="false" />
-                <line number="47" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="testeSelecionarCompromissoSemContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
                 <line number="49" hits="1" branch="false" />
+                <line number="50" hits="1" branch="false" />
                 <line number="51" hits="1" branch="false" />
+                <line number="52" hits="1" branch="false" />
                 <line number="53" hits="1" branch="false" />
                 <line number="54" hits="1" branch="false" />
                 <line number="55" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="mudarPorcentagemConclusao" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="58" hits="1" branch="false" />
-                <line number="59" hits="1" branch="false" />
-                <line number="60" hits="1" branch="false" />
-                <line number="61" hits="1" branch="false" />
-                <line number="63" hits="1" branch="false" />
-                <line number="65" hits="1" branch="false" />
-                <line number="67" hits="1" branch="false" />
-                <line number="68" hits="1" branch="false" />
-                <line number="69" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="DataConclusaoValidaAoConcluir" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="72" hits="1" branch="false" />
-                <line number="73" hits="1" branch="false" />
-                <line number="75" hits="1" branch="false" />
-                <line number="76" hits="1" branch="false" />
-                <line number="77" hits="1" branch="false" />
-                <line number="79" hits="1" branch="false" />
-                <line number="81" hits="1" branch="false" />
-                <line number="83" hits="1" branch="false" />
-                <line number="84" hits="1" branch="false" />
-                <line number="85" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="testeExcluirTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="88" hits="1" branch="false" />
-                <line number="89" hits="1" branch="false" />
-                <line number="90" hits="1" branch="false" />
-                <line number="91" hits="1" branch="false" />
-                <line number="92" hits="1" branch="false" />
-              </lines>
-            </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="6" branch="false" />
-                <line number="13" hits="6" branch="false" />
-                <line number="14" hits="6" branch="false" />
+                <line number="12" hits="4" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="1" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="12" hits="6" branch="false" />
-            <line number="13" hits="6" branch="false" />
-            <line number="14" hits="6" branch="false" />
-            <line number="15" hits="18" branch="false" />
-            <line number="16" hits="18" branch="false" />
-            <line number="20" hits="1" branch="false" />
+            <line number="12" hits="4" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="4" branch="false" />
+            <line number="16" hits="12" branch="false" />
+            <line number="17" hits="12" branch="false" />
             <line number="21" hits="1" branch="false" />
             <line number="22" hits="1" branch="false" />
             <line number="23" hits="1" branch="false" />
             <line number="24" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
+            <line number="25" hits="1" branch="false" />
             <line number="28" hits="1" branch="false" />
             <line number="29" hits="1" branch="false" />
             <line number="30" hits="1" branch="false" />
@@ -1728,38 +2299,254 @@
             <line number="39" hits="1" branch="false" />
             <line number="42" hits="1" branch="false" />
             <line number="43" hits="1" branch="false" />
+            <line number="44" hits="1" branch="false" />
             <line number="45" hits="1" branch="false" />
             <line number="46" hits="1" branch="false" />
-            <line number="47" hits="1" branch="false" />
             <line number="49" hits="1" branch="false" />
+            <line number="50" hits="1" branch="false" />
             <line number="51" hits="1" branch="false" />
+            <line number="52" hits="1" branch="false" />
             <line number="53" hits="1" branch="false" />
             <line number="54" hits="1" branch="false" />
             <line number="55" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="UnitTestProject.TestesContatos" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\TestesContatos.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="inserirContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="9" branch="false" />
+              </lines>
+            </method>
+            <method name="excluirContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="9" branch="false" />
+              </lines>
+            </method>
+            <method name="adicionarContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="20" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="editarContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="1" branch="false" />
+                <line number="26" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+                <line number="32" hits="1" branch="false" />
+                <line number="33" hits="1" branch="false" />
+                <line number="34" hits="1" branch="false" />
+                <line number="35" hits="1" branch="false" />
+                <line number="36" hits="1" branch="false" />
+                <line number="37" hits="1" branch="false" />
+                <line number="38" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="ExcluirContato" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="41" hits="1" branch="false" />
+                <line number="42" hits="1" branch="false" />
+                <line number="43" hits="1" branch="false" />
+                <line number="44" hits="1" branch="false" />
+                <line number="45" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="3" branch="false" />
+                <line number="11" hits="3" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="3" branch="false" />
+            <line number="11" hits="3" branch="false" />
+            <line number="13" hits="9" branch="false" />
+            <line number="14" hits="9" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="20" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="25" hits="1" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="32" hits="1" branch="false" />
+            <line number="33" hits="1" branch="false" />
+            <line number="34" hits="1" branch="false" />
+            <line number="35" hits="1" branch="false" />
+            <line number="36" hits="1" branch="false" />
+            <line number="37" hits="1" branch="false" />
+            <line number="38" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="42" hits="1" branch="false" />
+            <line number="43" hits="1" branch="false" />
+            <line number="44" hits="1" branch="false" />
+            <line number="45" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="UnitTestProject.TestesTarefas" filename="C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\TestesTarefas.cs" line-rate="1" branch-rate="1" complexity="9">
+          <methods>
+            <method name="inserirTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="18" branch="false" />
+              </lines>
+            </method>
+            <method name="excluirTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="18" branch="false" />
+              </lines>
+            </method>
+            <method name="adicionarTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="1" branch="false" />
+                <line number="20" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="23" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="editarTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="32" hits="1" branch="false" />
+                <line number="33" hits="1" branch="false" />
+                <line number="34" hits="1" branch="false" />
+                <line number="35" hits="1" branch="false" />
+                <line number="36" hits="1" branch="false" />
+                <line number="37" hits="1" branch="false" />
+                <line number="38" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="PorcentagemConclusao100AoConcluir" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="41" hits="1" branch="false" />
+                <line number="42" hits="1" branch="false" />
+                <line number="44" hits="1" branch="false" />
+                <line number="45" hits="1" branch="false" />
+                <line number="46" hits="1" branch="false" />
+                <line number="48" hits="1" branch="false" />
+                <line number="50" hits="1" branch="false" />
+                <line number="52" hits="1" branch="false" />
+                <line number="53" hits="1" branch="false" />
+                <line number="54" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="mudarPorcentagemConclusao" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="57" hits="1" branch="false" />
+                <line number="58" hits="1" branch="false" />
+                <line number="59" hits="1" branch="false" />
+                <line number="60" hits="1" branch="false" />
+                <line number="62" hits="1" branch="false" />
+                <line number="64" hits="1" branch="false" />
+                <line number="66" hits="1" branch="false" />
+                <line number="67" hits="1" branch="false" />
+                <line number="68" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="DataConclusaoValidaAoConcluir" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="71" hits="1" branch="false" />
+                <line number="72" hits="1" branch="false" />
+                <line number="74" hits="1" branch="false" />
+                <line number="75" hits="1" branch="false" />
+                <line number="76" hits="1" branch="false" />
+                <line number="78" hits="1" branch="false" />
+                <line number="80" hits="1" branch="false" />
+                <line number="82" hits="1" branch="false" />
+                <line number="83" hits="1" branch="false" />
+                <line number="84" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="testeExcluirTarefa" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="87" hits="1" branch="false" />
+                <line number="88" hits="1" branch="false" />
+                <line number="89" hits="1" branch="false" />
+                <line number="90" hits="1" branch="false" />
+                <line number="91" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="6" branch="false" />
+                <line number="12" hits="6" branch="false" />
+                <line number="13" hits="6" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="6" branch="false" />
+            <line number="12" hits="6" branch="false" />
+            <line number="13" hits="6" branch="false" />
+            <line number="14" hits="18" branch="false" />
+            <line number="15" hits="18" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="20" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="23" hits="1" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="32" hits="1" branch="false" />
+            <line number="33" hits="1" branch="false" />
+            <line number="34" hits="1" branch="false" />
+            <line number="35" hits="1" branch="false" />
+            <line number="36" hits="1" branch="false" />
+            <line number="37" hits="1" branch="false" />
+            <line number="38" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="42" hits="1" branch="false" />
+            <line number="44" hits="1" branch="false" />
+            <line number="45" hits="1" branch="false" />
+            <line number="46" hits="1" branch="false" />
+            <line number="48" hits="1" branch="false" />
+            <line number="50" hits="1" branch="false" />
+            <line number="52" hits="1" branch="false" />
+            <line number="53" hits="1" branch="false" />
+            <line number="54" hits="1" branch="false" />
+            <line number="57" hits="1" branch="false" />
             <line number="58" hits="1" branch="false" />
             <line number="59" hits="1" branch="false" />
             <line number="60" hits="1" branch="false" />
-            <line number="61" hits="1" branch="false" />
-            <line number="63" hits="1" branch="false" />
-            <line number="65" hits="1" branch="false" />
+            <line number="62" hits="1" branch="false" />
+            <line number="64" hits="1" branch="false" />
+            <line number="66" hits="1" branch="false" />
             <line number="67" hits="1" branch="false" />
             <line number="68" hits="1" branch="false" />
-            <line number="69" hits="1" branch="false" />
+            <line number="71" hits="1" branch="false" />
             <line number="72" hits="1" branch="false" />
-            <line number="73" hits="1" branch="false" />
+            <line number="74" hits="1" branch="false" />
             <line number="75" hits="1" branch="false" />
             <line number="76" hits="1" branch="false" />
-            <line number="77" hits="1" branch="false" />
-            <line number="79" hits="1" branch="false" />
-            <line number="81" hits="1" branch="false" />
+            <line number="78" hits="1" branch="false" />
+            <line number="80" hits="1" branch="false" />
+            <line number="82" hits="1" branch="false" />
             <line number="83" hits="1" branch="false" />
             <line number="84" hits="1" branch="false" />
-            <line number="85" hits="1" branch="false" />
+            <line number="87" hits="1" branch="false" />
             <line number="88" hits="1" branch="false" />
             <line number="89" hits="1" branch="false" />
             <line number="90" hits="1" branch="false" />
             <line number="91" hits="1" branch="false" />
-            <line number="92" hits="1" branch="false" />
           </lines>
         </class>
       </classes>

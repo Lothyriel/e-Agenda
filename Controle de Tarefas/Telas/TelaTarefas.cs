@@ -20,7 +20,7 @@ namespace Controle_de_Tarefas.Telas
                 Console.WriteLine("Escolha uma opção: \n");
                 Console.WriteLine("Digite 1 para visualizar tarefas pendentes");
                 Console.WriteLine("Digite 2 para visualizar tarefas concluídas");
-                Console.WriteLine("Digite 3 para cadastrar novas tarefas");
+                Console.WriteLine("Digite 3 para cadastrar novas tarefas\n");
                 Console.WriteLine("Digite S para Voltar\n");
                 TipoMensagem.Requisicao.mostrarMensagem("Opção:");
                 opcao = Console.ReadLine().ToUpperInvariant();

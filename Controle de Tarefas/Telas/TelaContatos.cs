@@ -1,7 +1,6 @@
 ﻿using Controle_de_Tarefas.Controladores;
 using Controle_de_Tarefas.Dominio;
 using System;
-using System.Linq;
 
 namespace Controle_de_Tarefas.Telas
 {
@@ -20,7 +19,7 @@ namespace Controle_de_Tarefas.Telas
                 Console.WriteLine("Digite 1 para visualizar contatos cadastrados");
                 Console.WriteLine("Digite 2 para cadastrar um novo contato");
                 Console.WriteLine("Digite 3 para editar um contato");
-                Console.WriteLine("Digite 4 para excluir um contato");
+                Console.WriteLine("Digite 4 para excluir um contato\n");
                 Console.WriteLine("Digite S para Voltar\n");
                 TipoMensagem.Requisicao.mostrarMensagem("Opção:");
                 opcao = Console.ReadLine().ToUpperInvariant();

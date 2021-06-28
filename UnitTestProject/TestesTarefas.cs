@@ -2,7 +2,6 @@
 using Controle_de_Tarefas.Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Linq;
 
 namespace UnitTestProject
 {

@@ -1,71 +1,18 @@
 ﻿using Controle_de_Tarefas.Controladores;
-using Controle_de_Tarefas.Domínio;
 using Controle_de_Tarefas.Dominio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Controle_de_Tarefas.Telas
 {
     class TelaCompromissos : Tela<Compromisso>
     {
-        ControladorCompromissos ccompro = new ControladorCompromissos();
-        ControladorContatos ccontat = new ControladorContatos();
+        private new ControladorCompromissos controlador = new ControladorCompromissos();
+        private ControladorContatos ccontat = new ControladorContatos();
 
         public TelaCompromissos() : base(new ControladorCompromissos()) { }
-        public override void menu()
-        {
-            String opcao = "";
-            while (opcao != "S")
-            {
-                Console.Clear();
-                Console.WriteLine("Escolha uma opção: \n");
-                Console.WriteLine("Digite 1 para visualizar compromissos");
-                Console.WriteLine("Digite 2 para cadastrar um novo compromisso");
-                Console.WriteLine("Digite 3 para editar um compromisso");
-                Console.WriteLine("Digite 4 para excluir um compromisso");
-                Console.WriteLine("Digite S para Voltar\n");
-                TipoMensagem.Requisicao.mostrarMensagem("Opção:");
-                opcao = Console.ReadLine().ToUpperInvariant();
-                switch (opcao)
-                {
-                    case "1": menuVisualizar(); break;
-                    case "2": cadastrar(); break;
-                    case "3": editar(); break;
-                    case "4": excluir(); break;
-                    case "S": break;
-                    default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
-                }
-            }
-        }
-
-        private void menuVisualizar()
-        {
-            String opcao = "";
-            while (opcao != "S")
-            {
-                Console.Clear();
-                Console.WriteLine("Escolha uma opção: \n");
-                Console.WriteLine("Digite 1 para visualizar compromissos futuros");
-                Console.WriteLine("Digite 2 para visualizar compromissos passados");
-                Console.WriteLine("Digite 3 para visualizar todos os compromissos cadastrados");
-                TipoMensagem.Requisicao.mostrarMensagem("Opção:");
-                opcao = Console.ReadLine().ToUpperInvariant();
-                switch (opcao)
-                {
-                    case "1": visualizar(ccompro.compromissosFuturos()); break;
-                    case "2": visualizar(ccompro.compromissosPassados()); break;
-                    case "3": visualizar(); break;
-                    case "S": break;
-                    default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
-                }
-            }
-        }
-
         public override Compromisso registroValido()
         {
+            Console.Clear();
             String assunto;
             String local;
             DateTime data_inicio;
@@ -122,6 +69,90 @@ namespace Controle_de_Tarefas.Telas
             contato = strContato != "S" ? ccontat.getById(Convert.ToInt32(strContato)) : null;
 
             return new Compromisso(assunto, local, data_inicio, data_fim, contato);
+        }
+        public override void menu()
+        {
+            String opcao = "";
+            while (opcao != "S")
+            {
+                Console.Clear();
+                Console.WriteLine("Escolha uma opção: \n");
+                Console.WriteLine("Digite 1 para o menu visualização de compromissos");
+                Console.WriteLine("Digite 2 para cadastrar um novo compromisso");
+                Console.WriteLine("Digite 3 para editar um compromisso");
+                Console.WriteLine("Digite 4 para excluir um compromisso\n");
+                Console.WriteLine("Digite S para Voltar\n");
+                TipoMensagem.Requisicao.mostrarMensagem("Opção:");
+                opcao = Console.ReadLine().ToUpperInvariant();
+                switch (opcao)
+                {
+                    case "1": menuVisualizar(); break;
+                    case "2": cadastrar(); break;
+                    case "3": editar(); break;
+                    case "4": excluir(); break;
+                    case "S": break;
+                    default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
+                }
+            }
+        }
+        private void menuVisualizar()
+        {
+            String opcao = "";
+            while (opcao != "S")
+            {
+                Console.Clear();
+                Console.WriteLine("Escolha uma opção: \n");
+                Console.WriteLine("Digite 1 para visualizar compromissos futuros");
+                Console.WriteLine("Digite 2 para visualizar compromissos passados");
+                Console.WriteLine("Digite 3 para visualizar todos os compromissos cadastrados\n");
+                Console.WriteLine("Digite S para Voltar\n");
+                TipoMensagem.Requisicao.mostrarMensagem("Opção:");
+                opcao = Console.ReadLine().ToUpperInvariant();
+                switch (opcao)
+                {
+                    case "1": visualizarFuturos(); break;
+                    case "2": visualizar(controlador.compromissosPassados()); break;
+                    case "3": visualizar(); break;
+                    case "S": break;
+                    default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
+                }
+            }
+        }
+        private void visualizarFuturos()
+        {
+            String opcao = "";
+            while (opcao != "S")
+            {
+                Console.Clear();
+                Console.WriteLine("Escolha uma opção: \n");
+                Console.WriteLine("Digite 1 para visualizar compromissos nos próximos 7 dias");
+                Console.WriteLine("Digite 2 para visualizar compromissos no próximo mês");
+                Console.WriteLine("Digite 3 para visualizar todos os compromissos até certa data\n");
+                Console.WriteLine("Digite S para Voltar\n");
+                TipoMensagem.Requisicao.mostrarMensagem("Opção:");
+                opcao = Console.ReadLine().ToUpperInvariant();
+                switch (opcao)
+                {
+                    case "1": visualizar(controlador.filtrarPorPeriodo(new TimeSpan(7, 0, 0, 0, 0))); break;
+                    case "2": visualizar(controlador.filtrarPorPeriodo(new TimeSpan(28, 0, 0, 0, 0))); break;
+                    case "3": visualizar(controlador.filtrarPorData(getDate())); break;
+                    case "S": break;
+                    default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
+                }
+            }
+        }
+        private DateTime getDate()
+        {
+            DateTime date;
+            while (true)
+            {
+                TipoMensagem.Requisicao.mostrarMensagem("Digite uma data para filtrar compromissos\n");
+                String strDate = Console.ReadLine();
+                if (DateTime.TryParse(strDate, out date))
+                    break;
+                TipoMensagem.Erro.mostrarMensagem("\nDigite uma data válida");
+            }
+            return date;
         }
     }
 }

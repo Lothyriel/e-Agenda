@@ -29,7 +29,7 @@ namespace Controle_de_Tarefas.Telas
                 Console.WriteLine("Digite 1 para cadastrar novos objetivos para esta tarefa");
                 Console.WriteLine("Digite 2 para marcar objetivos como concluídos");
                 Console.WriteLine("Digite 3 para editar esta tarefa");
-                Console.WriteLine("Digite 4 para excluir esta tarefa");
+                Console.WriteLine("Digite 4 para excluir esta tarefa\n");
                 Console.WriteLine("Digite S para Voltar\n");
                 TipoMensagem.Requisicao.mostrarMensagem("Opção:");
                 opcao = Console.ReadLine().ToUpperInvariant();

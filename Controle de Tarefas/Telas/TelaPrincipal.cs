@@ -12,7 +12,8 @@ namespace Controle_de_Tarefas.Telas
                 Console.Clear();
                 Console.WriteLine("Escolha uma opção: \n");
                 Console.WriteLine("Digite 1 para menu de Tarefas");
-                Console.WriteLine("Digite 2 para menu de Contatos\n");
+                Console.WriteLine("Digite 2 para menu de Contatos");
+                Console.WriteLine("Digite 3 para menu de Compromissos\n");
 
                 TipoMensagem.Requisicao.mostrarMensagem("Opção:");
                 opcao = Console.ReadLine().ToUpperInvariant();
@@ -25,6 +26,7 @@ namespace Controle_de_Tarefas.Telas
             {
                 case "1": return new TelaTarefas();
                 case "2": return new TelaContatos();
+                case "3": return new TelaCompromissos();
                 default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); return this;
             }
         }

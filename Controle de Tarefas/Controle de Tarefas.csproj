@@ -192,6 +192,7 @@
     <Compile Include="Controlador\ControladorCompromissos.cs" />
     <Compile Include="Controlador\ControladorTarefas.cs" />
     <Compile Include="Controlador\ControladorObjetivos.cs" />
+    <Compile Include="Controlador\Db.cs" />
     <Compile Include="Domínio\Compromisso.cs" />
     <Compile Include="Domínio\Entidade.cs" />
     <Compile Include="Domínio\Objetivo.cs" />

@@ -1,9 +1,8 @@
-﻿using Controle_de_Tarefas.Dominio;
-using System;
+﻿using System;
 
-namespace Controle_de_Tarefas.Domínio
+namespace Controle_de_Tarefas.Dominio
 {
-    class Compromisso : Entidade
+    public class Compromisso : Entidade
     {
         public Compromisso(String assunto, String local, DateTime data_inicio, DateTime data_fim, Contato contato)
         {
@@ -12,7 +11,6 @@ namespace Controle_de_Tarefas.Domínio
             this.data_inicio = data_inicio;
             this.data_fim = data_fim;
             this.contato = contato;
-
         }
         public Contato contato;
         public String assunto { get; set; }
@@ -21,7 +19,7 @@ namespace Controle_de_Tarefas.Domínio
         public DateTime data_fim { get; set; }
         public override string ToString()
         {
-            return $"Assunto: {assunto} | Local: {local} | Data: {data_inicio.ToString("g")} | Fim: {data_fim.ToString("t")} | Contato: {contato} ";
+            return $"Assunto: {assunto} | Local: {local} | Data: {data_inicio.ToString("g")} | Fim: {data_fim.ToString("t")} {(contato != null ? $"| Contato: {contato.nome}" : " ")}";
         }
     }
 }
