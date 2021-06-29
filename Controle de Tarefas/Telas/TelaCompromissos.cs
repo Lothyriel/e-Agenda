@@ -95,6 +95,7 @@ namespace Controle_de_Tarefas.Telas
                 }
             }
         }
+
         private void menuVisualizar()
         {
             String opcao = "";

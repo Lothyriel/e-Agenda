@@ -41,7 +41,7 @@ namespace Controle_de_Tarefas.Controladores
             @"DELETE FROM [TBCONTATOS] 
                 WHERE [ID] = @ID";
 
-        private const string sqlSelecionarTodasContatos =
+        private const string sqlSelecionarTodosContatos =
             @"SELECT 
                 [ID],       
                 [NOME],       
@@ -66,28 +66,13 @@ namespace Controle_de_Tarefas.Controladores
                 [ID] = @ID";
 
         #endregion
-        public override void inserir(Contato registro)
-        {
-            registro.id = Db.Insert(sqlInserirContato, ObtemParametrosContato(registro));
-        }
-        public override void editar(int id, Contato registro)
-        {
-            registro.id = id;
-            Db.Update(sqlEditarContato, ObtemParametrosContato(registro));
-        }
-        public override void excluir(int id)
-        {
-            Db.Delete(sqlExcluirContato, AdicionarParametro("ID", id));
-        }
-        public override Contato getById(int id)
-        {
-            return Db.Get(sqlSelecionarContatoPorId, ConverterEmContato, AdicionarParametro("ID", id));
-        }
-        public override List<Contato> obterRegistros()
-        {
-            return Db.GetAll(sqlSelecionarTodasContatos, ConverterEmContato);
-        }
-        private Contato ConverterEmContato(IDataReader reader)
+        public override string sqlInserir => sqlInserirContato;
+        public override string sqlEditar => sqlEditarContato;
+        public override string sqlExcluir => sqlExcluirContato;
+        public override string sqlSelecionarPorId => sqlSelecionarContatoPorId;
+        public override string sqlSelecionarTodos => sqlSelecionarTodosContatos;
+
+        public override Contato ConverterEmRegistro(IDataReader reader)
         {
             var nome = Convert.ToString(reader["NOME"]);
             var email = Convert.ToString(reader["EMAIL"]);
@@ -102,23 +87,21 @@ namespace Controle_de_Tarefas.Controladores
 
             return contato;
         }
-        private Dictionary<string, object> ObtemParametrosContato(Contato contato)
+        public override Dictionary<string, object> ObtemParametrosRegistro(Contato contato)
         {
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("ID", contato.id);
-            parametros.Add("CARGO", contato.cargo);
-            parametros.Add("EMAIL", contato.email);
-            parametros.Add("EMPRESA", contato.empresa);
-            parametros.Add("NOME", contato.nome);
-            parametros.Add("TELEFONE", contato.telefone);
+            var parametros = new Dictionary<string, object>
+            {
+                { "ID", contato.id },
+                { "CARGO", contato.cargo },
+                { "EMAIL", contato.email },
+                { "EMPRESA", contato.empresa },
+                { "NOME", contato.nome },
+                { "TELEFONE", contato.telefone }
+            };
 
             return parametros;
         }
-        private static Dictionary<string, object> AdicionarParametro(string campo, int valor)
-        {
-            return new Dictionary<string, object>() { { campo, valor } };
-        }
+
         public List<Contato> ordenadosPorCargo()
         {
             return Registros.OrderBy(x => x.cargo).ToList();

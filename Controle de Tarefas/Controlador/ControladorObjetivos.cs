@@ -56,51 +56,26 @@ namespace Controle_de_Tarefas.Controladores
                 [ID] = @ID";
 
         #endregion
-        public override void inserir(Objetivo registro)
-        {
-            registro.id = Db.Insert(sqlInserirObjetivo, ObtemParametrosObjetivo(registro));
-        }
-        public override void editar(int id, Objetivo registro)
-        {
-            registro.id = id;
-            Db.Update(sqlEditarObjetivo, ObtemParametrosObjetivo(registro));
-        }
-        public override void excluir(int id)
-        {
-            Db.Delete(sqlExcluirObjetivo, AdicionarParametro("ID", id));
-        }
-        public override Objetivo getById(int id)
-        {
-            return Db.Get(sqlSelecionarObjetivoPorId, ConverterEmObjetivo, AdicionarParametro("ID", id));
-        }
-        public override List<Objetivo> obterRegistros()
-        {
-            return Db.GetAll(sqlSelecionarTodosObjetivos, ConverterEmObjetivo);
-        }
-        public List<Objetivo> objetivosCompletos(int id_tarefa)
-        {
-            return objetivosTarefa(id_tarefa).Where(x => x.finalizado).ToList();
-        }
-        public List<Objetivo> objetivosIncompletos(int id_tarefa)
-        {
-            return objetivosTarefa(id_tarefa).Where(x => !x.finalizado).ToList();
-        }
-        public List<Objetivo> objetivosTarefa(int id_tarefa)
-        {
-            return obterRegistros().Where(x => x.id_tarefa == id_tarefa).ToList();
-        }
-        private Objetivo ConverterEmObjetivo(IDataReader reader)
+        public override string sqlInserir => sqlInserirObjetivo;
+        public override string sqlEditar => sqlEditarObjetivo;
+        public override string sqlExcluir => sqlExcluirObjetivo;
+        public override string sqlSelecionarPorId => sqlSelecionarObjetivoPorId;
+        public override string sqlSelecionarTodos => sqlSelecionarTodosObjetivos;
+
+        public override Objetivo ConverterEmRegistro(IDataReader reader)
         {
             var descricao = Convert.ToString(reader["DESCRICAO"]);
             var finalizado = Convert.ToBoolean(reader["FINALIZADO"]);
             var id_tarefa = Convert.ToInt32(reader["ID_TAREFA"]);
 
-            Objetivo objetivo = new Objetivo(descricao, finalizado, id_tarefa);
-            objetivo.id = Convert.ToInt32(reader["ID"]);
+            Objetivo objetivo = new Objetivo(descricao, finalizado, id_tarefa)
+            {
+                id = Convert.ToInt32(reader["ID"])
+            };
 
             return objetivo;
         }
-        private Dictionary<string, object> ObtemParametrosObjetivo(Objetivo objetivo)
+        public override Dictionary<string, object> ObtemParametrosRegistro(Objetivo objetivo)
         {
             var parametros = new Dictionary<string, object>
             {
@@ -112,10 +87,7 @@ namespace Controle_de_Tarefas.Controladores
 
             return parametros;
         }
-        private static Dictionary<string, object> AdicionarParametro(string campo, int valor)
-        {
-            return new Dictionary<string, object>() { { campo, valor } };
-        }
+
         public String ToString(int id_tarefa)
         {
             var objetivos = objetivosTarefa(id_tarefa);
@@ -126,6 +98,18 @@ namespace Controle_de_Tarefas.Controladores
             foreach (var objetivo in objetivos)
                 strObjetivos += "- " + objetivo.ToString("sem ID") + "\n";
             return strObjetivos;
+        }
+        public List<Objetivo> objetivosCompletos(int id_tarefa)
+        {
+            return objetivosTarefa(id_tarefa).Where(x => x.finalizado).ToList();
+        }
+        public List<Objetivo> objetivosIncompletos(int id_tarefa)
+        {
+            return objetivosTarefa(id_tarefa).Where(x => !x.finalizado).ToList();
+        }
+        public List<Objetivo> objetivosTarefa(int id_tarefa)
+        {
+            return Registros.Where(x => x.id_tarefa == id_tarefa).ToList();
         }
     }
 }

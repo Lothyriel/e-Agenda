@@ -41,7 +41,7 @@ namespace Controle_de_Tarefas.Controladores
             @"DELETE FROM [TBCOMPROMISSOS] 
                 WHERE [ID] = @ID";
 
-        private const string sqlSelecionarTodasCompromissos =
+        private const string sqlSelecionarTodosCompromissos =
             @"SELECT 
                 [ID],       
                 [ASSUNTO],       
@@ -66,40 +66,13 @@ namespace Controle_de_Tarefas.Controladores
                 [ID] = @ID";
 
         #endregion
-        public override void inserir(Compromisso registro)
-        {
-            registro.id = Db.Insert(sqlInserirCompromisso, ObtemParametrosCompromisso(registro));
-        }
-        public override void editar(int id, Compromisso registro)
-        {
-            registro.id = id;
-            Db.Update(sqlEditarCompromisso, ObtemParametrosCompromisso(registro));
-        }
-        public override void excluir(int id)
-        {
-            Db.Delete(sqlExcluirCompromisso, AdicionarParametro("ID", id));
-        }
-        public override Compromisso getById(int id)
-        {
-            return Db.Get(sqlSelecionarCompromissoPorId, ConverterEmCompromisso, AdicionarParametro("ID", id));
-        }
-        public override List<Compromisso> obterRegistros()
-        {
-            return Db.GetAll(sqlSelecionarTodasCompromissos, ConverterEmCompromisso);
-        }
-        public List<Compromisso> filtrarPorPeriodo(TimeSpan periodo)
-        {
-            return Registros.Where(x => x.data_fim < x.data_fim.Add(periodo)).ToList();
-        }
-        public List<Compromisso> filtrarPorData(DateTime dataMax)
-        {
-            return Registros.Where(x => x.data_fim < dataMax).ToList();
-        }
-        public List<Compromisso> compromissosPassados()
-        {
-            return filtrarPorData(DateTime.Now);
-        }
-        private Compromisso ConverterEmCompromisso(IDataReader reader)
+        public override string sqlInserir => sqlInserirCompromisso;
+        public override string sqlEditar => sqlEditarCompromisso;
+        public override string sqlExcluir => sqlExcluirCompromisso;
+        public override string sqlSelecionarPorId => sqlSelecionarCompromissoPorId;
+        public override string sqlSelecionarTodos => sqlSelecionarTodosCompromissos;
+
+        public override Compromisso ConverterEmRegistro(IDataReader reader)
         {
             var assunto = Convert.ToString(reader["ASSUNTO"]);
             var local = Convert.ToString(reader["LOCAL"]);
@@ -115,15 +88,16 @@ namespace Controle_de_Tarefas.Controladores
 
             return compromisso;
         }
-        private Dictionary<string, object> ObtemParametrosCompromisso(Compromisso compromisso)
+        public override Dictionary<string, object> ObtemParametrosRegistro(Compromisso compromisso)
         {
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("ID", compromisso.id);
-            parametros.Add("DATA_FIM", compromisso.data_fim);
-            parametros.Add("LOCAL", compromisso.local);
-            parametros.Add("DATA_INICIO", compromisso.data_inicio);
-            parametros.Add("ASSUNTO", compromisso.assunto);
+            var parametros = new Dictionary<string, object>
+            {
+                { "ID", compromisso.id },
+                { "DATA_FIM", compromisso.data_fim },
+                { "LOCAL", compromisso.local },
+                { "DATA_INICIO", compromisso.data_inicio },
+                { "ASSUNTO", compromisso.assunto }
+            };
 
             if (compromisso.contato != null)
                 parametros.Add("ID_CONTATO", compromisso.contato.id);
@@ -132,9 +106,18 @@ namespace Controle_de_Tarefas.Controladores
 
             return parametros;
         }
-        private static Dictionary<string, object> AdicionarParametro(string campo, int valor)
+
+        public List<Compromisso> filtrarPorPeriodo(TimeSpan periodo)
         {
-            return new Dictionary<string, object>() { { campo, valor } };
+            return Registros.Where(x => x.data_fim < x.data_fim.Add(periodo)).ToList();
+        }
+        public List<Compromisso> filtrarPorData(DateTime dataMax)
+        {
+            return Registros.Where(x => x.data_fim < dataMax).ToList();
+        }
+        public List<Compromisso> compromissosPassados()
+        {
+            return filtrarPorData(DateTime.Now);
         }
     }
 }

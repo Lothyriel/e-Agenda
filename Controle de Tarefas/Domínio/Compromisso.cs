@@ -19,7 +19,7 @@ namespace Controle_de_Tarefas.Dominio
         public DateTime data_fim { get; set; }
         public override string ToString()
         {
-            return $"Assunto: {assunto} | Local: {local} | Data: {data_inicio.ToString("g")} | Fim: {data_fim.ToString("t")} {(contato != null ? $"| Contato: {contato.nome}" : " ")}";
+            return $"Assunto: {assunto} | Local: {local} | Data: {data_inicio:g} | Fim: {data_fim:t)} {(contato != null ? $"| Contato: {contato.nome}" : " ")}";
         }
     }
 }

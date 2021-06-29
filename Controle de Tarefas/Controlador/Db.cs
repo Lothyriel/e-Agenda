@@ -87,6 +87,7 @@ namespace Controle_de_Tarefas.Controladores
             connection.Close();
             return t;
         }
+
         private static void SetParameters(this SqlCommand command, Dictionary<string, object> parameters)
         {
             if (parameters == null || parameters.Count == 0)

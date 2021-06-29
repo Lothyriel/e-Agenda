@@ -97,36 +97,13 @@ namespace Controle_de_Tarefas.Controladores
                 T.[PRIORIDADE] DESC";
 
         #endregion
-        public override void inserir(Tarefa registro)
-        {
-            registro.id = Db.Insert(sqlInserirTarefa, ObtemParametrosTarefa(registro));
-        }
-        public override void editar(int id, Tarefa registro)
-        {
-            registro.id = id;
-            Db.Update(sqlEditarTarefa, ObtemParametrosTarefa(registro));
-        }
-        public override void excluir(int id)
-        {
-            Db.Delete(sqlExcluirTarefa, AdicionarParametro("ID", id));
-        }
-        public override Tarefa getById(int id)
-        {
-            return Db.Get(sqlSelecionarTarefaPorId, ConverterEmTarefa, AdicionarParametro("ID", id));
-        }
-        public override List<Tarefa> obterRegistros()
-        {
-            return Db.GetAll(sqlSelecionarTodasTarefas, ConverterEmTarefa);
-        }
-        public List<Tarefa> tarefasCompletas()
-        {
-            return Db.GetAll(sqlSelecionarTodasTarefasConcluidas, ConverterEmTarefa);
-        }
-        public List<Tarefa> tarefasIncompletas()
-        {
-            return Db.GetAll(sqlSelecionarTodasTarefasPendentes, ConverterEmTarefa);
-        }
-        private Tarefa ConverterEmTarefa(IDataReader reader)
+        public override string sqlInserir => sqlInserirTarefa;
+        public override string sqlEditar => sqlEditarTarefa;
+        public override string sqlExcluir => sqlExcluirTarefa;
+        public override string sqlSelecionarPorId => sqlSelecionarTarefaPorId;
+        public override string sqlSelecionarTodos => sqlSelecionarTodasTarefas;
+
+        public override Tarefa ConverterEmRegistro(IDataReader reader)
         {
             var titulo = Convert.ToString(reader["TITULO"]);
             var prioridade = Convert.ToInt32(reader["PRIORIDADE"]);
@@ -145,22 +122,28 @@ namespace Controle_de_Tarefas.Controladores
 
             return tarefa;
         }
-        private Dictionary<string, object> ObtemParametrosTarefa(Tarefa tarefa)
+        public override Dictionary<string, object> ObtemParametrosRegistro(Tarefa tarefa)
         {
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("ID", tarefa.id);
-            parametros.Add("TITULO", tarefa.titulo);
-            parametros.Add("PRIORIDADE", tarefa.prioridade);
-            parametros.Add("DT_CRIACAO", tarefa.dt_criacao);
-            parametros.Add("DT_CONCLUSAO", tarefa.dt_conclusao);
-            parametros.Add("PORCENTAGEM_CONCLUSAO", tarefa.porcentagem_conclusao);
+            var parametros = new Dictionary<string, object>
+            {
+                { "ID", tarefa.id },
+                { "TITULO", tarefa.titulo },
+                { "PRIORIDADE", tarefa.prioridade },
+                { "DT_CRIACAO", tarefa.dt_criacao },
+                { "DT_CONCLUSAO", tarefa.dt_conclusao },
+                { "PORCENTAGEM_CONCLUSAO", tarefa.porcentagem_conclusao }
+            };
 
             return parametros;
         }
-        private static Dictionary<string, object> AdicionarParametro(string campo, int valor)
+
+        public List<Tarefa> tarefasCompletas()
         {
-            return new Dictionary<string, object>() { { campo, valor } };
+            return Db.GetAll(sqlSelecionarTodasTarefasConcluidas, ConverterEmRegistro);
+        }
+        public List<Tarefa> tarefasIncompletas()
+        {
+            return Db.GetAll(sqlSelecionarTodasTarefasPendentes, ConverterEmRegistro);
         }
     }
 }
