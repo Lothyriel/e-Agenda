@@ -136,7 +136,7 @@ namespace Controle_de_Tarefas.Telas
                 {
                     case "1": visualizar(controlador.filtrarPorPeriodo(new TimeSpan(7, 0, 0, 0, 0))); break;
                     case "2": visualizar(controlador.filtrarPorPeriodo(new TimeSpan(28, 0, 0, 0, 0))); break;
-                    case "3": visualizar(controlador.filtrarPorData(getDate())); break;
+                    case "3": visualizar(controlador.compromissosFuturos(getDate())); break;
                     case "S": break;
                     default: TipoMensagem.Erro.mostrarMensagem("\nSelecione uma opcão correta!"); break;
                 }

@@ -1,20 +1,24 @@
-﻿using System;
+﻿using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace Controle_de_Tarefas.Controladores
 {
-    public delegate T ConverterDelegate<T>(IDataReader reader);
+    public delegate T ConverterDelegate<T>(DbDataReader reader);
 
     public static class Db
     {
-        private static readonly string connectionString = @"Data Source=(LocalDB)\MSSqlLocalDB;Initial Catalog=DBControleTarefas;Integrated Security=True;Pooling=False";
+        private static string bancoSelecionado = ConfigurationManager.AppSettings["bancoDeDados"];
+        private static string connectionString = ConfigurationManager.ConnectionStrings[bancoSelecionado].ConnectionString;
+
         public static int Insert(string sql, Dictionary<string, object> parameters)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql.AppendSelectIdentity(), connection);
+            DbConnection connection = dbConnection();
+            DbCommand command = dbComand(sql.AppendSelectIdentity(), connection);
 
             command.SetParameters(parameters);
 
@@ -28,9 +32,8 @@ namespace Controle_de_Tarefas.Controladores
         }
         public static void Update(string sql, Dictionary<string, object> parameters)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
+            DbConnection connection = dbConnection();
+            DbCommand command = dbComand(sql, connection);
 
             command.SetParameters(parameters);
 
@@ -40,17 +43,14 @@ namespace Controle_de_Tarefas.Controladores
 
             connection.Close();
         }
-        public static void Delete(string sql, Dictionary<string, object> parameters)
+        public static void Delete(string sql, Dictionary<string, object> parameters = null)
         {
             Update(sql, parameters);
         }
-        public static List<T> GetAll<T>(string sql, ConverterDelegate<T> convert, Dictionary<string, object> parameters = null)
+        public static List<T> GetAll<T>(string sql, ConverterDelegate<T> convert)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
-
-            command.SetParameters(parameters);
+            DbConnection connection = dbConnection();
+            DbCommand command = dbComand(sql, connection);
 
             connection.Open();
 
@@ -63,15 +63,13 @@ namespace Controle_de_Tarefas.Controladores
                 var obj = convert(reader);
                 list.Add(obj);
             }
-
             connection.Close();
             return list;
         }
         public static T Get<T>(string sql, ConverterDelegate<T> convert, Dictionary<string, object> parameters)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(sql, connection);
+            DbConnection connection = dbConnection();
+            DbCommand command = dbComand(sql, connection);
 
             command.SetParameters(parameters);
 
@@ -87,8 +85,7 @@ namespace Controle_de_Tarefas.Controladores
             connection.Close();
             return t;
         }
-
-        private static void SetParameters(this SqlCommand command, Dictionary<string, object> parameters)
+        private static void SetParameters(this DbCommand command, Dictionary<string, object> parameters)
         {
             if (parameters == null || parameters.Count == 0)
                 return;
@@ -100,11 +97,34 @@ namespace Controle_de_Tarefas.Controladores
 
                 string name = parameter.Key;
                 object value = parameter.Value ?? DBNull.Value;
+                DbParameter _dbParameter = dbParameter(name, value);
 
-                SqlParameter dbParameter = new SqlParameter(name, value);
-
-                command.Parameters.Add(dbParameter);
+                command.Parameters.Add(_dbParameter);
             }
+        }
+        private static DbConnection dbConnection()
+        {
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
+                return new SqlConnection(connectionString);
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
+                return new SqliteConnection(connectionString);
+            return null;
+        }
+        private static DbCommand dbComand(string sql, DbConnection connection)
+        {
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
+                return new SqlCommand(sql, (SqlConnection)connection);
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
+                return new SqliteCommand(sql, (SqliteConnection)connection);
+            return null;
+        }
+        private static DbParameter dbParameter(string name, object value)
+        {
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
+                return new SqlParameter(name, value);
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
+                return new SqliteParameter(name, value);
+            return null;
         }
         private static string AppendSelectIdentity(this string sql)
         {

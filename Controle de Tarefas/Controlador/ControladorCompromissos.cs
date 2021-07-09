@@ -71,7 +71,6 @@ namespace Controle_de_Tarefas.Controladores
         public override string sqlExcluir => sqlExcluirCompromisso;
         public override string sqlSelecionarPorId => sqlSelecionarCompromissoPorId;
         public override string sqlSelecionarTodos => sqlSelecionarTodosCompromissos;
-
         public override Compromisso ConverterEmRegistro(IDataReader reader)
         {
             var assunto = Convert.ToString(reader["ASSUNTO"]);
@@ -111,13 +110,17 @@ namespace Controle_de_Tarefas.Controladores
         {
             return Registros.Where(x => x.data_fim < x.data_fim.Add(periodo)).ToList();
         }
-        public List<Compromisso> filtrarPorData(DateTime dataMax)
-        {
-            return Registros.Where(x => x.data_fim < dataMax).ToList();
-        }
         public List<Compromisso> compromissosPassados()
         {
             return filtrarPorData(DateTime.Now);
+        }
+        public List<Compromisso> compromissosFuturos(DateTime dataMax)
+        {
+            return filtrarPorData(dataMax).Except(compromissosPassados()).ToList();
+        }
+        private List<Compromisso> filtrarPorData(DateTime dataMax)
+        {
+            return Registros.Where(x => x.data_fim < dataMax).ToList();
         }
     }
 }

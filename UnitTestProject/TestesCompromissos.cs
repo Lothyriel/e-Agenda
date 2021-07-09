@@ -2,6 +2,7 @@
 using Controle_de_Tarefas.Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using FluentAssertions;
 
 namespace UnitTestProject
 {
@@ -9,48 +10,81 @@ namespace UnitTestProject
     public class TestesCompromissos
     {
         ControladorCompromissos ccomp = new ControladorCompromissos();
-        static Contato c = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev");
-        Compromisso comp = new Compromisso("Aula ADP", "google meet", new DateTime(2021, 06, 28, 13, 30, 0), new DateTime(2021, 06, 28, 17, 30, 0), c);
+        Contato c;
+        Compromisso comp;
 
-        void inserirCompromisso() { ccomp.inserir(comp); }
-        void excluirCompromisso() { ccomp.excluir(comp.id); }
-
-        [TestMethod]
+        [TestInitialize]
         public void adicionarCompromisso()
         {
-            inserirCompromisso();
-            Assert.IsTrue(comp.id != 0);
-            excluirCompromisso();
+            c = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev");
+            new ControladorContatos().inserir(c);
+            comp = new Compromisso("Aula ADP", "google meet", new DateTime(2021, 06, 28, 13, 30, 0), new DateTime(2021, 06, 28, 17, 30, 0), c);
+
+            ccomp.inserir(comp);
+        }
+
+        [TestMethod]
+        public void inserirCompromisso()
+        {
+            comp.id.Should().NotBe(0);
         }
         [TestMethod]
         public void editarCompromisso()
         {
-            inserirCompromisso();
             Compromisso cn = new Compromisso("Aula IFSC", "google meet", new DateTime(2021, 06, 29, 8, 0, 0), new DateTime(2021, 06, 29, 12, 0, 0), c);
-            ccomp.editar(cn.id, cn);
+            ccomp.editar(comp.id, cn);
 
-            Assert.AreEqual(cn.local, comp.local);
-            Assert.AreNotEqual(cn.assunto, comp.assunto);
-            Assert.AreNotEqual(cn.data_inicio, comp.data_inicio);
-            Assert.AreNotEqual(cn.id, comp.id);
-            Assert.AreNotEqual(cn, comp);
-            excluirCompromisso();
+            ccomp.getById(cn.id).ToString().Should().Be(cn.ToString());
         }
         [TestMethod]
-        public void testeExcluirCompromisso()
+        public void excluirCompromisso()
         {
-            inserirCompromisso();
-            excluirCompromisso();
-            Assert.AreEqual(null, ccomp.getById(comp.id));
+            ccomp.excluir(comp.id);
+            ccomp.getById(comp.id).Should().BeNull();
         }
         [TestMethod]
-        public void testeSelecionarCompromissoSemContato()
+        public void inserirCompromissoSemContato()
         {
             comp.contato = null;
-            inserirCompromisso();
-            Assert.AreEqual(ccomp.getById(comp.id).id, comp.id);
-            Assert.AreEqual(ccomp.getById(comp.id).contato, comp.contato);
-            excluirCompromisso();
+            ccomp.inserir(comp);
+            ccomp.getById(comp.id).ToString().Should().Be(comp.ToString());
+        }
+        [TestMethod]
+        public void testeSelecionarCompromissoPorId()
+        {
+            ccomp.getById(comp.id).ToString().Should().Be(comp.ToString());
+        }
+        [TestMethod]
+        public void SelecionarTodosCompromissos()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", new DateTime(2021, 06, 30, 13, 30, 0), new DateTime(2021, 06, 30, 17, 30, 0), null);
+            ccomp.inserir(comp);
+
+            ccomp.Registros.Should().HaveCount(2);
+        }
+
+        [TestMethod]
+        public void SelecionarCompromissosPassados()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", new DateTime(2020, 06, 30, 13, 30, 0), new DateTime(2020, 06, 30, 17, 30, 0), null);
+            ccomp.inserir(comp);
+
+            ccomp.compromissosPassados().Should().HaveCount(2);
+        }
+        [TestMethod]
+        public void SelecionarCompromissosFuturos()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", new DateTime(2022, 06, 30, 13, 30, 0), new DateTime(2022, 06, 30, 17, 30, 0), null);
+            ccomp.inserir(comp);
+
+            ccomp.compromissosFuturos(new DateTime(2023, 01, 01)).Should().HaveCount(2);
+        }
+
+        [TestCleanup]
+        public void removerTodosCompromissos()
+        {
+            Db.Delete("DELETE FROM TBCompromissos");
+            Db.Delete("DELETE FROM TBContatos");
         }
     }
 }
