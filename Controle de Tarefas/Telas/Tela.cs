@@ -38,7 +38,7 @@ namespace Controle_de_Tarefas.Telas
                 TipoMensagem.Erro.mostrarMensagem("Selecione uma opcão válida");
                 return obterOpcao(lista);
             }
-            TipoMensagem.Sucesso.mostrarMensagem("Operação realizada com sucesso");
+            TipoMensagem.Sucesso.mostrarMensagem("Registro selecionado com sucesso");
             return opcao;
         }
         protected bool opcaoValida(string opcao, List<T> lista)
@@ -59,7 +59,7 @@ namespace Controle_de_Tarefas.Telas
         protected virtual void cadastrar()
         {
             controlador.inserir(registroValido());
-            TipoMensagem.Sucesso.mostrarMensagem("\nRegistro adicionado com sucesso");
+            TipoMensagem.Sucesso.mostrarMensagem("\nRegistro inserido com sucesso");
         }
         protected virtual void editar()
         {
@@ -112,13 +112,6 @@ namespace Controle_de_Tarefas.Telas
             Console.Write(mensagem);
             Console.ResetColor();
             if (tipo != TipoMensagem.Requisicao && tipo != TipoMensagem.Item) Console.ReadKey();
-        }
-        public static List<Object> ObterCamposDB(this SqlDataReader linha)
-        {
-            List<Object> parametros = new List<object>();
-            for (int i = 0; i < linha.FieldCount; i++)
-                parametros.Add(linha.GetValue(i));
-            return parametros;
         }
     }
 }

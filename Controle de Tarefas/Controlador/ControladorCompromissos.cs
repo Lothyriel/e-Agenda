@@ -108,19 +108,15 @@ namespace Controle_de_Tarefas.Controladores
 
         public List<Compromisso> filtrarPorPeriodo(TimeSpan periodo)
         {
-            return Registros.Where(x => x.data_fim < x.data_fim.Add(periodo)).ToList();
+            return compromissosFuturos(DateTime.Now.Add(periodo));
         }
         public List<Compromisso> compromissosPassados()
         {
-            return filtrarPorData(DateTime.Now);
+            return Db.GetAll($@"{sqlSelecionarTodos} WHERE DATA_FIM < '{DateTime.Now:yyyy-MM-dd HH:mm:ss}'", ConverterEmRegistro);
         }
         public List<Compromisso> compromissosFuturos(DateTime dataMax)
         {
-            return filtrarPorData(dataMax).Except(compromissosPassados()).ToList();
-        }
-        private List<Compromisso> filtrarPorData(DateTime dataMax)
-        {
-            return Db.GetAll($@"WHERE DATAINICIO >= '{DateTime.Now:yyyy-MM-dd HH:mm:ss}' AND DATAFIM <= '{dataMax:yyyy-MM-dd HH:mm:ss}'", ConverterEmRegistro);
+            return Db.GetAll($@"{sqlSelecionarTodos} WHERE DATA_FIM < '{dataMax:yyyy-MM-dd HH:mm:ss}'", ConverterEmRegistro);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Controle_de_Tarefas.Controladores
             @"DELETE FROM [TBCONTATOS] 
                 WHERE [ID] = @ID";
 
-        private const string sqlSelecionarTodosContatos =
+        private const string sqlSelecionarTodosContatos =           //nao to usando agora 
             @"SELECT 
                 [ID],       
                 [NOME],       
@@ -65,12 +65,25 @@ namespace Controle_de_Tarefas.Controladores
              WHERE 
                 [ID] = @ID";
 
+        private const string sqlSelecionarContatosOrdenadoCargo =
+            @"SELECT 
+                [ID],       
+                [NOME],       
+                [EMAIL],             
+                [TELEFONE],                    
+                [EMPRESA],
+                [CARGO]
+            FROM
+                [TBCONTATOS] C
+            ORDER BY 
+                C.[NOME] DESC";
+
         #endregion
         public override string sqlInserir => sqlInserirContato;
         public override string sqlEditar => sqlEditarContato;
         public override string sqlExcluir => sqlExcluirContato;
         public override string sqlSelecionarPorId => sqlSelecionarContatoPorId;
-        public override string sqlSelecionarTodos => sqlSelecionarTodosContatos;
+        public override string sqlSelecionarTodos => sqlSelecionarContatosOrdenadoCargo;
 
         public override Contato ConverterEmRegistro(IDataReader reader)
         {
@@ -100,11 +113,6 @@ namespace Controle_de_Tarefas.Controladores
             };
 
             return parametros;
-        }
-
-        public List<Contato> ordenadosPorCargo()
-        {
-            return Registros.OrderBy(x => x.cargo).ToList();
         }
     }
 }

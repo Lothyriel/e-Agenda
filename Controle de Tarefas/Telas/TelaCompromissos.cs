@@ -16,7 +16,7 @@ namespace Controle_de_Tarefas.Telas
             String assunto;
             String local;
             DateTime data_inicio;
-            DateTime data_fim;
+            DateTime hora;
             Contato contato;
 
             String strContato;
@@ -39,7 +39,7 @@ namespace Controle_de_Tarefas.Telas
             }
             while (true)
             {
-                TipoMensagem.Requisicao.mostrarMensagem("Digite a data e hora do compromisso\n");
+                TipoMensagem.Requisicao.mostrarMensagem("Digite a data do compromisso\n");
                 String strData = Console.ReadLine();
                 if (DateTime.TryParse(strData, out data_inicio) && data_inicio > DateTime.Now)
                     break;
@@ -47,12 +47,23 @@ namespace Controle_de_Tarefas.Telas
             }
             while (true)
             {
-                TipoMensagem.Requisicao.mostrarMensagem("Digite o horário de término do compromisso\n");
-                String strData = Console.ReadLine();
-                if (DateTime.TryParse(strData, out data_fim))
+                TipoMensagem.Requisicao.mostrarMensagem("Digite a hora do compromisso\n");
+                String strHora = Console.ReadLine();
+                if (DateTime.TryParse(strHora, out hora))
                 {
-                    data_fim = new DateTime(data_inicio.Year, data_inicio.Month, data_inicio.Day, data_fim.Hour, data_fim.Minute, 0);
-                    if (data_fim > data_inicio)
+                    data_inicio = new DateTime(data_inicio.Year, data_inicio.Month, data_inicio.Day, hora.Hour, hora.Minute, 0);
+                    break;
+                }
+                TipoMensagem.Erro.mostrarMensagem("\nDigite um horário válido no formato hh:mm");
+            }
+            while (true)
+            {
+                TipoMensagem.Requisicao.mostrarMensagem("Digite o horário de término do compromisso\n");
+                String strHora = Console.ReadLine();
+                if (DateTime.TryParse(strHora, out hora))
+                {
+                    hora = new DateTime(data_inicio.Year, data_inicio.Month, data_inicio.Day, hora.Hour, hora.Minute, 0);
+                    if (hora > data_inicio)
                         break;
                 }
                 TipoMensagem.Erro.mostrarMensagem("\nDigite um horário válido no formato hh:mm");
@@ -68,7 +79,7 @@ namespace Controle_de_Tarefas.Telas
             }
             contato = strContato != "S" ? ccontat.getById(Convert.ToInt32(strContato)) : null;
 
-            return new Compromisso(assunto, local, data_inicio, data_fim, contato);
+            return new Compromisso(assunto, local, data_inicio, hora, contato);
         }
         public override void menu()
         {

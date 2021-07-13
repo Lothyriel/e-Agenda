@@ -25,7 +25,7 @@ namespace Controle_de_Tarefas.Telas
                 opcao = Console.ReadLine().ToUpperInvariant();
                 switch (opcao)
                 {
-                    case "1": visualizar(controlador.ordenadosPorCargo()); break;
+                    case "1": visualizar(); break;
                     case "2": cadastrar(); break;
                     case "3": editar(); break;
                     case "4": excluir(); break;

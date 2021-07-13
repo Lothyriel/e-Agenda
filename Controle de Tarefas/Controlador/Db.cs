@@ -17,7 +17,7 @@ namespace Controle_de_Tarefas.Controladores
         public static int Insert(string sql, Dictionary<string, object> parameters)
         {
             DbConnection connection = dbConnection();
-            DbCommand command = dbComand(sql.AppendSelectIdentity(), connection);
+            DbCommand command = dbComand(sql.getIdInserido(), connection);
 
             command.SetParameters(parameters);
 
@@ -127,12 +127,13 @@ namespace Controle_de_Tarefas.Controladores
                 return new SQLiteParameter(name, value);
             return null;
         }
-        private static string AppendSelectIdentity(this string sql)
+
+        private static string getIdInserido(this string sql)
         {
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
                 return sql + ";SELECT SCOPE_IDENTITY()";
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return sql + ";SELECT last_insert_rowid()";
+                return sql + ";SELECT LAST_INSERT_ROWID()";
             else return sql;
         }
     }

@@ -35,7 +35,7 @@ namespace Controle_de_Tarefas.Controladores
             @"DELETE FROM [TBOBJETIVOS] 
                 WHERE [ID] = @ID";
 
-        private const string sqlSelecionarTodosObjetivos =
+        private const string sqlSelecionarTodosObjetivos =  //nao usado ainda
             @"SELECT 
                 [ID],       
                 [DESCRICAO],       
@@ -44,7 +44,7 @@ namespace Controle_de_Tarefas.Controladores
             FROM
                 [TBOBJETIVOS]";
 
-        private const string sqlSelecionarObjetivoPorId =
+        private const string sqlSelecionarObjetivoPorId =   //nao usado ainda
             @"SELECT 
                 [ID],
                 [DESCRICAO],       
@@ -54,6 +54,17 @@ namespace Controle_de_Tarefas.Controladores
                 [TBOBJETIVOS]
              WHERE 
                 [ID] = @ID";
+
+        private const string sqlSelecionarTodosObjetivosTarefa =
+            @"SELECT 
+                [ID],       
+                [DESCRICAO],       
+                [FINALIZADO],             
+                [ID_TAREFA]                   
+            FROM
+                [TBOBJETIVOS] O
+            WHERE 
+                O.[ID_TAREFA] = ";
 
         #endregion
         public override string sqlInserir => sqlInserirObjetivo;
@@ -92,7 +103,7 @@ namespace Controle_de_Tarefas.Controladores
         {
             var objetivos = objetivosTarefa(id_tarefa);
             if (objetivos.Count == 0)
-                return "Nenhum objetivo cadastrado";
+                return "Nenhum objetivo cadastrado\n";
 
             String strObjetivos = "";
             foreach (var objetivo in objetivos)
@@ -101,15 +112,15 @@ namespace Controle_de_Tarefas.Controladores
         }
         public List<Objetivo> objetivosCompletos(int id_tarefa)
         {
-            return objetivosTarefa(id_tarefa).Where(x => x.finalizado).ToList();
+            return Db.GetAll(sqlSelecionarTodosObjetivosTarefa + id_tarefa + " AND O.[FINALIZADO] =  1", ConverterEmRegistro);
         }
         public List<Objetivo> objetivosIncompletos(int id_tarefa)
         {
-            return objetivosTarefa(id_tarefa).Where(x => !x.finalizado).ToList();
+            return Db.GetAll(sqlSelecionarTodosObjetivosTarefa + id_tarefa + " AND O.[FINALIZADO] =  0", ConverterEmRegistro);
         }
         public List<Objetivo> objetivosTarefa(int id_tarefa)
         {
-            return Registros.Where(x => x.id_tarefa == id_tarefa).ToList();
+            return Db.GetAll(sqlSelecionarTodosObjetivosTarefa + id_tarefa, ConverterEmRegistro);
         }
     }
 }
