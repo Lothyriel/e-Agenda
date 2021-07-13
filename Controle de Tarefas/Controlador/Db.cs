@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Common;
-using System.Data.SqlClient;
-using System.Data.SQLite;
 
 namespace Controle_de_Tarefas.Controladores
 {
@@ -11,13 +9,27 @@ namespace Controle_de_Tarefas.Controladores
 
     public static class Db
     {
-        private static string bancoSelecionado = ConfigurationManager.AppSettings["bancoDeDados"];
-        private static string connectionString = ConfigurationManager.ConnectionStrings[bancoSelecionado].ConnectionString;
+        private static readonly string bancoSelecionado;
+        private static readonly DbProviderFactory factory;
+        private static readonly string connectionString;
 
+        static Db()
+        {
+            var table = DbProviderFactories.GetFactoryClasses();
+
+            bancoSelecionado = ConfigurationManager.AppSettings["bancoDeDados"];
+            connectionString = ConfigurationManager.ConnectionStrings[bancoSelecionado].ConnectionString;
+            string nomeProvedor = ConfigurationManager.ConnectionStrings[bancoSelecionado].ProviderName;
+            factory = DbProviderFactories.GetFactory(nomeProvedor);
+        }
         public static int Insert(string sql, Dictionary<string, object> parameters)
         {
-            DbConnection connection = dbConnection();
-            DbCommand command = dbComand(sql.getIdInserido(), connection);
+            DbConnection connection = factory.CreateConnection();
+            connection.ConnectionString = connectionString;
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = sql.getIdInserido();
+            command.Connection = connection;
 
             command.SetParameters(parameters);
 
@@ -31,8 +43,12 @@ namespace Controle_de_Tarefas.Controladores
         }
         public static void Update(string sql, Dictionary<string, object> parameters)
         {
-            DbConnection connection = dbConnection();
-            DbCommand command = dbComand(sql, connection);
+            DbConnection connection = factory.CreateConnection();
+            connection.ConnectionString = connectionString;
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = sql;
+            command.Connection = connection;
 
             command.SetParameters(parameters);
 
@@ -48,8 +64,12 @@ namespace Controle_de_Tarefas.Controladores
         }
         public static List<T> GetAll<T>(string sql, ConverterDelegate<T> convert)
         {
-            DbConnection connection = dbConnection();
-            DbCommand command = dbComand(sql, connection);
+            DbConnection connection = factory.CreateConnection();
+            connection.ConnectionString = connectionString;
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = sql;
+            command.Connection = connection;
 
             connection.Open();
 
@@ -68,8 +88,12 @@ namespace Controle_de_Tarefas.Controladores
         }
         public static T Get<T>(string sql, ConverterDelegate<T> convert, Dictionary<string, object> parameters)
         {
-            DbConnection connection = dbConnection();
-            DbCommand command = dbComand(sql, connection);
+            DbConnection connection = factory.CreateConnection();
+            connection.ConnectionString = connectionString;
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = sql;
+            command.Connection = connection;
 
             command.SetParameters(parameters);
 
@@ -98,43 +122,21 @@ namespace Controle_de_Tarefas.Controladores
 
                 string name = parameter.Key;
                 object value = parameter.Value ?? DBNull.Value;
-                DbParameter _dbParameter = dbParameter(name, value);
+                DbParameter dbParameter = command.CreateParameter();
+                dbParameter.ParameterName = name;
+                dbParameter.Value = value;
 
-                command.Parameters.Add(_dbParameter);
+                command.Parameters.Add(dbParameter);
             }
         }
-        private static DbConnection dbConnection()
-        {
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
-                return new SqlConnection(connectionString);
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return new SQLiteConnection(connectionString);
-            return null;
-        }
-        private static DbCommand dbComand(string sql, DbConnection connection)
-        {
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
-                return new SqlCommand(sql, (SqlConnection)connection);
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return new SQLiteCommand(sql, (SQLiteConnection)connection);
-            return null;
-        }
-        private static DbParameter dbParameter(string name, object value)
-        {
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
-                return new SqlParameter(name, value);
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return new SQLiteParameter(name, value);
-            return null;
-        }
-
         private static string getIdInserido(this string sql)
         {
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
-                return sql + ";SELECT SCOPE_IDENTITY()";
-            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return sql + ";SELECT LAST_INSERT_ROWID()";
-            else return sql;
+            switch (bancoSelecionado)
+            {
+                case "SQLServer": return sql + ";SELECT SCOPE_IDENTITY()";
+                case "SQLite": return sql + ";SELECT LAST_INSERT_ROWID()";
+                default: throw new ArgumentException(message: "Invalid providerName");
+            }
         }
     }
 }
