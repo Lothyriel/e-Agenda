@@ -120,7 +120,7 @@ namespace Controle_de_Tarefas.Controladores
         }
         private List<Compromisso> filtrarPorData(DateTime dataMax)
         {
-            return Registros.Where(x => x.data_fim < dataMax).ToList();
+            return Db.GetAll($@"WHERE DATAINICIO >= '{DateTime.Now:yyyy-MM-dd HH:mm:ss}' AND DATAFIM <= '{dataMax:yyyy-MM-dd HH:mm:ss}'", ConverterEmRegistro);
         }
     }
 }

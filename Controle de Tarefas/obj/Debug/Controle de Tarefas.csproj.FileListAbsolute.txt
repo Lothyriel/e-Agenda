@@ -18,8 +18,6 @@ C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\C
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.exe
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.pdb
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.csproj.AssemblyReference.cache
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\x86\sqlite3.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\x64\sqlite3.dll
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\Microsoft.Data.Sqlite.dll
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\SQLitePCLRaw.core.dll
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Buffers.dll
@@ -29,3 +27,5 @@ C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\M
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Buffers.xml
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Memory.xml
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Data.SQLite.dll
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\bin\Debug\System.Data.SQLite.xml

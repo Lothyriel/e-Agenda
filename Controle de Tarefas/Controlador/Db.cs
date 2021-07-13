@@ -1,10 +1,9 @@
-﻿using Microsoft.Data.Sqlite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace Controle_de_Tarefas.Controladores
 {
@@ -63,6 +62,7 @@ namespace Controle_de_Tarefas.Controladores
                 var obj = convert(reader);
                 list.Add(obj);
             }
+            reader.Close();
             connection.Close();
             return list;
         }
@@ -82,6 +82,7 @@ namespace Controle_de_Tarefas.Controladores
             if (reader.Read())
                 t = convert(reader);
 
+            reader.Close();
             connection.Close();
             return t;
         }
@@ -107,7 +108,7 @@ namespace Controle_de_Tarefas.Controladores
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
                 return new SqlConnection(connectionString);
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return new SqliteConnection(connectionString);
+                return new SQLiteConnection(connectionString);
             return null;
         }
         private static DbCommand dbComand(string sql, DbConnection connection)
@@ -115,7 +116,7 @@ namespace Controle_de_Tarefas.Controladores
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
                 return new SqlCommand(sql, (SqlConnection)connection);
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return new SqliteCommand(sql, (SqliteConnection)connection);
+                return new SQLiteCommand(sql, (SQLiteConnection)connection);
             return null;
         }
         private static DbParameter dbParameter(string name, object value)
@@ -123,12 +124,16 @@ namespace Controle_de_Tarefas.Controladores
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
                 return new SqlParameter(name, value);
             if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
-                return new SqliteParameter(name, value);
+                return new SQLiteParameter(name, value);
             return null;
         }
         private static string AppendSelectIdentity(this string sql)
         {
-            return sql + ";SELECT SCOPE_IDENTITY()";
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLServer")
+                return sql + ";SELECT SCOPE_IDENTITY()";
+            if (ConfigurationManager.AppSettings["bancoDeDados"] == "SQLite")
+                return sql + ";SELECT last_insert_rowid()";
+            else return sql;
         }
     }
 }
