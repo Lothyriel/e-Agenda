@@ -1,0 +1,39 @@
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.exe
+C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\obj\Debug\Controle de Tarefas.exe
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\obj\Debug\Controle de Tarefas.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Controle de Tarefas.exe.config
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Controle de Tarefas.exe
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Controle de Tarefas.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Controladorfes.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Dominio.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\DotNetty.Common.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Buffers.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Data.SQLite.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Memory.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Controladorfes.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Dominio.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\DotNetty.Common.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Data.Sqlite.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Buffers.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Data.SQLite.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Memory.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\JX\Documents\GitHub\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.CopyComplete
