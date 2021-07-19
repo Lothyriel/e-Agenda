@@ -1,6 +1,8 @@
 ﻿using e_Agenda.Controladores;
 using e_Agenda.Dominio;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UnitTestProject.Extensions;
 
 namespace UnitTestProject.Contatos
 {
@@ -10,38 +12,35 @@ namespace UnitTestProject.Contatos
         ControladorContatos cc = new ControladorContatos();
         Contato c = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev");
 
-        void inserirContato() { cc.inserir(c); }
-        void excluirContato() { cc.excluir(c.id); }
+        [TestInitialize]
+        public void inserirContato() { cc.inserir(c); }
+        [TestCleanup]
+        public void excluirContato() { Extension.resetId("TBContatos"); }
 
         [TestMethod]
         public void adicionarContato()
         {
-            inserirContato();
-            Assert.IsTrue(c.id != 0);
-            excluirContato();
+            c.id.Should().NotBe(0);
         }
         [TestMethod]
         public void editarContato()
         {
-            inserirContato();
             Contato cn = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev Pleno");
             cc.editar(c.id, c);
+
+            cn.nome.Should().Be(c.nome);
+            cn.telefone.Should().Be(c.telefone);
+            cn.email.Should().Be(c.email);
+            cn.empresa.Should().Be(c.empresa);
             
-            Assert.AreEqual(cn.nome, c.nome);
-            Assert.AreEqual(cn.telefone, c.telefone);
-            Assert.AreEqual(cn.email, c.email);
-            Assert.AreEqual(cn.empresa, c.empresa);
-            Assert.AreNotEqual(cn.cargo, c.cargo);
-            Assert.AreNotEqual(cn.id, c.id);
-            Assert.AreNotEqual(cn, c);
-            excluirContato();
+            cn.id.Should().NotBe(c.id);
+            cn.cargo.Should().NotBe(c.cargo);
         }
         [TestMethod]
         public void ExcluirContato()
         {
-            inserirContato();
-            excluirContato();
-            Assert.AreEqual(null, cc.getById(c.id));
+            cc.excluir(c.id);
+            cc.getById(c.id).Should().BeNull();
         }
     }
 }

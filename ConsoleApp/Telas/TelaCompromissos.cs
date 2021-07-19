@@ -79,7 +79,10 @@ namespace e_Agenda.Telas
             }
             contato = strContato != "S" ? ccontat.getById(Convert.ToInt32(strContato)) : null;
 
-            return new Compromisso(assunto, local, data_inicio, hora, contato);
+            Compromisso compromisso = new Compromisso(assunto, local, data_inicio, hora, contato);
+            if (!controlador.horarioDisponivel(compromisso))
+                TipoMensagem.Erro.mostrarMensagem("\nJá existe um compromisso cadastrado nesse horário");
+            return compromisso;
         }
         public override void menu()
         {

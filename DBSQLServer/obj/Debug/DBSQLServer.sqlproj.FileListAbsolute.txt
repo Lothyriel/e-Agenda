@@ -1,0 +1,5 @@
+C:\Users\JX\Documents\GitHub\e-Agenda\DBSQLServer\bin\Debug\DBSQLServer.dacpac
+C:\Users\JX\Documents\GitHub\e-Agenda\DBSQLServer\bin\Debug\ControleTarefas.DB.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\DBSQLServer\bin\Debug\ControleTarefas.DB.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\DBSQLServer\obj\Debug\ControleTarefas.DB.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\DBSQLServer\obj\Debug\ControleTarefas.DB.pdb

@@ -40,17 +40,6 @@ namespace e_Agenda.Controladores
             @"DELETE FROM [TBCONTATOS] 
                 WHERE [ID] = @ID";
 
-        private const string sqlSelecionarTodosContatos =           //nao to usando agora 
-            @"SELECT 
-                [ID],       
-                [NOME],       
-                [EMAIL],             
-                [TELEFONE],                    
-                [EMPRESA],
-                [CARGO]
-            FROM
-                [TBCONTATOS]";
-
         private const string sqlSelecionarContatoPorId =
             @"SELECT 
                 [ID],
@@ -77,12 +66,22 @@ namespace e_Agenda.Controladores
             ORDER BY 
                 C.[NOME] DESC";
 
+        private const string sqlExisteContato =
+            @"SELECT 
+                COUNT(*) 
+            FROM 
+                [TBContatos]
+            WHERE 
+                [ID] = @ID";
+
         #endregion
         public override string sqlInserir => sqlInserirContato;
         public override string sqlEditar => sqlEditarContato;
         public override string sqlExcluir => sqlExcluirContato;
         public override string sqlSelecionarPorId => sqlSelecionarContatoPorId;
         public override string sqlSelecionarTodos => sqlSelecionarContatosOrdenadoCargo;
+        public override string sqlExists => sqlExisteContato;
+
         public override Contato ConverterEmRegistro(IDataReader reader)
         {
             var nome = Convert.ToString(reader["NOME"]);

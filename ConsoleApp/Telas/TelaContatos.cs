@@ -6,7 +6,6 @@ namespace e_Agenda.Telas
 {
     public class TelaContatos : Tela<Contato>, IMenu
     {
-        private new ControladorContatos controlador = new ControladorContatos();
         public TelaContatos() : base(new ControladorContatos()) { }
 
         public override void menu()

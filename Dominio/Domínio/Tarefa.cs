@@ -14,7 +14,7 @@ namespace e_Agenda.Dominio
             resetaDt_Conclusao();
             objetivos = new List<Objetivo>();
         }
-        public Tarefa(int porcentagem_conclusao, DateTime dt_criacao, int prioridade, String titulo)
+        public Tarefa(int porcentagem_conclusao, DateTime dt_criacao, int prioridade, string titulo)
         {
             this.prioridade = prioridade;
             this.titulo = titulo;

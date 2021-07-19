@@ -4,7 +4,7 @@ namespace e_Agenda.Dominio
 {
     public class Compromisso : Entidade
     {
-        public Compromisso(String assunto, String local, DateTime data_inicio, DateTime data_fim, Contato contato)
+        public Compromisso(String assunto, String local, DateTime data_inicio, DateTime data_fim, Contato contato = null)
         {
             this.assunto = assunto;
             this.local = local;

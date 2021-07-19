@@ -41,48 +41,72 @@ namespace e_Agenda.Controladores
                 WHERE [ID] = @ID";
 
         private const string sqlSelecionarTodosCompromissos =
-            @"SELECT 
-                [ID],       
-                [ASSUNTO],       
-                [LOCAL],             
-                [DATA_INICIO],
-                [DATA_FIM],
-                [ID_CONTATO]
+            @"SELECT *
             FROM
-                [TBCOMPROMISSOS]";
+                [TBCompromissos] AS CP LEFT JOIN 
+                [TBContatos] AS CT
+            ON
+                CT.[ID] = CP.[ID_CONTATO]";
 
         private const string sqlSelecionarCompromissoPorId =
+            @"SELECT *
+            FROM
+                [TBCompromissos] AS CP LEFT JOIN 
+                [TBContatos] AS CT
+            ON
+                CT.[ID] = CP.[ID_CONTATO]
+            WHERE 
+                CP.[ID] = @ID";
+
+        private const string sqlExisteCompromisso =
             @"SELECT 
-                [ID],
-                [ASSUNTO],       
-                [LOCAL],        
-                [DATA_INICIO],
-                [DATA_FIM],
-                [ID_CONTATO]
-             FROM
-                [TBCOMPROMISSOS]
-             WHERE 
+                COUNT(*) 
+            FROM 
+                [TBCompromissos]
+            WHERE 
                 [ID] = @ID";
 
-        private const string sqlSelectCountDatasEntre =
-            @"SELECT
-	            COUNT(*)
-            FROM 
-	            TBCOMPROMISSO
-            WHERE 
-                [DATA_INICIO] = @DATA_INICIO 
-            AND 
-                @DATA_INICIO_DESEJADO BETWEEN DATA_INICIO AND DATA_FIM 
+        private const string sqlVerificarHorarioOcupado =
+            @"SELECT COUNT(*)
+            FROM [TBCompromissos]
+            WHERE
+            CAST([DATA_INICIO] AS date) = CAST(@DATA_INICIO_NOVA AS date)
+            AND             
+            @DATA_INICIO_NOVA BETWEEN [DATA_INICIO] AND [DATA_FIM]
             OR 
-                @DATA_FIM_DESEJADO BETWEEN DATA_INICIO AND DATA_FIM";
+            @DATA_FIM_NOVA BETWEEN [DATA_INICIO] AND [DATA_FIM]
+            OR
+            [DATA_INICIO] BETWEEN @DATA_INICIO_NOVA AND @DATA_FIM_NOVA
+            OR 
+            [DATA_FIM] BETWEEN @DATA_INICIO_NOVA AND @DATA_FIM_NOVA";
+
+        private const string sqlSelecionarCompromissosPassados =
+            @"SELECT * 
+            FROM
+                [TBCompromissos] AS CP LEFT JOIN 
+                [TBContatos] AS CT
+            ON
+                CT.[ID] = CP.[ID_CONTATO]
+            WHERE [DATA_FIM] < @DATA_FIM";
+
+        private const string sqlSelecionarCompromissosFuturosAntesDeUmaData =
+            @"SELECT * 
+            FROM
+                [TBCompromissos] AS CP LEFT JOIN 
+                [TBContatos] AS CT
+            ON
+                CT.[ID] = CP.[ID_CONTATO]
+            WHERE [DATA_FIM] < @DATA_FIM
+            AND [DATA_FIM] > SYSDATETIME()";
 
         #endregion
-        public string sqlSelecionarAntesDeUmaData => sqlSelecionarTodos + "WHERE [DATA_FIM] < @DATA_FIM";
         public override string sqlInserir => sqlInserirCompromisso;
         public override string sqlEditar => sqlEditarCompromisso;
         public override string sqlExcluir => sqlExcluirCompromisso;
         public override string sqlSelecionarPorId => sqlSelecionarCompromissoPorId;
         public override string sqlSelecionarTodos => sqlSelecionarTodosCompromissos;
+        public override string sqlExists => sqlExisteCompromisso;
+
         public override Compromisso ConverterEmRegistro(IDataReader reader)
         {
             var assunto = Convert.ToString(reader["ASSUNTO"]);
@@ -90,12 +114,27 @@ namespace e_Agenda.Controladores
             var data_inicio = Convert.ToDateTime(reader["DATA_INICIO"]);
             var data_fim = Convert.ToDateTime(reader["DATA_FIM"]);
 
-            Compromisso compromisso = new Compromisso(assunto, local, data_inicio, data_fim, null)
+            var email = Convert.ToString(reader["EMAIL"]);
+            var nome = Convert.ToString(reader["NOME"]);
+            var telefone = Convert.ToString(reader["TELEFONE"]);
+            var empresa = Convert.ToString(reader["EMPRESA"]);
+            var cargo = Convert.ToString(reader["CARGO"]);
+
+
+            Compromisso compromisso = new Compromisso(assunto, local, data_inicio, data_fim)
             {
                 id = Convert.ToInt32(reader["ID"])
             };
+
+            Contato contato = null;
             if (reader["ID_CONTATO"] != DBNull.Value)
-                compromisso.contato = new ControladorContatos().getById(Convert.ToInt32(reader["ID_CONTATO"]));
+            {
+                contato = new Contato(nome, email, telefone, empresa, cargo)
+                {
+                    id = Convert.ToInt32(reader["ID_CONTATO"])
+                };
+            }
+            compromisso.contato = contato;
 
             return compromisso;
         }
@@ -124,16 +163,21 @@ namespace e_Agenda.Controladores
         }
         public List<Compromisso> compromissosPassados()
         {
-            return Db.GetAll(sqlSelecionarAntesDeUmaData, ConverterEmRegistro, AdicionarParametro("DATA_FIM", DateTime.Now));
+            return Db.GetAll(sqlSelecionarCompromissosPassados, ConverterEmRegistro, AdicionarParametro("DATA_FIM", DateTime.Now));
         }
         public List<Compromisso> compromissosFuturos(DateTime dataMax)
         {
-            return Db.GetAll(sqlSelecionarAntesDeUmaData, ConverterEmRegistro, AdicionarParametro("DATA_FIM", dataMax));
+            return Db.GetAll(sqlSelecionarCompromissosFuturosAntesDeUmaData, ConverterEmRegistro, AdicionarParametro("DATA_FIM", dataMax));
         }
-
-        public bool horarioDisponivel()
+        public bool horarioDisponivel(Compromisso comp)
         {
-            return Db.Exists(sqlSelectCountDatasEntre, sqlSelecionarAntesDeUmaData);
+            var parametros = new Dictionary<string, object>
+            {
+                { "DATA_INICIO_NOVA", comp.data_inicio },
+                { "DATA_FIM_NOVA", comp.data_fim }
+            };
+
+            return !Db.Exists(sqlVerificarHorarioOcupado, parametros);
         }
     }
 }

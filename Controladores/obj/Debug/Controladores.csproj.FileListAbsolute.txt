@@ -2,12 +2,12 @@ C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controladorfes\obj\Debug\Contro
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controladorfes\obj\Debug\Controladores.csproj.CoreCompileInputs.cache
 C:\Users\JX\Documents\GitHub\e-Agenda\Controladorfes\obj\Debug\Controladores.csproj.AssemblyReference.cache
 C:\Users\JX\Documents\GitHub\e-Agenda\Controladorfes\obj\Debug\Controladores.csproj.CoreCompileInputs.cache
-C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladores.csproj.AssemblyReference.cache
-C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladores.csproj.CoreCompileInputs.cache
-C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\bin\Debug\Controladorfes.dll
-C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\bin\Debug\Controladorfes.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\bin\Debug\Controladores.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\bin\Debug\Controladores.pdb
 C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\bin\Debug\Dominio.dll
 C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\bin\Debug\Dominio.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladores.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladores.csproj.CoreCompileInputs.cache
 C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladores.csproj.CopyComplete
-C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladorfes.dll
-C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladorfes.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladores.dll
+C:\Users\JX\Documents\GitHub\e-Agenda\Controladores\obj\Debug\Controladores.pdb

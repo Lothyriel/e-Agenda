@@ -13,6 +13,8 @@ namespace e_Agenda.Controladores
         public abstract string sqlInserir { get; }
         public abstract string sqlEditar { get; }
         public abstract string sqlExcluir { get; }
+        public abstract string sqlExists { get; }
+
 
         public T getById(int id)
         {
@@ -34,6 +36,10 @@ namespace e_Agenda.Controladores
         public void excluir(int id)
         {
             Db.Delete(sqlExcluir, AdicionarParametro("ID", id));
+        }
+        public bool exists(int id)
+        {
+            return Db.Exists(sqlExists, AdicionarParametro("ID", id));
         }
 
         public abstract T ConverterEmRegistro(IDataReader reader);

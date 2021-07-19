@@ -20,7 +20,8 @@ namespace UnitTestProject.Extensions
         }
         private static string resetIdSQLite(string tableName)
         {
-            return $@"DELETE FROM {tableName} update SQLITE_SEQUENCE
+            return $@"DELETE FROM {tableName};
+                      update SQLITE_SEQUENCE
                       set seq = 0
                       where name = '{tableName}'";
         }

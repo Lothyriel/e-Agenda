@@ -4,13 +4,7 @@ namespace e_Agenda.Dominio
 {
     public class Objetivo : Entidade
     {
-        public Objetivo(String descricao, int id_tarefa)
-        {
-            this.descricao = descricao;
-            this.id_tarefa = id_tarefa;
-            finalizado = false;
-        }
-        public Objetivo(String descricao, int id_tarefa, bool finalizado)
+        public Objetivo(String descricao, int id_tarefa, bool finalizado=false)
         {
             this.descricao = descricao;
             this.finalizado = finalizado;

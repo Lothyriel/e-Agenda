@@ -19,8 +19,8 @@ namespace UnitTestProject.Compromissos
         {
             c = new Contato("João Xavier", "fastjonh@gmail.com", "999790598", "NDD", "Dev");
             new ControladorContatos().inserir(c);
-            comp = new Compromisso("Aula ADP", "google meet", new DateTime(2021, 06, 28, 13, 30, 0), new DateTime(2021, 06, 28, 17, 30, 0), c);
-            
+            comp = new Compromisso("Aula ADP", "google meet", DateTime.Now.AddHours(1), DateTime.Now.AddHours(5), c);
+
             ccomp = new ControladorCompromissos();
             ccomp.inserir(comp);
         }
@@ -33,7 +33,7 @@ namespace UnitTestProject.Compromissos
         [TestMethod]
         public void editarCompromisso()
         {
-            Compromisso cn = new Compromisso("Aula IFSC", "google meet", new DateTime(2021, 06, 29, 8, 0, 0), new DateTime(2021, 06, 29, 12, 0, 0), c);
+            Compromisso cn = new Compromisso("Aula IFSC", "google meet", DateTime.Now, DateTime.Now.AddHours(4), c);
             ccomp.editar(comp.id, cn);
 
             ccomp.getById(cn.id).ToString().Should().Be(cn.ToString());
@@ -59,29 +59,67 @@ namespace UnitTestProject.Compromissos
         [TestMethod]
         public void SelecionarTodosCompromissos()
         {
-            comp = new Compromisso("Aula ADP 2", "google meet", new DateTime(2021, 06, 30, 13, 30, 0), new DateTime(2021, 06, 30, 17, 30, 0), null);
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now, DateTime.Now.AddHours(5), null);
             ccomp.inserir(comp);
 
             ccomp.Registros.Should().HaveCount(2);
         }
-
         [TestMethod]
         public void SelecionarCompromissosPassados()
         {
-            comp = new Compromisso("Aula ADP 2", "google meet", new DateTime(2020, 06, 30, 13, 30, 0), new DateTime(2020, 06, 30, 17, 30, 0), null);
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddDays(-50).AddHours(-5), DateTime.Now.AddDays(-50), null);
             ccomp.inserir(comp);
 
-            ccomp.compromissosPassados().Should().HaveCount(2);
+            ccomp.compromissosPassados().Should().HaveCount(1);
         }
         [TestMethod]
         public void SelecionarCompromissosFuturos()
         {
-            comp = new Compromisso("Aula ADP 2", "google meet", new DateTime(2022, 06, 30, 13, 30, 0), new DateTime(2022, 06, 30, 17, 30, 0), null);
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddDays(50).AddHours(5), DateTime.Now.AddDays(50), null);
             ccomp.inserir(comp);
 
-            ccomp.compromissosFuturos(new DateTime(2023, 01, 01)).Should().HaveCount(2);
+            ccomp.compromissosFuturos(DateTime.Now.AddMonths(8)).Should().HaveCount(2);
         }
-
+        [TestMethod]
+        public void verificaDataABBA()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now, DateTime.Now.AddHours(5), null);
+            ccomp.inserir(comp);
+            Compromisso comp2 = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddHours(1), DateTime.Now.AddHours(4), null);
+            ccomp.horarioDisponivel(comp2).Should().BeFalse();
+        }
+        [TestMethod]
+        public void verificaDataBAAB()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now, DateTime.Now.AddHours(5), null);
+            ccomp.inserir(comp);
+            Compromisso comp2 = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddHours(-1), DateTime.Now.AddHours(6), null);
+            ccomp.horarioDisponivel(comp2).Should().BeFalse();
+        }
+        [TestMethod]
+        public void verificaDataABAB()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now, DateTime.Now.AddHours(5), null);
+            ccomp.inserir(comp);
+            Compromisso comp2 = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddHours(1), DateTime.Now.AddHours(6), null);
+            ccomp.horarioDisponivel(comp2).Should().BeFalse();
+        }
+        [TestMethod]
+        public void verificaDataBABA()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now, DateTime.Now.AddHours(5), null);
+            ccomp.inserir(comp);
+            Compromisso comp2 = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddHours(-1), DateTime.Now.AddHours(4), null);
+            ccomp.horarioDisponivel(comp2).Should().BeFalse();
+        }
+        [TestMethod]
+        public void verificaDataValida()
+        {
+            comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now, DateTime.Now.AddHours(5), null);
+            ccomp.inserir(comp);
+            Compromisso comp2 = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddHours(6), DateTime.Now.AddHours(8), null);
+            ccomp.horarioDisponivel(comp2).Should().BeTrue();
+        }
         [TestCleanup]
         public void removerTodosCompromissos()
         {

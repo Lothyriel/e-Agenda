@@ -7,8 +7,8 @@
     <ProjectGuid>{EA8D20F1-E0AA-4B09-B4AD-871A17CF68BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Controladorfes</RootNamespace>
-    <AssemblyName>Controladorfes</AssemblyName>
+    <RootNamespace>Controladores</RootNamespace>
+    <AssemblyName>Controladores</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

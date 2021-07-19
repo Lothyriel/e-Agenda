@@ -1,8 +1,7 @@
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
 C:\Users\JX\Documents\GitHub\Controle de Tarefas\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
-C:\Users\JX\Documents\GitHub\e-Agenda\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
-C:\Users\JX\Documents\GitHub\e-Agenda\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\JX\Documents\GitHub\e-Agenda\Dominio\bin\Debug\Dominio.dll
 C:\Users\JX\Documents\GitHub\e-Agenda\Dominio\bin\Debug\Dominio.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\JX\Documents\GitHub\e-Agenda\Dominio\obj\Debug\Dominio.dll
 C:\Users\JX\Documents\GitHub\e-Agenda\Dominio\obj\Debug\Dominio.pdb

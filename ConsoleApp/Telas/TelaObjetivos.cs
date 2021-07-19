@@ -7,14 +7,15 @@ namespace e_Agenda.Telas
     public class TelaObjetivos : Tela<Objetivo>
     {
         private ControladorTarefas controladorT;
-        private new ControladorObjetivos controlador = new ControladorObjetivos();
+        private new ControladorTarefas.ControladorObjetivos controlador;
         private Tarefa tarefa;
 
         private TelaTarefas telaT;
 
-        public TelaObjetivos(Tarefa tarefa) : base(new ControladorObjetivos())
+        public TelaObjetivos(Tarefa tarefa) : base(new ControladorTarefas.ControladorObjetivos())
         {
             this.tarefa = tarefa;
+            controlador = new ControladorTarefas.ControladorObjetivos();
             controladorT = new ControladorTarefas();
             telaT = new TelaTarefas();
             menu();

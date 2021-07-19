@@ -11,7 +11,8 @@ namespace UnitTestProject.Tarefas
     public class TestesTarefas
     {
         ControladorTarefas ct = new ControladorTarefas();
-        ControladorObjetivos co = new ControladorObjetivos();
+        ControladorTarefas.ControladorObjetivos co = new ControladorTarefas.ControladorObjetivos();
+
         Tarefa t;
 
         [TestInitialize]
