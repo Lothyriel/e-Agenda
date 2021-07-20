@@ -29,20 +29,107 @@ namespace WindowsForms.Compromissos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCompromissos));
+            this.bt_editar = new System.Windows.Forms.Button();
+            this.dg_visualizar = new System.Windows.Forms.DataGridView();
+            this.titulo = new System.Windows.Forms.Label();
+            this.bt_excluir = new System.Windows.Forms.Button();
+            this.bt_cadastro = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bt_editar
+            // 
+            this.bt_editar.Enabled = false;
+            this.bt_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bt_editar.Location = new System.Drawing.Point(164, 403);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(172, 49);
+            this.bt_editar.TabIndex = 16;
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.UseVisualStyleBackColor = true;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
+            // 
+            // dg_visualizar
+            // 
+            this.dg_visualizar.AllowUserToAddRows = false;
+            this.dg_visualizar.AllowUserToDeleteRows = false;
+            this.dg_visualizar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dg_visualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_visualizar.Location = new System.Drawing.Point(477, 242);
+            this.dg_visualizar.MultiSelect = false;
+            this.dg_visualizar.Name = "dg_visualizar";
+            this.dg_visualizar.ReadOnly = true;
+            this.dg_visualizar.RowHeadersVisible = false;
+            this.dg_visualizar.RowHeadersWidth = 51;
+            this.dg_visualizar.RowTemplate.Height = 24;
+            this.dg_visualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dg_visualizar.Size = new System.Drawing.Size(867, 439);
+            this.dg_visualizar.TabIndex = 15;
+            this.dg_visualizar.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_visualizar_RowEnter);
+            // 
+            // titulo
+            // 
+            this.titulo.AutoSize = true;
+            this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F);
+            this.titulo.Location = new System.Drawing.Point(462, 62);
+            this.titulo.Name = "titulo";
+            this.titulo.Size = new System.Drawing.Size(539, 85);
+            this.titulo.TabIndex = 14;
+            this.titulo.Text = "Compromissos";
+            // 
+            // bt_excluir
+            // 
+            this.bt_excluir.Enabled = false;
+            this.bt_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bt_excluir.Location = new System.Drawing.Point(164, 467);
+            this.bt_excluir.Name = "bt_excluir";
+            this.bt_excluir.Size = new System.Drawing.Size(172, 49);
+            this.bt_excluir.TabIndex = 13;
+            this.bt_excluir.Text = "Excluir";
+            this.bt_excluir.UseVisualStyleBackColor = true;
+            this.bt_excluir.Click += new System.EventHandler(this.bt_excluir_Click);
+            // 
+            // bt_cadastro
+            // 
+            this.bt_cadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bt_cadastro.Location = new System.Drawing.Point(164, 337);
+            this.bt_cadastro.Name = "bt_cadastro";
+            this.bt_cadastro.Size = new System.Drawing.Size(172, 49);
+            this.bt_cadastro.TabIndex = 12;
+            this.bt_cadastro.Text = "Cadastrar";
+            this.bt_cadastro.UseVisualStyleBackColor = true;
+            this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
             // 
             // TelaCompromissos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(113)))), ((int)(((byte)(34)))));
+            this.BackgroundImage = global::WindowsForms.Properties.Resources.fundo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.bt_editar);
+            this.Controls.Add(this.dg_visualizar);
+            this.Controls.Add(this.titulo);
+            this.Controls.Add(this.bt_excluir);
+            this.Controls.Add(this.bt_cadastro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaCompromissos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCompromissos";
+            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button bt_editar;
+        private System.Windows.Forms.DataGridView dg_visualizar;
+        private System.Windows.Forms.Label titulo;
+        private System.Windows.Forms.Button bt_excluir;
+        private System.Windows.Forms.Button bt_cadastro;
     }
 }

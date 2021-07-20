@@ -36,7 +36,7 @@ namespace WindowsForms.Tarefas
                 linha["Prioridade"] = tarefa.prioridade;
                 linha["Percentual de Conclusão"] = tarefa.porcentagem_conclusao;
                 linha["Data Criação"] = tarefa.dt_criacao.ToString("d");
-                linha["Data Conclusão"] = tarefa.dt_conclusao != new DateTime(1900, 1, 1) ? tarefa.dt_conclusao.ToString("d") : "Não Finalizada";
+                linha["Data Conclusão"] = tarefa.dt_conclusao != new DateTime(1753,1,1) ? tarefa.dt_conclusao.ToString("d") : "Não Finalizada";
 
                 tabela.Rows.Add(linha);
             }

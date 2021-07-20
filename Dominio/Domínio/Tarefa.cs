@@ -14,17 +14,8 @@ namespace e_Agenda.Dominio
             resetaDt_Conclusao();
             objetivos = new List<Objetivo>();
         }
-        public Tarefa(int id, int porcentagem_conclusao, DateTime dt_criacao, int prioridade, string titulo, DateTime dt_conclusao)
-        {
-            this.id = id;
-            this.prioridade = prioridade;
-            this.titulo = titulo;
-            this.porcentagem_conclusao = porcentagem_conclusao;
-            this.dt_criacao = dt_criacao;
-            this.dt_conclusao = dt_conclusao;
-        }
-        public int porcentagem_conclusao { get; private set; }
-        public DateTime dt_criacao { get; private set; }
+        public int porcentagem_conclusao { get; set; }
+        public DateTime dt_criacao { get; set; }
         public DateTime dt_conclusao { get; set; }
         public string titulo { get; set; }
         public int prioridade { get; set; }
@@ -49,7 +40,7 @@ namespace e_Agenda.Dominio
         }
         private void resetaDt_Conclusao()
         {
-            dt_conclusao = new DateTime(1900, 1, 1);
+            dt_conclusao = new DateTime(1753, 1, 1);
         }
         private void calculaConclusao()
         {
@@ -70,7 +61,7 @@ namespace e_Agenda.Dominio
         public override String ToString()
         {
             return $"ID: {id} | Titulo: {titulo} | Prioridade: {prioridade} | Conclusão: {porcentagem_conclusao}% | Data Criação: {dt_criacao} " +
-            $"{(dt_conclusao != new DateTime(1900, 1, 1) ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{mostrarObjetivos()}";
+            $"{(dt_conclusao != new DateTime(1753, 1, 1) ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{mostrarObjetivos()}";
         }
         public override string validar()
         {

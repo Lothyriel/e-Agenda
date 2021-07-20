@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compromissos\CadastrarCompromissos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compromissos\CadastrarCompromissos.Designer.cs">
+      <DependentUpon>CadastrarCompromissos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compromissos\TelaCompromissos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Compromissos\CadastrarCompromissos.resx">
+      <DependentUpon>CadastrarCompromissos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compromissos\TelaCompromissos.resx">
       <DependentUpon>TelaCompromissos.cs</DependentUpon>
     </EmbeddedResource>

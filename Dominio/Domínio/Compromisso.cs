@@ -21,7 +21,6 @@ namespace e_Agenda.Dominio
         {
             return $"Assunto: {assunto} | Local: {local} | Data: {data_inicio:g} | Fim: {data_fim:t} {(contato != null ? $"| Contato: {contato.nome}" : " ")}";
         }
-
         public override string validar()
         {
             string resultadoValidacao = "";
@@ -40,6 +39,9 @@ namespace e_Agenda.Dominio
 
             if (data_inicio == DateTime.MinValue)
                 resultadoValidacao += "\nO campo Hora fim é obrigatório";
+
+            if (data_fim <= DateTime.Now)
+                resultadoValidacao += "\nO campo Data fim deve ser maior que a data de agora";
 
             if (data_fim <= data_inicio)
                 resultadoValidacao += "\nO campo Data fim deve ser maior que Data Início";

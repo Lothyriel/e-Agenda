@@ -26,7 +26,6 @@ namespace WindowsForms.Contatos
             tb_email.Text = contato.email;
             tb_telefone.Text = contato.telefone;
         }
-
         private void bt_cadastrar_Click(object sender, EventArgs e)
         {
             Contato contato = new Contato(tb_nome.Text, tb_email.Text, tb_telefone.Text, tb_empresa.Text, tb_cargo.Text);

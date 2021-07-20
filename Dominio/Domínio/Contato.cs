@@ -20,9 +20,12 @@ namespace e_Agenda.Dominio
 
         public override string ToString()
         {
+            return $"{nome} | {email} | {telefone}";
+        }
+        public string ToString(string format)
+        {
             return $"ID: {id} | Nome: {nome} | Email: {email} | Telefone: {telefone} | Empresa: {empresa} | Cargo: {cargo}";
         }
-
         public override string validar()
         {
             Regex templateEmail = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");

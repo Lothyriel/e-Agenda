@@ -73,7 +73,7 @@ namespace UnitTestProject.Tarefas
 
             ct.editar(t.id, t);
 
-            t.dt_conclusao.Should().NotBe(new DateTime(1900, 1, 1));
+            t.dt_conclusao.Should().NotBe(new DateTime(1753,1,1));
         }
         [TestMethod]
         public void testeExcluirTarefa()

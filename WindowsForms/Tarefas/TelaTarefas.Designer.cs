@@ -64,7 +64,7 @@ namespace WindowsForms.Tarefas
             // 
             this.titulo.AutoSize = true;
             this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F);
-            this.titulo.Location = new System.Drawing.Point(461, 66);
+            this.titulo.Location = new System.Drawing.Point(488, 67);
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(293, 85);
             this.titulo.TabIndex = 5;

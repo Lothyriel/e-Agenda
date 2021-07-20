@@ -82,8 +82,8 @@ namespace WindowsForms.Tarefas
         private void carregarCheckedListBox()
         {
             clb_objetivos.Items.Clear();
-            foreach (var item in tarefa.objetivos)
-                clb_objetivos.Items.Add(item, item.finalizado);
+
+            tarefa.objetivos.ForEach(x => clb_objetivos.Items.Add(x, x.finalizado));
 
             atualizaBarraProgresso();
         }
