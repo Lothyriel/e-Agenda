@@ -2,12 +2,7 @@
 using e_Agenda.Dominio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsForms.Contatos
@@ -19,6 +14,7 @@ namespace WindowsForms.Contatos
         {
             InitializeComponent();
             controlador = new ControladorContatos();
+            changeButtons(false);
             carregarTabelas();
         }
         public DataTable carregarTabela(List<Contato> fonte)
@@ -54,15 +50,23 @@ namespace WindowsForms.Contatos
             carregarTabelas();
             Show();
         }
-        private int getIdSelecionadoTabela()
+        private void bt_editar_Click(object sender, EventArgs e)
         {
-            return Convert.ToInt32(dg_visualizar.CurrentRow.Cells[0].Value);
+            Hide();
+            Contato contato = controlador.getById(getIdSelecionadoTabela());
+            using (CadastrarContatos tela = new CadastrarContatos(controlador, contato)) { tela.ShowDialog(); }
+            carregarTabelas();
+            Show();
         }
         private void bt_excluir_Click(object sender, EventArgs e)
         {
             controlador.excluir(getIdSelecionadoTabela());
             carregarTabelas();
             changeButtons(false);
+        }
+        private int getIdSelecionadoTabela()
+        {
+            return Convert.ToInt32(dg_visualizar.CurrentRow.Cells[0].Value);
         }
         private void dg_visualizar_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -71,6 +75,7 @@ namespace WindowsForms.Contatos
         private void changeButtons(bool estado)
         {
             bt_excluir.Enabled = estado;
+            bt_editar.Enabled = estado;
         }
         private void carregarTabelas()
         {

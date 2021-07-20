@@ -55,7 +55,7 @@ namespace WindowsForms
             // 
             this.compromissos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.compromissos.Image = global::WindowsForms.Properties.Resources.compromissos;
-            this.compromissos.Location = new System.Drawing.Point(627, 373);
+            this.compromissos.Location = new System.Drawing.Point(960, 373);
             this.compromissos.Name = "compromissos";
             this.compromissos.Size = new System.Drawing.Size(155, 147);
             this.compromissos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -67,7 +67,7 @@ namespace WindowsForms
             // 
             this.contatos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.contatos.Image = global::WindowsForms.Properties.Resources.contatos;
-            this.contatos.Location = new System.Drawing.Point(933, 373);
+            this.contatos.Location = new System.Drawing.Point(645, 373);
             this.contatos.Name = "contatos";
             this.contatos.Size = new System.Drawing.Size(150, 147);
             this.contatos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

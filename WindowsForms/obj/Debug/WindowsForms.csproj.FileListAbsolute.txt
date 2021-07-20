@@ -18,3 +18,4 @@ C:\Users\JX\Documents\GitHub\e-Agenda\WindowsForms\bin\Debug\Dominio.pdb
 C:\Users\JX\Documents\GitHub\e-Agenda\WindowsForms\obj\Debug\WindowsForms.csproj.CopyComplete
 C:\Users\JX\Documents\GitHub\e-Agenda\WindowsForms\obj\Debug\WindowsForms.exe
 C:\Users\JX\Documents\GitHub\e-Agenda\WindowsForms\obj\Debug\WindowsForms.pdb
+C:\Users\JX\Documents\GitHub\e-Agenda\WindowsForms\obj\Debug\WindowsForms.Contatos.CadastrarContatos.resources

@@ -64,7 +64,7 @@ namespace e_Agenda.Controladores
             FROM
                 [TBCONTATOS] C
             ORDER BY 
-                C.[NOME] DESC";
+                C.[CARGO] ASC";
 
         private const string sqlExisteContato =
             @"SELECT 

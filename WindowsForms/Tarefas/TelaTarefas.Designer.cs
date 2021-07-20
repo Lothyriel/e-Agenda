@@ -74,7 +74,7 @@ namespace WindowsForms.Tarefas
             // 
             this.dg_visualizar.AllowUserToAddRows = false;
             this.dg_visualizar.AllowUserToDeleteRows = false;
-            this.dg_visualizar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dg_visualizar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_visualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_visualizar.Location = new System.Drawing.Point(476, 246);
             this.dg_visualizar.MultiSelect = false;
