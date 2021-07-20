@@ -99,6 +99,15 @@ namespace e_Agenda.Controladores
             WHERE [DATA_FIM] < @DATA_FIM
             AND [DATA_FIM] > SYSDATETIME()";
 
+        private const string sqlSelecionarCompromissosFuturos =
+            @"SELECT * 
+            FROM
+                [TBCompromissos] AS CP LEFT JOIN 
+                [TBContatos] AS CT
+            ON
+                CT.[ID] = CP.[ID_CONTATO]
+            WHERE [DATA_FIM] > SYSDATETIME()";
+
         #endregion
         public override string sqlInserir => sqlInserirCompromisso;
         public override string sqlEditar => sqlEditarCompromisso;
@@ -159,16 +168,21 @@ namespace e_Agenda.Controladores
 
         public List<Compromisso> filtrarPorPeriodo(TimeSpan periodo)
         {
-            return compromissosFuturos(DateTime.Now.Add(periodo));
+            return compromissosFuturosAteData(DateTime.Now.Add(periodo));
         }
         public List<Compromisso> compromissosPassados()
         {
             return Db.GetAll(sqlSelecionarCompromissosPassados, ConverterEmRegistro, AdicionarParametro("DATA_FIM", DateTime.Now));
         }
-        public List<Compromisso> compromissosFuturos(DateTime dataMax)
+        public List<Compromisso> compromissosFuturosAteData(DateTime dataMax)
         {
             return Db.GetAll(sqlSelecionarCompromissosFuturosAntesDeUmaData, ConverterEmRegistro, AdicionarParametro("DATA_FIM", dataMax));
         }
+        public List<Compromisso> compromissosFuturos()
+        {
+            return Db.GetAll(sqlSelecionarCompromissosFuturos, ConverterEmRegistro);
+        }
+
         public bool horarioDisponivel(Compromisso comp)
         {
             var parametros = new Dictionary<string, object>

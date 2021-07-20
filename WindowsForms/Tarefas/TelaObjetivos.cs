@@ -1,6 +1,5 @@
 ﻿using e_Agenda.Controladores;
 using e_Agenda.Dominio;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using static e_Agenda.Controladores.ControladorTarefas;
 using System;

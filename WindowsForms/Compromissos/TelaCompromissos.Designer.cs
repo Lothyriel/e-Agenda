@@ -31,11 +31,19 @@ namespace WindowsForms.Compromissos
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCompromissos));
             this.bt_editar = new System.Windows.Forms.Button();
-            this.dg_visualizar = new System.Windows.Forms.DataGridView();
+            this.dg_visualizarFuturos = new System.Windows.Forms.DataGridView();
             this.titulo = new System.Windows.Forms.Label();
             this.bt_excluir = new System.Windows.Forms.Button();
             this.bt_cadastro = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizar)).BeginInit();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dg_visualizarPassados = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizarFuturos)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizarPassados)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_editar
@@ -50,23 +58,24 @@ namespace WindowsForms.Compromissos
             this.bt_editar.UseVisualStyleBackColor = true;
             this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
-            // dg_visualizar
+            // dg_visualizarFuturos
             // 
-            this.dg_visualizar.AllowUserToAddRows = false;
-            this.dg_visualizar.AllowUserToDeleteRows = false;
-            this.dg_visualizar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dg_visualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_visualizar.Location = new System.Drawing.Point(477, 242);
-            this.dg_visualizar.MultiSelect = false;
-            this.dg_visualizar.Name = "dg_visualizar";
-            this.dg_visualizar.ReadOnly = true;
-            this.dg_visualizar.RowHeadersVisible = false;
-            this.dg_visualizar.RowHeadersWidth = 51;
-            this.dg_visualizar.RowTemplate.Height = 24;
-            this.dg_visualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_visualizar.Size = new System.Drawing.Size(867, 439);
-            this.dg_visualizar.TabIndex = 15;
-            this.dg_visualizar.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_visualizar_RowEnter);
+            this.dg_visualizarFuturos.AllowUserToAddRows = false;
+            this.dg_visualizarFuturos.AllowUserToDeleteRows = false;
+            this.dg_visualizarFuturos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dg_visualizarFuturos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_visualizarFuturos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dg_visualizarFuturos.Location = new System.Drawing.Point(3, 3);
+            this.dg_visualizarFuturos.MultiSelect = false;
+            this.dg_visualizarFuturos.Name = "dg_visualizarFuturos";
+            this.dg_visualizarFuturos.ReadOnly = true;
+            this.dg_visualizarFuturos.RowHeadersVisible = false;
+            this.dg_visualizarFuturos.RowHeadersWidth = 51;
+            this.dg_visualizarFuturos.RowTemplate.Height = 24;
+            this.dg_visualizarFuturos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dg_visualizarFuturos.Size = new System.Drawing.Size(879, 481);
+            this.dg_visualizarFuturos.TabIndex = 15;
+            this.dg_visualizarFuturos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_visualizar_RowEnter);
             // 
             // titulo
             // 
@@ -101,6 +110,56 @@ namespace WindowsForms.Compromissos
             this.bt_cadastro.UseVisualStyleBackColor = true;
             this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
             // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Location = new System.Drawing.Point(464, 203);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(893, 516);
+            this.tabControl.TabIndex = 17;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dg_visualizarFuturos);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(885, 487);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Futuros";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dg_visualizarPassados);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(885, 487);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Passados";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dg_visualizarPassados
+            // 
+            this.dg_visualizarPassados.AllowUserToAddRows = false;
+            this.dg_visualizarPassados.AllowUserToDeleteRows = false;
+            this.dg_visualizarPassados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dg_visualizarPassados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_visualizarPassados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dg_visualizarPassados.Location = new System.Drawing.Point(3, 3);
+            this.dg_visualizarPassados.MultiSelect = false;
+            this.dg_visualizarPassados.Name = "dg_visualizarPassados";
+            this.dg_visualizarPassados.ReadOnly = true;
+            this.dg_visualizarPassados.RowHeadersVisible = false;
+            this.dg_visualizarPassados.RowHeadersWidth = 51;
+            this.dg_visualizarPassados.RowTemplate.Height = 24;
+            this.dg_visualizarPassados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dg_visualizarPassados.Size = new System.Drawing.Size(879, 481);
+            this.dg_visualizarPassados.TabIndex = 16;
+            // 
             // TelaCompromissos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,8 +168,8 @@ namespace WindowsForms.Compromissos
             this.BackgroundImage = global::WindowsForms.Properties.Resources.fundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.bt_editar);
-            this.Controls.Add(this.dg_visualizar);
             this.Controls.Add(this.titulo);
             this.Controls.Add(this.bt_excluir);
             this.Controls.Add(this.bt_cadastro);
@@ -118,7 +177,11 @@ namespace WindowsForms.Compromissos
             this.Name = "TelaCompromissos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCompromissos";
-            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizarFuturos)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_visualizarPassados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,9 +190,13 @@ namespace WindowsForms.Compromissos
         #endregion
 
         private System.Windows.Forms.Button bt_editar;
-        private System.Windows.Forms.DataGridView dg_visualizar;
+        private System.Windows.Forms.DataGridView dg_visualizarFuturos;
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.Button bt_excluir;
         private System.Windows.Forms.Button bt_cadastro;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dg_visualizarPassados;
     }
 }

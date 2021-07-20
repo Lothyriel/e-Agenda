@@ -3,6 +3,7 @@ using e_Agenda.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsForms.Tarefas
@@ -36,7 +37,7 @@ namespace WindowsForms.Tarefas
                 linha["Prioridade"] = tarefa.prioridade;
                 linha["Percentual de Conclusão"] = tarefa.porcentagem_conclusao;
                 linha["Data Criação"] = tarefa.dt_criacao.ToString("d");
-                linha["Data Conclusão"] = tarefa.dt_conclusao != new DateTime(1753,1,1) ? tarefa.dt_conclusao.ToString("d") : "Não Finalizada";
+                linha["Data Conclusão"] = tarefa.dt_conclusao != new DateTime(1753, 1, 1) ? tarefa.dt_conclusao.ToString("d") : "Não Finalizada";
 
                 tabela.Rows.Add(linha);
             }
@@ -51,7 +52,8 @@ namespace WindowsForms.Tarefas
         }
         private int getIdSelecionadoTabela()
         {
-            return Convert.ToInt32(dg_visualizar.CurrentRow.Cells[0].Value);
+            DataGridView dg_selecionado = (DataGridView)tabControl.SelectedTab.GetChildAtPoint(new Point(dg_visualizarConcluidas.Size));
+            return Convert.ToInt32(dg_selecionado.CurrentRow.Cells[0].Value);
         }
         private void bt_excluir_Click(object sender, EventArgs e)
         {
@@ -69,9 +71,10 @@ namespace WindowsForms.Tarefas
         }
         private void carregarTabelas()
         {
-            dg_visualizar.DataSource = carregarTabela(controlador.Registros);
+            dg_visualizarConcluidas.DataSource = carregarTabela(controlador.tarefasCompletas());
+            dg_visualizarInconcluidas.DataSource = carregarTabela(controlador.tarefasIncompletas());
         }
-        private void dg_visualizar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dg_selecionado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Hide();
             Tarefa selecionada = controlador.getById(getIdSelecionadoTabela());

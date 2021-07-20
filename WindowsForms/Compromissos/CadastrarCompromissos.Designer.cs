@@ -149,6 +149,7 @@ namespace WindowsForms.Compromissos
             this.dtp_horaFim.ShowUpDown = true;
             this.dtp_horaFim.Size = new System.Drawing.Size(117, 22);
             this.dtp_horaFim.TabIndex = 38;
+            this.dtp_horaFim.Value = new System.DateTime(2021, 7, 20, 17, 0, 0, 0);
             // 
             // lb_contatos
             // 
@@ -168,7 +169,7 @@ namespace WindowsForms.Compromissos
             this.dtp_horaInicio.ShowUpDown = true;
             this.dtp_horaInicio.Size = new System.Drawing.Size(117, 22);
             this.dtp_horaInicio.TabIndex = 41;
-            this.dtp_horaInicio.Value = new System.DateTime(2021, 7, 20, 10, 54, 0, 0);
+            this.dtp_horaInicio.Value = new System.DateTime(2021, 7, 20, 13, 0, 0, 0);
             // 
             // label5
             // 

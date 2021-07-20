@@ -3,6 +3,7 @@ using e_Agenda.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsForms.Compromissos
@@ -68,7 +69,8 @@ namespace WindowsForms.Compromissos
         }
         private int getIdSelecionadoTabela()
         {
-            return Convert.ToInt32(dg_visualizar.CurrentRow.Cells[0].Value);
+            DataGridView dg_selecionado = (DataGridView)tabControl.SelectedTab.GetChildAtPoint(new Point(dg_visualizarPassados.Size));
+            return Convert.ToInt32(dg_selecionado.CurrentRow.Cells[0].Value);
         }
         private void dg_visualizar_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -81,7 +83,8 @@ namespace WindowsForms.Compromissos
         }
         private void carregarTabelas()
         {
-            dg_visualizar.DataSource = carregarTabela(controlador.Registros);
+            dg_visualizarFuturos.DataSource = carregarTabela(controlador.compromissosFuturos());
+            dg_visualizarPassados.DataSource = carregarTabela(controlador.compromissosPassados());
         }
     }
 }

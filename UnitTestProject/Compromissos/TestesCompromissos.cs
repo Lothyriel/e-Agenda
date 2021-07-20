@@ -78,7 +78,7 @@ namespace UnitTestProject.Compromissos
             comp = new Compromisso("Aula ADP 2", "google meet", DateTime.Now.AddDays(50).AddHours(5), DateTime.Now.AddDays(50), null);
             ccomp.inserir(comp);
 
-            ccomp.compromissosFuturos(DateTime.Now.AddMonths(8)).Should().HaveCount(2);
+            ccomp.compromissosFuturosAteData(DateTime.Now.AddMonths(8)).Should().HaveCount(2);
         }
         [TestMethod]
         public void verificaDataABBA()
