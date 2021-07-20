@@ -46,6 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compromissos\TelaCompromissos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compromissos\TelaCompromissos.Designer.cs">
+      <DependentUpon>TelaCompromissos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contatos\CadastrarContatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contatos\CadastrarContatos.Designer.cs">
+      <DependentUpon>CadastrarContatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contatos\TelaContatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contatos\TelaContatos.Designer.cs">
+      <DependentUpon>TelaContatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tarefas\CadastrarTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\CadastrarTarefas.Designer.cs">
+      <DependentUpon>CadastrarTarefas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarefas\TelaObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\TelaObjetivos.Designer.cs">
+      <DependentUpon>TelaObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarefas\TelaTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\TelaTarefas.Designer.cs">
+      <DependentUpon>TelaTarefas.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,15 +95,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Compromissos\TelaCompromissos.resx">
+      <DependentUpon>TelaCompromissos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contatos\CadastrarContatos.resx">
+      <DependentUpon>CadastrarContatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contatos\TelaContatos.resx">
+      <DependentUpon>TelaContatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Tarefas\CadastrarTarefas.resx">
+      <DependentUpon>CadastrarTarefas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarefas\TelaObjetivos.resx">
+      <DependentUpon>TelaObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarefas\TelaTarefas.resx">
+      <DependentUpon>TelaTarefas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +133,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controladores\Controladores.csproj">
+      <Project>{ea8d20f1-e0aa-4b09-b4ad-871a17cf68bc}</Project>
+      <Name>Controladores</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{5cb4d0be-418c-44ce-abd1-8d2d7cd683f6}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\compromissos.png" />
+    <Content Include="Resources\contatos.png" />
+    <Content Include="Resources\fundo.jpg" />
+    <Content Include="Resources\tarefas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

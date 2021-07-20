@@ -115,22 +115,19 @@ namespace e_Agenda.Controladores
 
         public override Tarefa ConverterEmRegistro(IDataReader reader)
         {
+            var id = Convert.ToInt32(reader["ID"]);
             var titulo = Convert.ToString(reader["TITULO"]);
             var prioridade = Convert.ToInt32(reader["PRIORIDADE"]);
             var dt_criacao = Convert.ToDateTime(reader["DT_CRIACAO"]);
+            var dt_conclusao = Convert.ToDateTime(reader["DT_CONCLUSAO"]);
             int porcentagem_conclusao = Convert.ToInt32(reader["PORCENTAGEM_CONCLUSAO"]);
 
-            Tarefa tarefa = new Tarefa(porcentagem_conclusao, dt_criacao, prioridade, titulo)
-            {
-                id = Convert.ToInt32(reader["ID"])
-            };
+            Tarefa tarefa = new Tarefa(id, porcentagem_conclusao, dt_criacao, prioridade, titulo, dt_conclusao);
 
             if (reader["DT_CONCLUSAO"] != DBNull.Value)
                 tarefa.dt_conclusao = Convert.ToDateTime(reader["DT_CONCLUSAO"]);
 
             tarefa.objetivos = new ControladorObjetivos().objetivosTarefa(tarefa.id);
-            tarefa.atualizaConclusao();
-
             return tarefa;
         }
         public override Dictionary<string, object> ObtemParametrosRegistro(Tarefa tarefa)

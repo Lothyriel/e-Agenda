@@ -4,7 +4,7 @@ namespace e_Agenda.Dominio
 {
     public class Objetivo : Entidade
     {
-        public Objetivo(String descricao, int id_tarefa, bool finalizado=false)
+        public Objetivo(String descricao, int id_tarefa, bool finalizado = false)
         {
             this.descricao = descricao;
             this.finalizado = finalizado;
@@ -17,11 +17,28 @@ namespace e_Agenda.Dominio
         public void concluir() { finalizado = true; }
         public override string ToString()
         {
-            return $"ID: {id} | Descrição { descricao} | : Status: { (finalizado ? "Completo" : "Incompleto")}";
+            return descricao;
         }
         public string ToString(String format)
         {
-            return $"{ descricao} | : Status: { (finalizado ? "Completo" : "Incompleto")}";
+            if (format == "sem ID")
+                return $"{ descricao} | : Status: { (finalizado ? "Completo" : "Incompleto")}";
+            if (format == "com ID")
+                return $"ID: {id} | Descrição { descricao} | : Status: { (finalizado ? "Completo" : "Incompleto")}";
+            return ToString();
+        }
+
+        public override string validar()
+        {
+            string resultadoValidacao = "";
+
+            if (string.IsNullOrEmpty(descricao))
+                resultadoValidacao = "O campo Descrição é obrigatório";
+
+            if (resultadoValidacao == "")
+                resultadoValidacao = "ESTA_VALIDO";
+
+            return resultadoValidacao;
         }
     }
 }

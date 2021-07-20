@@ -3,5 +3,7 @@
     public abstract class Entidade
     {
         public int id { get; set; }
+
+        public abstract string validar();
     }
 }

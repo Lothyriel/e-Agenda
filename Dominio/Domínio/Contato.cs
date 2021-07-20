@@ -1,4 +1,6 @@
-﻿namespace e_Agenda.Dominio
+﻿using System.Text.RegularExpressions;
+
+namespace e_Agenda.Dominio
 {
     public class Contato : Entidade
     {
@@ -19,6 +21,34 @@
         public override string ToString()
         {
             return $"ID: {id} | Nome: {nome} | Email: {email} | Telefone: {telefone} | Empresa: {empresa} | Cargo: {cargo}";
+        }
+
+        public override string validar()
+        {
+            Regex templateEmail = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+            Regex templateTelefone = new Regex(@"(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})");
+
+            string resultadoValidacao = "";
+
+            if (string.IsNullOrEmpty(nome))
+                resultadoValidacao = "O campo Nome é obrigatório";
+
+            if (string.IsNullOrEmpty(cargo))
+                resultadoValidacao = "\nO campo Cargo é obrigatório";
+
+            if (string.IsNullOrEmpty(empresa))
+                resultadoValidacao = "\nO campo Empresa é obrigatório";
+
+            if (!templateTelefone.IsMatch(telefone))
+                resultadoValidacao = "O campo Telefone está inválido";
+
+            if (!templateEmail.IsMatch(email))
+                resultadoValidacao += "\nO campo Email está inválido";
+
+            if (resultadoValidacao == "")
+                resultadoValidacao = "ESTA_VALIDO";
+
+            return resultadoValidacao;
         }
     }
 }

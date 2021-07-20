@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForms.Compromissos;
+using WindowsForms.Contatos;
+using WindowsForms.Tarefas;
 
 namespace WindowsForms
 {
@@ -17,9 +13,23 @@ namespace WindowsForms
             InitializeComponent();
         }
 
-        private void TelaPrincipal_Load(object sender, EventArgs e)
+        private void tarefas_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            using (TelaTarefas tela = new TelaTarefas()) { tela.ShowDialog(); }
+            Show();
+        }
+        private void compromissos_Click(object sender, EventArgs e)
+        {
+            Hide();
+            using (TelaCompromissos tela = new TelaCompromissos()) { tela.ShowDialog(); }
+            Show();
+        }
+        private void contatos_Click(object sender, EventArgs e)
+        {
+            Hide();
+            using (TelaContatos tela = new TelaContatos()) { tela.ShowDialog(); }
+            Show();
         }
     }
 }

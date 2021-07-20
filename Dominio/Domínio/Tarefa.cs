@@ -14,12 +14,14 @@ namespace e_Agenda.Dominio
             resetaDt_Conclusao();
             objetivos = new List<Objetivo>();
         }
-        public Tarefa(int porcentagem_conclusao, DateTime dt_criacao, int prioridade, string titulo)
+        public Tarefa(int id, int porcentagem_conclusao, DateTime dt_criacao, int prioridade, string titulo, DateTime dt_conclusao)
         {
+            this.id = id;
             this.prioridade = prioridade;
             this.titulo = titulo;
             this.porcentagem_conclusao = porcentagem_conclusao;
             this.dt_criacao = dt_criacao;
+            this.dt_conclusao = dt_conclusao;
         }
         public int porcentagem_conclusao { get; private set; }
         public DateTime dt_criacao { get; private set; }
@@ -45,7 +47,6 @@ namespace e_Agenda.Dominio
             titulo = nova.titulo;
             prioridade = nova.prioridade;
         }
-
         private void resetaDt_Conclusao()
         {
             dt_conclusao = new DateTime(1900, 1, 1);
@@ -55,7 +56,7 @@ namespace e_Agenda.Dominio
             double total = objetivos.Count;
             double concluidos = objetivos.FindAll(x => x.finalizado).Count;
             double resultado = concluidos / total * 100;
-            porcentagem_conclusao = (int)resultado;
+            porcentagem_conclusao = Double.IsNaN(resultado) ? 0 : (int)resultado;
         }
         public String mostrarObjetivos()
         {
@@ -70,6 +71,21 @@ namespace e_Agenda.Dominio
         {
             return $"ID: {id} | Titulo: {titulo} | Prioridade: {prioridade} | Conclusão: {porcentagem_conclusao}% | Data Criação: {dt_criacao} " +
             $"{(dt_conclusao != new DateTime(1900, 1, 1) ? $" | Data Conclusão: {dt_conclusao}" : "")}\n{mostrarObjetivos()}";
+        }
+        public override string validar()
+        {
+            string resultadoValidacao = "";
+
+            if (string.IsNullOrEmpty(titulo))
+                resultadoValidacao = "O campo Título é obrigatório";
+
+            if (prioridade == 0)
+                resultadoValidacao = "\nO campo Prioridade é obrigatório";
+
+            if (resultadoValidacao == "")
+                resultadoValidacao = "ESTA_VALIDO";
+
+            return resultadoValidacao;
         }
     }
 }
