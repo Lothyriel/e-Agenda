@@ -82,10 +82,10 @@ namespace WindowsForms.Tarefas
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Location = new System.Drawing.Point(454, 193);
+            this.tabControl.Location = new System.Drawing.Point(482, 217);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(893, 516);
+            this.tabControl.Size = new System.Drawing.Size(865, 492);
             this.tabControl.TabIndex = 18;
             // 
             // tabPage1
@@ -94,7 +94,7 @@ namespace WindowsForms.Tarefas
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(885, 487);
+            this.tabPage1.Size = new System.Drawing.Size(857, 463);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Concluídas";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@ namespace WindowsForms.Tarefas
             this.dg_visualizarConcluidas.RowHeadersWidth = 51;
             this.dg_visualizarConcluidas.RowTemplate.Height = 24;
             this.dg_visualizarConcluidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_visualizarConcluidas.Size = new System.Drawing.Size(879, 481);
+            this.dg_visualizarConcluidas.Size = new System.Drawing.Size(851, 457);
             this.dg_visualizarConcluidas.TabIndex = 15;
             this.dg_visualizarConcluidas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_selecionado_CellDoubleClick);
             // 
