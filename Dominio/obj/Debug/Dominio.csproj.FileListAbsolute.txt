@@ -1,0 +1,5 @@
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\Dominio\bin\Debug\Dominio.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\Dominio\bin\Debug\Dominio.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\Dominio\obj\Debug\Dominio.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\Dominio\obj\Debug\Dominio.pdb
