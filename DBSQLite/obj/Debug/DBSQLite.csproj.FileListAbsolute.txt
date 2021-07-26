@@ -1,0 +1,7 @@
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\DBSQLite\bin\Debug\DBSQLite.dll.config
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\DBSQLite\bin\Debug\DBSQLite.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\DBSQLite\bin\Debug\DBSQLite.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\DBSQLite\obj\Debug\DBSQLite.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\DBSQLite\obj\Debug\DBSQLite.csproj.CoreCompileInputs.cache
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\DBSQLite\obj\Debug\DBSQLite.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\DBSQLite\obj\Debug\DBSQLite.pdb

@@ -1,7 +1,5 @@
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\ConsoleApp.csproj.AssemblyReference.cache
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.exe
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\Controle de Tarefas\obj\Debug\Controle de Tarefas.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\bin\Debug\ConsoleApp.exe.config
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\bin\Debug\ConsoleApp.exe
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\bin\Debug\ConsoleApp.pdb
@@ -32,8 +30,6 @@ C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\bin\Debug\System.Diagnostics
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\bin\Debug\System.Memory.xml
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.AssemblyReference.cache
-C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.csproj.CopyComplete
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.exe
 C:\Users\JX\Documents\GitHub\C#\e-Agenda\ConsoleApp\obj\Debug\ConsoleApp.pdb
