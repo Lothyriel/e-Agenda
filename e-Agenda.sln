@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBSQLite", "DBSQLite\DBSQLi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{871F66A9-687F-40FA-AA9E-6727B225DBB7}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "e-Agenda Installer", "Instalador\e-Agenda Installer\e-Agenda Installer.vdproj", "{320DAB88-B2C3-402C-807F-54C5FBE3E18A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,8 @@ Global
 		{32B7E95D-C9DF-4DAA-9FA5-DF91D5E1180D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32B7E95D-C9DF-4DAA-9FA5-DF91D5E1180D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32B7E95D-C9DF-4DAA-9FA5-DF91D5E1180D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{320DAB88-B2C3-402C-807F-54C5FBE3E18A}.Debug|Any CPU.ActiveCfg = Debug
+		{320DAB88-B2C3-402C-807F-54C5FBE3E18A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

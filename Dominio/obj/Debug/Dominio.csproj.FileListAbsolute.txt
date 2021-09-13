@@ -15,4 +15,3 @@ D:\Repositórios\e-Agenda\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cac
 D:\Repositórios\e-Agenda\Dominio\obj\Debug\Dominio.dll
 D:\Repositórios\e-Agenda\Dominio\obj\Debug\Dominio.pdb
 D:\Repositórios\e-Agenda\Dominio\bin\Debug\Dominio.xml
-D:\Repositórios\e-Agenda\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache

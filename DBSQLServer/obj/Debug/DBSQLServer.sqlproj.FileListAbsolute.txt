@@ -20,6 +20,9 @@ C:\Users\JX\Documents\GitHub\C#\Lothyriel\e-Agenda\DBSQLServer\obj\Debug\Control
 D:\Repositórios\e-Agenda\DBSQLServer\bin\Debug\DBSQLServer.dacpac
 D:\Repositórios\e-Agenda\DBSQLServer\bin\Debug\ControleTarefas.DB.dll
 D:\Repositórios\e-Agenda\DBSQLServer\bin\Debug\ControleTarefas.DB.pdb
-D:\Repositórios\e-Agenda\DBSQLServer\obj\Debug\DBSQLServer.sqlproj.AssemblyReference.cache
 D:\Repositórios\e-Agenda\DBSQLServer\obj\Debug\ControleTarefas.DB.dll
 D:\Repositórios\e-Agenda\DBSQLServer\obj\Debug\ControleTarefas.DB.pdb
+D:\Repositórios\e-Agenda\DBSQLServer\obj\Debug\Model.xml
+D:\Repositórios\e-Agenda\DBSQLServer\obj\Debug\refactor.xml
+D:\Repositórios\e-Agenda\DBSQLServer\obj\Debug\postdeploy.sql
+D:\Repositórios\e-Agenda\DBSQLServer\obj\Debug\predeploy.sql
