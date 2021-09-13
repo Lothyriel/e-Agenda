@@ -1,17 +1,69 @@
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\UnitTestProject.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\UnitTestProject.pdb
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Controle de Tarefas.exe
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Controle de Tarefas.pdb
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Controle de Tarefas.exe.config
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.csproj.AssemblyReference.cache
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.csproj.CopyComplete
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.dll
-C:\Users\JX\Documents\GitHub\Controle de Tarefas\UnitTestProject\obj\Debug\UnitTestProject.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\UnitTestProject.dll.config
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Controladores.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Dominio.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\FluentAssertions.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Buffers.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Data.SQLite.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Memory.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Controladores.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Dominio.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\FluentAssertions.pdb
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\FluentAssertions.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Microsoft.Data.Sqlite.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Buffers.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Data.SQLite.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Memory.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.csproj.AssemblyReference.cache
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.csproj.CopyComplete
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\JX\Documents\GitHub\C#\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.pdb
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\UnitTestProject.dll.config
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\UnitTestProject.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\UnitTestProject.pdb
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Controladores.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Dominio.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\FluentAssertions.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.Data.Sqlite.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\SQLitePCLRaw.core.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Buffers.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Data.SQLite.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Memory.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Numerics.Vectors.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Controladores.pdb
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Controladores.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Dominio.pdb
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\FluentAssertions.pdb
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\FluentAssertions.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.Data.Sqlite.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Buffers.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Data.SQLite.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Memory.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Numerics.Vectors.xml
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Repositórios\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.csproj.AssemblyReference.cache
+D:\Repositórios\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+D:\Repositórios\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.csproj.CopyComplete
+D:\Repositórios\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.dll
+D:\Repositórios\e-Agenda\UnitTestProject\obj\Debug\UnitTestProject.pdb
+D:\Repositórios\e-Agenda\UnitTestProject\bin\Debug\Dominio.xml
