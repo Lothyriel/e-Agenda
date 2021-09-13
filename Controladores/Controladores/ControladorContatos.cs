@@ -5,6 +5,9 @@ using System.Data;
 
 namespace e_Agenda.Controladores
 {
+    /// <summary>
+    /// Classe controladora de Contatos.
+    /// </summary>
     public class ControladorContatos : Controlador<Contato>
     {
         #region Queries

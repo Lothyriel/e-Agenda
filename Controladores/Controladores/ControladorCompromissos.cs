@@ -5,6 +5,9 @@ using System.Data;
 
 namespace e_Agenda.Controladores
 {
+    /// <summary>
+    /// Classe controladora de Compromisso.
+    /// </summary>
     public class ControladorCompromissos : Controlador<Compromisso>
     {
         #region Queries
@@ -166,23 +169,46 @@ namespace e_Agenda.Controladores
             return parametros;
         }
 
+        /// <summary>
+        /// Filtra compromissos por um período dado.
+        /// </summary>
+        /// <param name="periodo">The periodo.</param>
+        /// <returns>A list of Compromissos.</returns>
         public List<Compromisso> filtrarPorPeriodo(TimeSpan periodo)
         {
             return compromissosFuturosAteData(DateTime.Now.Add(periodo));
         }
+        /// <summary>
+        /// Filtra compromissos passados (baseado na data atual).
+        /// </summary>
+        /// <returns>A list of Compromissos.</returns>
         public List<Compromisso> compromissosPassados()
         {
             return Db.GetAll(sqlSelecionarCompromissosPassados, ConverterEmRegistro, AdicionarParametro("DATA_FIM", DateTime.Now));
         }
+        /// <summary>
+        /// Filtra compromissos até uma data dada.
+        /// </summary>
+        /// <param name="dataMax">The data max.</param>
+        /// <returns>A list of Compromissos.</returns>
         public List<Compromisso> compromissosFuturosAteData(DateTime dataMax)
         {
             return Db.GetAll(sqlSelecionarCompromissosFuturosAntesDeUmaData, ConverterEmRegistro, AdicionarParametro("DATA_FIM", dataMax));
         }
+        /// <summary>
+        /// Filtra compromissos futuros (baseado na data atual).
+        /// </summary>
+        /// <returns>A list of Compromissos.</returns>
         public List<Compromisso> compromissosFuturos()
         {
             return Db.GetAll(sqlSelecionarCompromissosFuturos, ConverterEmRegistro);
         }
 
+        /// <summary>
+        /// Verifica se o horário está disponível, para cadastrar um compromisso.
+        /// </summary>
+        /// <param name="comp">The comp.</param>
+        /// <returns>A bool.</returns>
         public bool horarioDisponivel(Compromisso comp)
         {
             var parametros = new Dictionary<string, object>

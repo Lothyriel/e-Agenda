@@ -7,6 +7,9 @@ namespace e_Agenda.Controladores
 {
     public delegate T ConverterDelegate<T>(DbDataReader reader);
 
+    /// <summary>
+    /// Classe responsável pela interação do banco de dados com o programa.
+    /// </summary>
     public static class Db
     {
         public static readonly string bancoSelecionado;
@@ -20,6 +23,12 @@ namespace e_Agenda.Controladores
             string nomeProvedor = ConfigurationManager.ConnectionStrings[bancoSelecionado].ProviderName;
             factory = DbProviderFactories.GetFactory(nomeProvedor);
         }
+        /// <summary>
+        /// Método genérico de inserção de entidades no banco.
+        /// </summary>
+        /// <param name="sql">The sql.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>Um int que representa o último ID inserido no banco.</returns>
         public static int Insert(string sql, Dictionary<string, object> parameters)
         {
             using (DbConnection connection = factory.CreateConnection())
@@ -43,6 +52,11 @@ namespace e_Agenda.Controladores
                 }
             }
         }
+        /// <summary>
+        /// Método genérico de atualização de entidades no banco.
+        /// </summary>
+        /// <param name="sql">The sql.</param>
+        /// <param name="parameters">The parameters.</param>
         public static void Update(string sql, Dictionary<string, object> parameters)
         {
             using (DbConnection connection = factory.CreateConnection())
@@ -62,10 +76,22 @@ namespace e_Agenda.Controladores
                 }
             }
         }
+        /// <summary>
+        /// Método genérico de remoção de entidades no banco.
+        /// </summary>
+        /// <param name="sql">The sql.</param>
+        /// <param name="parameters">The parameters.</param>
         public static void Delete(string sql, Dictionary<string, object> parameters = null)
         {
             Update(sql, parameters);
         }
+        /// <summary>
+        /// Método genérico que retorna todas as entidades de uma tabela.
+        /// </summary>
+        /// <param name="sql">The sql.</param>
+        /// <param name="convert">The convert.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>A list of T's.</returns>
         public static List<T> GetAll<T>(string sql, ConverterDelegate<T> convert, Dictionary<string, object> parameters = null)
         {
             using (DbConnection connection = factory.CreateConnection())
@@ -94,6 +120,13 @@ namespace e_Agenda.Controladores
                 }
             }
         }
+        /// <summary>
+        /// Método genérico que retorna uma entidade específica.
+        /// </summary>
+        /// <param name="sql">The sql.</param>
+        /// <param name="convert">The convert.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>A T.</returns>
         public static T Get<T>(string sql, ConverterDelegate<T> convert, Dictionary<string, object> parameters)
         {
             using (DbConnection connection = factory.CreateConnection())
@@ -121,6 +154,12 @@ namespace e_Agenda.Controladores
                 }
             }
         }
+        /// <summary>
+        /// Método para checar a existência de uma entidade no banco.
+        /// </summary>
+        /// <param name="sql">The sql.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>A bool.</returns>
         public static bool Exists(string sql, Dictionary<string, object> parameters)
         {
             using (DbConnection connection = factory.CreateConnection())
@@ -143,6 +182,11 @@ namespace e_Agenda.Controladores
                 }
             }
         }
+        /// <summary>
+        /// Seta os parâmetros para ações da classe Db.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <param name="parameters">The parameters.</param>
         private static void SetParameters(this DbCommand command, Dictionary<string, object> parameters)
         {
             if (parameters == null || parameters.Count == 0)

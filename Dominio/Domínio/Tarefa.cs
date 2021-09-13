@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace e_Agenda.Dominio
 {
+    /// <summary>
+    /// Classe da entidade Tarefa
+    /// </summary>
     public class Tarefa : Entidade
     {
         public Tarefa(int prioridade, string titulo)
@@ -27,6 +30,9 @@ namespace e_Agenda.Dominio
             resetaDt_Conclusao();
             calculaConclusao();
         }
+        /// <summary>
+        /// Atualiza a conclusão da tarefa.
+        /// </summary>
         public void atualizaConclusao()
         {
             calculaConclusao();

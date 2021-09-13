@@ -2,6 +2,9 @@
 
 namespace e_Agenda.Dominio
 {
+    /// <summary>
+    /// Classe da entidade Contato.
+    /// </summary>
     public class Contato : Entidade
     {
         public Contato(string nome, string email, string telefone, string empresa, string cargo)

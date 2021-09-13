@@ -5,6 +5,9 @@ using System.Data;
 
 namespace e_Agenda.Controladores
 {
+    /// <summary>
+    /// Classe controladora de Tarefas.
+    /// </summary>
     public class ControladorTarefas : Controlador<Tarefa>
     {
         #region Queries
@@ -145,10 +148,18 @@ namespace e_Agenda.Controladores
             return parametros;
         }
 
+        /// <summary>
+        /// Obtém todas as tarefas concluídas.
+        /// </summary>
+        /// <returns>A list of Tarefas.</returns>
         public List<Tarefa> tarefasCompletas()
         {
             return Db.GetAll(sqlSelecionarTodasTarefasConcluidas, ConverterEmRegistro);
         }
+        /// <summary>
+        /// Obtém todas as tarefas não concluídas.
+        /// </summary>
+        /// <returns>A list of Tarefas.</returns>
         public List<Tarefa> tarefasIncompletas()
         {
             return Db.GetAll(sqlSelecionarTodasTarefasPendentes, ConverterEmRegistro);

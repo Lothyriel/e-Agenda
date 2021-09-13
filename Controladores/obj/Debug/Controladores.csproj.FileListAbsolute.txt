@@ -16,3 +16,14 @@ C:\Users\JX\Documents\GitHub\C#\Lothyriel\e-Agenda\Controladores\obj\Debug\Contr
 C:\Users\JX\Documents\GitHub\C#\Lothyriel\e-Agenda\Controladores\obj\Debug\Controladores.csproj.CopyComplete
 C:\Users\JX\Documents\GitHub\C#\Lothyriel\e-Agenda\Controladores\obj\Debug\Controladores.dll
 C:\Users\JX\Documents\GitHub\C#\Lothyriel\e-Agenda\Controladores\obj\Debug\Controladores.pdb
+D:\Repositórios\e-Agenda\Controladores\bin\Debug\Controladores.dll
+D:\Repositórios\e-Agenda\Controladores\bin\Debug\Controladores.pdb
+D:\Repositórios\e-Agenda\Controladores\bin\Debug\Dominio.dll
+D:\Repositórios\e-Agenda\Controladores\bin\Debug\Dominio.pdb
+D:\Repositórios\e-Agenda\Controladores\obj\Debug\Controladores.csproj.AssemblyReference.cache
+D:\Repositórios\e-Agenda\Controladores\obj\Debug\Controladores.csproj.CoreCompileInputs.cache
+D:\Repositórios\e-Agenda\Controladores\obj\Debug\Controladores.csproj.CopyComplete
+D:\Repositórios\e-Agenda\Controladores\obj\Debug\Controladores.dll
+D:\Repositórios\e-Agenda\Controladores\obj\Debug\Controladores.pdb
+D:\Repositórios\e-Agenda\Controladores\bin\Debug\Controladores.xml
+D:\Repositórios\e-Agenda\Controladores\bin\Debug\Dominio.xml

@@ -2,6 +2,9 @@
 
 namespace e_Agenda.Dominio
 {
+    /// <summary>
+    /// Classe da entidade Compromisso.
+    /// </summary>
     public class Compromisso : Entidade
     {
         public Compromisso(String assunto, String local, DateTime data_inicio, DateTime data_fim, Contato contato = null)
