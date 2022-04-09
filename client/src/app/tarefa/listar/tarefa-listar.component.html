@@ -1,0 +1,24 @@
+<h1>{{titulo}}</h1>
+<hr>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Prioridade</th>
+            <th scope="col">Percentual</th>
+            <th scope="col">Data Criação</th>
+            <th scope="col">Data Conclusão</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of listaTarefas">
+            <td>{{t.titulo}}</td>
+            <td>{{t.prioridade}}</td>
+            <td>{{t.percentual}}</td>
+            <td>{{t.dataCriacao.toLocaleString()}}</td>
+            <td>{{t.dataConclusao.toLocaleString()}}</td>
+        </tr>
+    </tbody>
+</table>

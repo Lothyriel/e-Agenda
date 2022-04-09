@@ -1,0 +1,37 @@
+<h1>{{titulo}}</h1>
+<hr>
+
+<form [formGroup]="cadastroForm" (ngSubmit)="editarTarefa()">
+    <label for="titulo">Título</label>
+    <div>
+        <input id="titulo" type="text" placeholder="titulo" formControlName="titulo">
+    </div>
+
+    <label for="percentual">Percentual</label>
+    <div>
+        <input id="percentual" type="number" placeholder="percentual" formControlName="percentual">
+    </div>
+
+    <label for="dataCriacao">Data Criação</label>
+    <div>
+        <input id="dataCriacao" type="date" placeholder="Data Admissão" formControlName="dataCriacao">
+    </div>
+
+    <label for="dataConclusao">Data Conclusão</label>
+    <div>
+        <input id="dataConclusao" type="date" placeholder="Data Conclusão" formControlName="dataConclusao">
+    </div>
+
+    <label for="prioridade">Prioridade</label>
+    <div>
+        <select id="prioridade" formControlName="prioridade">
+            <option *ngFor="let p of prioridades" value={{p}}>
+                {{prioridade[p]}}
+            </option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <button id="registrar" type="submit">Editar</button>
+    </div>
+</form>
